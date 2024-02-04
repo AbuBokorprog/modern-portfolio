@@ -29,15 +29,20 @@ const Banner = () => {
   }, []);
 
   return (
-    <section ref={container} className="my-20 banner h-[60vh]">
-      <h1 className="text-9xl title uppercase text-center font-bold">
-        <span className="pe-28">Hi there, I'm</span> <br />
-        <span className="ps-44">Abu Bokor.</span>
-      </h1>
-      <p className="text-center my-6">
-        A freelance frontend developer & web designer <br /> propelling startup
-        visions to reality.
-      </p>
+    <section
+      ref={container}
+      className=" min-h-screen flex items-center justify-center"
+    >
+      <div>
+        <h1 className="text-5xl lg:text-9xl title uppercase text-center font-bold">
+          <span className="lg:pe-20">Hi there, I'm</span> <br />
+          <span className="lg:ps-20">Abu Bokor.</span>
+        </h1>
+        <p className="text-center my-6 text-sm">
+          A freelance frontend developer & web designer <br /> propelling
+          startup visions to reality.
+        </p>
+      </div>
     </section>
   );
 };
