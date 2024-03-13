@@ -10,16 +10,7 @@ const Contact = () => {
       <h2 className=" text-3xl lg:text-[165px] text-center uppercase font-bold py-10">
         Get in touch.
       </h2>
-      <div className="flex mt-20 items-start ">
-        <div className="w-1/5">
-          <h3 className="text-2xl uppercase font-semibold">Socials.</h3>
-          <div className="my-4 flex flex-col">
-            <a href="http://">Linkedin</a>
-            <a href="http://">Instagram</a>
-            <a href="http://">Github</a>
-          </div>
-        </div>
-
+      <div className="lg:flex mt-20 items-start flex-row-reverse">
         <form onSubmit={handleSubmit(onSubmit)} className=" w-full">
           <div className=" flex gap-4 items-center">
             <div className="w-full">
@@ -85,6 +76,16 @@ const Contact = () => {
             />
           </div>
         </form>
+        <div className="w-1/5">
+          <h3 className="text-2xl uppercase font-semibold">Socials.</h3>
+          <div className="my-4 flex flex-col">
+            <a href="https://www.linkedin.com/in/md-abu-bokor/">Linkedin</a>
+            <a href="#">Instagram</a>
+            <a href="https://github.com/AbuBokorprog" target="_blank">
+              Github
+            </a>
+          </div>
+        </div>
       </div>
     </div>
   );

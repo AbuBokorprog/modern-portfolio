@@ -16,7 +16,7 @@ const Portfolio = () => {
             start: "top 100%",
             end: "bottom -10%",
             scrub: 0.5,
-            markers: true,
+            // markers: true,
           },
         })
         .from(".title", {
