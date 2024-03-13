@@ -30,6 +30,7 @@ const Banner = () => {
   return (
     <section
       ref={container}
+      id="#"
       className=" min-h-screen flex items-center justify-center"
     >
       <div>
@@ -37,7 +38,7 @@ const Banner = () => {
           <span className="lg:pe-20">Hi there, I'm</span> <br />
           <span className="lg:ps-20">Abu Bokor.</span>
         </h1>
-        <p className="text-center my-6 text-sm">
+        <p className="text-center mt-6 text-sm">
           A freelance frontend developer.
         </p>
       </div>

@@ -62,6 +62,7 @@ const About = () => {
   return (
     <section
       ref={container}
+      id="about"
       className="bg-black rounded-t-xl about overflow-hidden"
     >
       <div className="py-10">
@@ -94,7 +95,7 @@ const About = () => {
                 Let's build the future of web development together. 💻✨
               </small>
             </p>
-            <div className="lg:w-96 py-2">
+            <div className=" py-2">
               <div className="flex gap-10 justify-start">
                 <p className="w-32 font-medium">Birthday:</p>
                 <p>26 June 2004</p>
@@ -149,12 +150,12 @@ const About = () => {
         ))}
       </div>
       {/* <hr className="border border-zinc-400" /> */}
-      <div className="py-10">
+      <div className="py-10" id="services">
         <h2 className="text-white fade-in text-5xl lg:text-8xl uppercase font-bold py-10">
           Services.
         </h2>
-        <div className="grid w-full px-4 md:grid-col-2 lg:grid-cols-3 justify-center mx-auto gap-4 mt-10 ">
-          <div className="p-2 card hover:border-b-2 max-w-sm border border-gray-200 rounded-lg lg:w-96 bg-base-100 shadow-2xl">
+        <div className="grid w-full px-4 md:grid-cols-2 lg:grid-cols-3 justify-center mx-auto mt-10 gap-4">
+          <div className="p-2 card hover:border-b-2 w-full border border-gray-200 rounded-lg  bg-base-100 shadow-2xl">
             <Image
               src={image1}
               alt="image1"
@@ -174,7 +175,7 @@ const About = () => {
               </p>
             </div>
           </div>
-          <div className="p-2 card hover:border-b-2 max-w-sm border border-gray-200 rounded-lg lg:w-96 bg-base-100 shadow-2xl">
+          <div className="p-2 card hover:border-b-2 w-full border border-gray-200 rounded-lg  bg-base-100 shadow-2xl">
             <Image
               width={500}
               height={500}
@@ -196,7 +197,7 @@ const About = () => {
               </p>
             </div>
           </div>
-          <div className="p-2 card hover:border-b-2 max-w-sm border border-gray-200 rounded-lg lg:w-96 bg-base-100 shadow-2xl">
+          <div className="p-2 card hover:border-b-2 w-full border border-gray-200 rounded-lg  bg-base-100 shadow-2xl">
             <Image
               width={500}
               height={500}
@@ -217,7 +218,7 @@ const About = () => {
               </p>
             </div>
           </div>
-          <div className="p-2 card hover:border-b-2 max-w-sm border border-gray-200 rounded-lg lg:w-96 bg-base-100 shadow-2xl">
+          <div className="p-2 card hover:border-b-2 w-full border border-gray-200 rounded-lg  bg-base-100 shadow-2xl">
             <Image
               width={500}
               height={500}

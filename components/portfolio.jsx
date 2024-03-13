@@ -13,10 +13,9 @@ const Portfolio = () => {
         .timeline({
           scrollTrigger: {
             trigger: container.current,
-            start: "top 100%",
-            end: "bottom -10%",
+            start: "top 80%",
+            end: "bottom 50%",
             scrub: 0.5,
-            // markers: true,
           },
         })
         .from(".title", {
@@ -29,12 +28,6 @@ const Portfolio = () => {
           y: 50,
           stagger: 0.2,
           duration: 0.5,
-        })
-        .to(container.current, {
-          y: -50,
-          duration: 1,
-          delay: 2,
-          opacity: 0,
         });
     },
     { scope: container }
@@ -43,9 +36,10 @@ const Portfolio = () => {
   return (
     <div
       ref={container}
+      id="projects"
       className="portfolio-container rounded-b-xl py-10 min-h-screen text-white bg-black overflow-hidden"
     >
-      <h2 className="title text-white text-5xl lg:text-8xl uppercase font-bold py-10">
+      <h2 className="title text-white text-5xl xl:text-8xl uppercase font-bold py-10">
         Selected Works.
       </h2>
       <div className=" px-1 grid grid-cols-1 md:grid-cols-2 items-center ">

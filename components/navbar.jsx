@@ -3,10 +3,13 @@ import React, { useRef, useState } from "react";
 import Link from "next/link";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
+import { useRouter } from "next/navigation";
+import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
-
+  gsap.registerPlugin(ScrollTrigger);
+  const router = useRouter();
   const handleToggle = () => {
     setIsOpen(!isOpen);
   };
@@ -20,19 +23,40 @@ const Navbar = () => {
         delay: 0,
         stagger: 0.5,
       });
+      gsap.to(container.current, {
+        backgroundColor: "#ffffff",
+        scrollTrigger: {
+          trigger: container.current,
+          start: "top -50%",
+          end: "bottom bottom",
+          scrub: 2,
+        },
+      });
+      gsap.from(smallContainer.current, {
+        y: -100,
+        duration: 1,
+        opacity: 0,
+        scrollTrigger: {
+          trigger: smallContainer.current,
+          start: "top -80%",
+          end: "bottom 50%",
+          scrub: 2,
+        },
+      });
     },
     { scope: container }
   );
 
   return (
     <>
-      <div ref={smallContainer}>
+      <div className="">
         {/* Navbar */}
-        <nav className=" relative lg:hidden block">
-          <div className=" text-right ">
+        <nav className="md:hidden block ">
+          <div className="">
             <button
+              ref={smallContainer}
               onClick={() => setIsOpen(!isOpen)}
-              className="lg:hidden text-right text-white focus:outline-none"
+              className="p-6 fixed top-0 left-0 w-full z-10 text-right text-white focus:outline-none"
             >
               Menu
             </button>
@@ -99,21 +123,39 @@ const Navbar = () => {
           </div>
         )}
       </div>
-      <nav ref={container} className="py-6 mx-auto hidden lg:block">
-        <div className="lg:flex text-xl font-semibold justify-center gap-10">
-          <Link className="box" href={"/"}>
+      <nav
+        ref={container}
+        className="py-6 big mx-auto hidden md:block fixed top-0 left-0 w-full z-10"
+      >
+        <div className="md:flex text-xl font-semibold justify-center gap-10">
+          <Link
+            className={`${router === "/" ? "text-red-500" : ""}`}
+            href={"#"}
+          >
             Home
           </Link>
-          <Link className="box" href={"/about"}>
+          <Link
+            className={`${router === "/#about" ? "text-red-500" : ""}`}
+            href={"/#about"}
+          >
             About
           </Link>
-          <Link className="box" href={"/services"}>
+          <Link
+            className={`${router === "/#services" ? "text-red-500" : ""}`}
+            href={"#services"}
+          >
             Services
           </Link>
-          <Link className="box" href={"/projects"}>
+          <Link
+            className={`${router === "/#projects" ? "text-red-500" : ""}`}
+            href={"#projects"}
+          >
             Projects
           </Link>
-          <Link className="box" href={"/contact"}>
+          <Link
+            className={`${router === "/#contact" ? "text-red-500" : ""}`}
+            href={"#contact"}
+          >
             Contact
           </Link>
         </div>
