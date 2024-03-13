@@ -62,7 +62,7 @@ const About = () => {
   return (
     <section
       ref={container}
-      className="bg-black rounded-xl about overflow-hidden"
+      className="bg-black rounded-t-xl about overflow-hidden"
     >
       <div className="py-10">
         <div className="fade-in">
