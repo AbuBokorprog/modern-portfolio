@@ -14,12 +14,11 @@ const Navbar = () => {
   const smallContainer = useRef();
   useGSAP(
     () => {
-      // gsap code here...
       gsap.from(".box", {
         y: -50,
-        duration: 1,
-        delay: 0.8,
-        stagger: 1,
+        duration: 0.5,
+        delay: 0,
+        stagger: 0.5,
       });
     },
     { scope: container }
@@ -29,7 +28,7 @@ const Navbar = () => {
     <>
       <div ref={smallContainer}>
         {/* Navbar */}
-        <nav className=" p-4 lg:hidden block">
+        <nav className=" relative lg:hidden block">
           <div className=" text-right ">
             <button
               onClick={() => setIsOpen(!isOpen)}

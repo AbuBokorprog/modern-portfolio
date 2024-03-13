@@ -17,13 +17,12 @@ const Banner = () => {
           start: "top 50%",
           end: "bottom 30%",
           scrub: 5,
-          //   markers: true,
         },
       })
       .to(container.current, {
         y: -30,
         delay: 1,
-        duration: 3,
+        duration: 1,
         opacity: 0,
       });
   }, []);
@@ -39,8 +38,7 @@ const Banner = () => {
           <span className="lg:ps-20">Abu Bokor.</span>
         </h1>
         <p className="text-center my-6 text-sm">
-          A freelance frontend developer & web designer <br /> propelling
-          startup visions to reality.
+          A freelance frontend developer.
         </p>
       </div>
     </section>
