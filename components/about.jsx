@@ -66,7 +66,7 @@ const About = () => {
     >
       <div className="py-10">
         <div className="fade-in">
-          <h2 className="text-white text-3xl lg:text-8xl uppercase font-bold py-10">
+          <h2 className="text-white text-5xl lg:text-8xl uppercase font-bold py-10">
             About Me.
           </h2>
         </div>
@@ -150,7 +150,7 @@ const About = () => {
       </div>
       {/* <hr className="border border-zinc-400" /> */}
       <div className="py-10">
-        <h2 className="text-white fade-in text-3xl lg:text-8xl uppercase font-bold py-10">
+        <h2 className="text-white fade-in text-5xl lg:text-8xl uppercase font-bold py-10">
           Services.
         </h2>
         <div className="grid w-full px-4 md:grid-col-2 lg:grid-cols-3 justify-center mx-auto gap-4 mt-10 ">
