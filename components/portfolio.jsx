@@ -92,8 +92,8 @@ const Portfolio = () => {
       ref={container}
       className="portfolio-container py-10 min-h-screen text-white bg-black overflow-hidden"
     >
-      <h2 className="title text-white text-3xl lg:text-8xl uppercase font-bold py-10">
-        My Portfolios.
+      <h2 className="title text-white text-5xl lg:text-8xl uppercase font-bold py-10">
+        Selected Works.
       </h2>
       <div className=" px-1 grid grid-cols-1 md:grid-cols-2 items-center ">
         {/* {portfolioItems.map((item) => (
