@@ -13,9 +13,10 @@ const Portfolio = () => {
         .timeline({
           scrollTrigger: {
             trigger: container.current,
-            start: "top 80%",
-            end: "bottom 50%",
+            start: "top 50%",
+            end: "top -10%",
             scrub: 0.5,
+            markers: true,
           },
         })
         .from(".title", {
@@ -25,7 +26,7 @@ const Portfolio = () => {
         })
         .from(".portfolio-item", {
           opacity: 0,
-          y: 50,
+          y: 30,
           stagger: 0.2,
           duration: 0.5,
         });
