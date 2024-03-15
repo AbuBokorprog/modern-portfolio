@@ -14,14 +14,13 @@ const Portfolio = () => {
           scrollTrigger: {
             trigger: container.current,
             start: "top 50%",
-            end: "top -10%",
+            end: "top 5%",
             scrub: 0.5,
-            markers: true,
           },
         })
         .from(".title", {
           x: -100,
-          duration: 1,
+          duration: 3,
           opacity: 0,
         })
         .from(".portfolio-item", {
