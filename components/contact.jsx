@@ -4,16 +4,24 @@ import { useForm } from "react-hook-form";
 
 const Contact = () => {
   const { register, handleSubmit } = useForm();
-  const onSubmit = (data) => console.log(data);
+  const onSubmit = (data) => {
+    const subject = data.subject;
+    const body = data.message;
+    const mailToLink = `mailto:abubokor1066@gmail.com?subject=${encodeURIComponent(
+      subject
+    )}&body=${encodeURIComponent(body)}`;
+
+    window.location.href = mailToLink;
+  };
   return (
     <section id="contact">
-      <div className="py-10 overflow-hidden">
+      <div className="py-10 overflow-hidden px-2">
         <h2 className=" text-3xl lg:text-[165px] text-center uppercase font-bold py-10">
           Get in touch.
         </h2>
         <div className="lg:flex pt-20 items-start flex-row-reverse">
           <form onSubmit={handleSubmit(onSubmit)} className=" w-full">
-            <div className=" flex gap-4 items-center">
+            <div className=" lg:flex gap-4 items-center">
               <div className="w-full">
                 <label
                   htmlFor="name"
@@ -66,7 +74,7 @@ const Contact = () => {
                 placeholder="Type your message"
                 rows={5}
                 className="bg-gray-50 min-w-full border border-gray-300 text-gray-900 rounded-lg focus:ring-blue-500 focus:border-blue-500 block  p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                {...register("name", { required: true, maxLength: 20 })}
+                {...register("message", { required: true, maxLength: 20 })}
               />
             </div>
             <div className="flex justify-center items-center my-4">

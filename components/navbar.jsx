@@ -78,7 +78,7 @@ const Navbar = () => {
               onClick={handleToggle}
               className="p-4 focus:outline-none"
             >
-              <IoMdMenu className="w-20 h-20 text-blue-400" />
+              <IoMdMenu className="w-16 h-16 text-blue-400" />
             </button>
           </div>
         </nav>
@@ -96,7 +96,7 @@ const Navbar = () => {
                   onClick={handleToggle}
                   className="text-gray-500 hover:text-gray-700 focus:outline-none"
                 >
-                  <RxCross1 className="w-20 h-20 link" />
+                  <RxCross1 className="w-16 h-16 link" />
                 </button>
               </div>
 

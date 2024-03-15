@@ -64,7 +64,7 @@ const About = () => {
     <section
       ref={container}
       id="about"
-      className="bg-black rounded-t-xl about overflow-hidden"
+      className="bg-black rounded-t-xl about overflow-hidden px-2"
     >
       <div className="py-10">
         <div className="fade-in">

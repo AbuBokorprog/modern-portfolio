@@ -38,7 +38,7 @@ const Reviews = () => {
     },
   ];
   return (
-    <div className="py-10 overflow-hidden" id="reviews">
+    <div className="py-10 overflow-hidden px-2" id="reviews">
       <h2 className="text-5xl lg:text-8xl uppercase font-bold py-10">
         What my clients says.
       </h2>
