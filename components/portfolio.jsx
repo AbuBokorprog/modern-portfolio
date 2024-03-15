@@ -2,7 +2,13 @@
 import React, { useRef } from "react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
+import Image from "next/image";
+import image1 from "../public/assets/home1.png";
+import image2 from "../public/assets/luminous-home.png";
+import image3 from "../public/assets/center-stone-home.png";
+import image4 from "../public/assets/work-manager.png";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+
 const Portfolio = () => {
   gsap.registerPlugin(ScrollTrigger);
   const container = useRef();
@@ -46,81 +52,122 @@ const Portfolio = () => {
         <div
           className={`portfolio-item border mb-6 text-white p-4 rounded-lg shadow-md `}
         >
-          <img
-            src="/assets/home1.png"
+          <Image
+            src={image1}
             alt=""
-            className="w-full object-cover mb-4 rounded-md"
+            width={500}
+            height={500}
+            className="w-full lg:h-96 object-cover mb-4 rounded-md"
           />
-          <h3 className="text-xl font-semibold">title</h3>
+          <h3 className="text-xl font-semibold uppercase">The Hotel Haven</h3>
           <p className="">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam,
-            tempora ea sunt nihil laudantium, excepturi voluptatem tenetur illum
-            animi dolorem, odit beatae consequuntur. Aperiam eos quas iste esse,
-            magnam tenetur?
+            🌟 Hotel Haven, my collaborative masterpiece, is an intuitive online
+            hotel booking platform.
           </p>
           <div className="flex justify-between items-center mt-4">
-            <button className="border px-4 rounded-3xl py-1">Github</button>
-            <button className="border px-4 rounded-3xl py-1">View</button>
+            <a
+              href="https://github.com/AbuBokorprog/hotel-haven-frontend"
+              className="border px-4 rounded-3xl py-1"
+            >
+              Github
+            </a>
+            <a
+              href="https://hotel-haven-37e44.web.app/"
+              className="border px-4 rounded-3xl py-1"
+            >
+              View
+            </a>
           </div>
         </div>
         <div
           className={`portfolio-item border mb-6 text-white p-4 rounded-lg shadow-md lg:w-[80vh] mx-auto`}
         >
-          <img
-            src="/assets/home1.png"
-            alt={"title"}
-            className="w-full object-cover mb-4 rounded-md"
+          <Image
+            src={image2}
+            alt=""
+            width={500}
+            height={500}
+            className="w-full lg:h-80 object-cover mb-4 rounded-md"
           />
-          <h3 className="text-xl font-semibold">{"title"}</h3>
+          <h3 className="text-xl font-semibold uppercase">Luminous</h3>
           <p className="">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam,
-            tempora ea sunt nihil laudantium, excepturi voluptatem tenetur illum
-            animi dolorem, odit beatae consequuntur. Aperiam eos quas iste esse,
-            magnam tenetur?
+            Luminous Beauty is an eCommerce platform dedicated to beauty and
+            cosmetic products.
           </p>
           <div className="flex justify-between items-center mt-4">
-            <button className="border px-4 rounded-3xl py-1">Github</button>
-            <button className="border px-4 rounded-3xl py-1">View</button>
+            <a
+              href="https://github.com/AbuBokorprog/Luminous-app"
+              className="border px-4 rounded-3xl py-1"
+            >
+              Github
+            </a>
+            <a
+              href="https://luminous-app.vercel.app/"
+              className="border px-4 rounded-3xl py-1"
+            >
+              View
+            </a>
           </div>
         </div>
         <div
           className={`portfolio-item border mb-6 text-white p-4 rounded-lg shadow-md lg:w-[80vh] mx-auto`}
         >
-          <img
-            src="/assets/home1.png"
-            alt={"title"}
-            className="w-full object-cover mb-4 rounded-md"
+          <Image
+            src={image3}
+            alt=""
+            width={500}
+            height={500}
+            className="w-full lg:h-80 object-cover mb-4 rounded-md"
           />
-          <h3 className="text-xl font-semibold">{"title"}</h3>
+          <h3 className="text-xl font-semibold uppercase">The Center Stone</h3>
           <p className="">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam,
-            tempora ea sunt nihil laudantium, excepturi voluptatem tenetur illum
-            animi dolorem, odit beatae consequuntur. Aperiam eos quas iste esse,
-            magnam tenetur?
+            The Center Stone is an online jewelry shop that offers a wide
+            variety of eye-catching and premium jewelry pieces.
           </p>
           <div className="flex justify-between items-center mt-4">
-            <button className="border px-4 rounded-3xl py-1">Github</button>
-            <button className="border px-4 rounded-3xl py-1">View</button>
+            <a
+              href="https://github.com/AbuBokorprog/the-center-stone-project"
+              className="border px-4 rounded-3xl py-1"
+            >
+              Github
+            </a>
+            <a
+              href="https://the-center-stone.web.app/"
+              className="border px-4 rounded-3xl py-1"
+            >
+              View
+            </a>
           </div>
         </div>
         <div
           className={`portfolio-item border mb-6 text-white p-4 rounded-lg shadow-md `}
         >
-          <img
-            src="/assets/home1.png"
-            alt={"title"}
-            className="w-full object-cover mb-4 rounded-md"
+          <Image
+            src={image4}
+            alt=""
+            width={500}
+            height={500}
+            className="w-full lg:h-96 object-cover mb-4 rounded-md"
           />
-          <h3 className="text-xl font-semibold">{"title"}</h3>
+          <h3 className="text-xl font-semibold uppercase">Work Manager</h3>
           <p className="">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam,
-            tempora ea sunt nihil laudantium, excepturi voluptatem tenetur illum
-            animi dolorem, odit beatae consequuntur. Aperiam eos quas iste esse,
-            magnam tenetur?
+            Work Manager is a task management web application that allows users
+            to add, view, edit, and delete tasks. Users can organize their tasks
+            efficiently and enhance their productivity.
           </p>
           <div className="flex justify-between items-center mt-4">
-            <button className="border px-4 rounded-3xl py-1">Github</button>
-            <button className="border px-4 rounded-3xl py-1">View</button>
+            <a
+              href="https://github.com/AbuBokorprog/work-manager-nextjs"
+              className="border px-4 rounded-3xl py-1"
+            >
+              Github
+            </a>
+            <a
+              href="https://work-manager-dquf3uigr-abubokorprog.vercel.app/"
+              className="border px-4 rounded-3xl py-1"
+            >
+              View
+            </a>
           </div>
         </div>
       </div>

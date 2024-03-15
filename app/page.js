@@ -11,7 +11,7 @@ export default function page() {
       <Banner />
       <About />
       <Portfolio />
-      <Reviews />
+      {/* <Reviews /> */}
       <Contact />
     </div>
   );

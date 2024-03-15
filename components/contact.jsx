@@ -77,16 +77,6 @@ const Contact = () => {
               />
             </div>
           </form>
-          <div className="w-1/5">
-            <h3 className="text-2xl uppercase font-semibold">Socials.</h3>
-            <div className="my-4 ps-2 flex flex-col">
-              <a href="https://www.linkedin.com/in/md-abu-bokor/">Linkedin</a>
-              <a href="#">Instagram</a>
-              <a href="https://github.com/AbuBokorprog" target="_blank">
-                Github
-              </a>
-            </div>
-          </div>
         </div>
       </div>
     </section>

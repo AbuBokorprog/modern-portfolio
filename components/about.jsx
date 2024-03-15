@@ -1,14 +1,15 @@
 "use client";
 import React, { useRef } from "react";
-import img from "@/public/assets/img.png";
+import img from "../public/assets/img.jpeg";
 import Image from "next/image";
 import gsap from "gsap";
-import image5 from "@/public/assets/accessibility.png";
-import image1 from "@/public/assets/accessibility.png";
-import image2 from "@/public/assets/accessibility.png";
-import image3 from "@/public/assets/accessibility.png";
-import image4 from "@/public/assets/accessibility.png";
-import image6 from "@/public/assets/accessibility.png";
+import Link from "next/link";
+// import image5 from "@/public/assets/accessibility.png";
+// import image1 from "@/public/assets/accessibility.png";
+// import image2 from "@/public/assets/accessibility.png";
+// import image3 from "@/public/assets/accessibility.png";
+// import image4 from "@/public/assets/accessibility.png";
+// import image6 from "@/public/assets/accessibility.png";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 
@@ -117,6 +118,11 @@ const About = () => {
                 <p>Bangla, English</p>
               </div>
             </div>
+            <div className="mt-5">
+              <Link href={"/#contact"} className="px-8 py-2 border rounded-3xl">
+                Contact
+              </Link>
+            </div>
           </div>
         </div>
       </div>
@@ -150,7 +156,7 @@ const About = () => {
         ))}
       </div>
       {/* <hr className="border border-zinc-400" /> */}
-      <div className="py-10" id="services">
+      {/* <div className="py-10" id="services">
         <h2 className="text-white fade-in text-5xl lg:text-8xl uppercase font-bold py-10">
           Services.
         </h2>
@@ -239,7 +245,7 @@ const About = () => {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
     </section>
   );
 };

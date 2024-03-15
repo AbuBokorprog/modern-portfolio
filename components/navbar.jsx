@@ -32,7 +32,7 @@ const Navbar = () => {
       backgroundColor: "#ffffff",
       scrollTrigger: {
         trigger: container.current,
-        start: "top -50%",
+        start: "top -10%",
         end: "bottom bottom",
         scrub: 2,
       },
@@ -41,16 +41,15 @@ const Navbar = () => {
       y: -50,
       duration: 1,
       opacity: 0,
-      color: "#ffffff",
       scrollTrigger: {
         trigger: smallContainer.current,
         start: "top -80%",
         end: "bottom 50%",
         scrub: 2,
-        markers: true,
       },
     });
   }, [container, smallContainer]);
+
   const containerNav = {
     hidden: { x: -100, opacity: 0 },
     show: {
@@ -160,37 +159,40 @@ const Navbar = () => {
         ref={container}
         className="py-6 big mx-auto hidden md:block fixed top-0 left-0 w-full z-10"
       >
-        <div className="md:flex text-xl font-semibold justify-center gap-10">
-          <Link
-            className={`${router === "/" ? "text-red-500" : ""}`}
-            href={"#"}
-          >
-            Home
-          </Link>
-          <Link
-            className={`${router === "/#about" ? "text-red-500" : ""}`}
-            href={"/#about"}
-          >
-            About
-          </Link>
-          <Link
-            className={`${router === "/#services" ? "text-red-500" : ""}`}
-            href={"#services"}
-          >
-            Services
-          </Link>
-          <Link
-            className={`${router === "/#projects" ? "text-red-500" : ""}`}
-            href={"#projects"}
-          >
-            Projects
-          </Link>
-          <Link
-            className={`${router === "/#contact" ? "text-red-500" : ""}`}
-            href={"#contact"}
-          >
-            Contact
-          </Link>
+        <div className="md:flex justify-between px-4">
+          <h1 className="text-3xl uppercase font-bold">Abu b.</h1>
+          <div className="md:flex text-xl font-semibold justify-center gap-8">
+            <Link
+              className={`${router === "/" ? "text-red-500" : ""}`}
+              href={"#"}
+            >
+              Home
+            </Link>
+            <Link
+              className={`${router === "/#about" ? "text-red-500" : ""}`}
+              href={"/#about"}
+            >
+              About
+            </Link>
+            <Link
+              className={`${router === "/#services" ? "text-red-500" : ""}`}
+              href={"#services"}
+            >
+              Services
+            </Link>
+            <Link
+              className={`${router === "/#projects" ? "text-red-500" : ""}`}
+              href={"#projects"}
+            >
+              Projects
+            </Link>
+            <Link
+              className={`${router === "/#contact" ? "text-red-500" : ""}`}
+              href={"#contact"}
+            >
+              Contact
+            </Link>
+          </div>
         </div>
       </nav>
     </div>

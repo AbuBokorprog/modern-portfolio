@@ -3,7 +3,7 @@ import gsap from "gsap";
 import React, { useRef } from "react";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
-
+import { FaGithub, FaInstagramSquare, FaLinkedin } from "react-icons/fa";
 gsap.registerPlugin(ScrollTrigger);
 
 const Banner = () => {
@@ -38,9 +38,17 @@ const Banner = () => {
           <span className="lg:pe-20">Hi there, I'm</span> <br />
           <span className="lg:ps-20">Abu Bokor.</span>
         </h1>
-        <p className="text-center mt-6 text-sm">
-          A freelance frontend developer.
-        </p>
+        <div className="flex justify-center items-center gap-4 md:gap-8 mt-8">
+          <a href="https://github.com/AbuBokorprog">
+            <FaGithub className="w-8 lg:w-12 h-8 lg:h-12" />
+          </a>
+          <a href="https://www.linkedin.com/in/md-abu-bokor/">
+            <FaLinkedin className="w-8 lg:w-12 h-8 lg:h-12 " />
+          </a>
+          <a href="#">
+            <FaInstagramSquare className="w-8 lg:w-12 h-8 lg:h-12 " />
+          </a>
+        </div>
       </div>
     </section>
   );
