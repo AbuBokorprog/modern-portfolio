@@ -30,6 +30,7 @@ const Navbar = () => {
     });
     gsap.to(container.current, {
       backgroundColor: "#ffffff",
+      color: "#000000",
       scrollTrigger: {
         trigger: container.current,
         start: "top -10%",
@@ -78,7 +79,7 @@ const Navbar = () => {
               onClick={handleToggle}
               className="p-4 focus:outline-none"
             >
-              <IoMdMenu className="w-16 h-16 text-blue-400" />
+              <IoMdMenu className="w-12 h-12 text-black bg-white rounded-full" />
             </button>
           </div>
         </nav>
