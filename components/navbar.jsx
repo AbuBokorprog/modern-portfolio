@@ -79,7 +79,7 @@ const Navbar = () => {
               onClick={handleToggle}
               className="p-4 focus:outline-none"
             >
-              <IoMdMenu className="w-12 h-12 text-black bg-white rounded-full" />
+              <IoMdMenu className="w-12 h-12 text-black dark:text-white bg-white rounded-full" />
             </button>
           </div>
         </nav>

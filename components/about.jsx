@@ -64,11 +64,11 @@ const About = () => {
     <section
       ref={container}
       id="about"
-      className="bg-black rounded-t-xl about overflow-hidden px-2"
+      className="dark:bg-black rounded-t-xl about overflow-hidden px-2"
     >
       <div className="py-10">
         <div className="fade-in">
-          <h2 className="text-white text-5xl lg:text-8xl uppercase font-bold py-10">
+          <h2 className="dark:text-white text-5xl lg:text-8xl uppercase font-bold py-10">
             About Me.
           </h2>
         </div>
@@ -82,7 +82,7 @@ const About = () => {
               className="mx-auto rounded-xl text-center"
             />
           </div>
-          <div className=" slide-up lg:w-1/2 py-2 lg:my-0 text-white mx-auto">
+          <div className=" slide-up lg:w-1/2 py-2 lg:my-0 dark:text-white mx-auto">
             <p className="lg:text-xl ">
               <small>
                 🚀 a passionate frontend developer with hands-on experience in
@@ -119,14 +119,17 @@ const About = () => {
               </div>
             </div>
             <div className="mt-5">
-              <Link href={"/#contact"} className="px-8 py-2 border rounded-3xl">
+              <Link
+                href={"/#contact"}
+                className="px-8 py-2 border border-black dark:border-white rounded-3xl"
+              >
                 Contact
               </Link>
             </div>
           </div>
         </div>
       </div>
-      <hr className="border border-zinc-400" />
+      <hr className="border border-zinc-600 dark:border-zinc-400" />
       <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-5 my-20 text-center justify-center mx-auto items-center">
         {[
           "HTML",
@@ -149,7 +152,7 @@ const About = () => {
           "Figma",
         ].map((i) => (
           <div key={i} className="">
-            <span className="text-white px-4 rounded-3xl border border-white py-2">
+            <span className="dark:text-white px-4 rounded-3xl border border-black dark:border-white py-2">
               {i}
             </span>
           </div>

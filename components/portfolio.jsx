@@ -43,14 +43,14 @@ const Portfolio = () => {
     <div
       ref={container}
       id="projects"
-      className="portfolio-container rounded-b-xl py-10 min-h-screen text-white px-2 bg-black overflow-hidden"
+      className="portfolio-container rounded-b-xl py-10 min-h-screen text-black dark:text-white px-2 dark:bg-black overflow-hidden"
     >
-      <h2 className="title text-white text-5xl xl:text-8xl uppercase font-bold py-10">
+      <h2 className="title text-black dark:text-white text-5xl xl:text-8xl uppercase font-bold py-10">
         Selected Works.
       </h2>
-      <div className=" px-1 grid grid-cols-1 md:grid-cols-2 items-center ">
+      <div className=" px-1 grid grid-cols-1 md:grid-cols-2 items-center gap-5">
         <div
-          className={`portfolio-item border mb-6 text-white p-4 rounded-lg shadow-md `}
+          className={`portfolio-item mb-6 border border-black dark:border-white text-black dark:text-white p-4 rounded-lg shadow-md `}
         >
           <Image
             src={image1}
@@ -67,27 +67,27 @@ const Portfolio = () => {
           <div className="flex justify-between items-center mt-4">
             <a
               href="https://github.com/AbuBokorprog/hotel-haven-frontend"
-              className="border px-4 rounded-3xl py-1"
+              className="border border-black dark:border-white px-4 rounded-3xl py-1"
             >
               Github
             </a>
             <a
               href="https://hotel-haven-37e44.web.app/"
-              className="border px-4 rounded-3xl py-1"
+              className="border border-black dark:border-white px-4 rounded-3xl py-1"
             >
               View
             </a>
           </div>
         </div>
         <div
-          className={`portfolio-item border mb-6 text-white p-4 rounded-lg shadow-md lg:w-[80vh] mx-auto`}
+          className={`portfolio-item mb-6 border border-black dark:border-white text-black dark:text-white p-4 rounded-lg shadow-md `}
         >
           <Image
             src={image2}
             alt=""
             width={500}
             height={500}
-            className="w-full lg:h-80 object-cover mb-4 rounded-md"
+            className="w-full lg:h-96 object-cover mb-4 rounded-md"
           />
           <h3 className="text-xl font-semibold uppercase">Luminous</h3>
           <p className="">
@@ -97,27 +97,27 @@ const Portfolio = () => {
           <div className="flex justify-between items-center mt-4">
             <a
               href="https://github.com/AbuBokorprog/Luminous-app"
-              className="border px-4 rounded-3xl py-1"
+              className="border border-black dark:border-white px-4 rounded-3xl py-1"
             >
               Github
             </a>
             <a
               href="https://luminous-app.vercel.app/"
-              className="border px-4 rounded-3xl py-1"
+              className="border border-black dark:border-white px-4 rounded-3xl py-1"
             >
               View
             </a>
           </div>
         </div>
         <div
-          className={`portfolio-item border mb-6 text-white p-4 rounded-lg shadow-md lg:w-[80vh] mx-auto`}
+          className={`portfolio-item mb-6 border border-black dark:border-white text-black dark:text-white p-4 rounded-lg shadow-md `}
         >
           <Image
             src={image3}
             alt=""
             width={500}
             height={500}
-            className="w-full lg:h-80 object-cover mb-4 rounded-md"
+            className="w-full lg:h-96 object-cover mb-4 rounded-md"
           />
           <h3 className="text-xl font-semibold uppercase">The Center Stone</h3>
           <p className="">
@@ -127,20 +127,20 @@ const Portfolio = () => {
           <div className="flex justify-between items-center mt-4">
             <a
               href="https://github.com/AbuBokorprog/the-center-stone-project"
-              className="border px-4 rounded-3xl py-1"
+              className="border border-black dark:border-white px-4 rounded-3xl py-1"
             >
               Github
             </a>
             <a
               href="https://the-center-stone.web.app/"
-              className="border px-4 rounded-3xl py-1"
+              className="border border-black dark:border-white px-4 rounded-3xl py-1"
             >
               View
             </a>
           </div>
         </div>
         <div
-          className={`portfolio-item border mb-6 text-white p-4 rounded-lg shadow-md `}
+          className={`portfolio-item mb-6 border border-black dark:border-white text-black dark:text-white p-4 rounded-lg shadow-md `}
         >
           <Image
             src={image4}
@@ -158,13 +158,13 @@ const Portfolio = () => {
           <div className="flex justify-between items-center mt-4">
             <a
               href="https://github.com/AbuBokorprog/work-manager-nextjs"
-              className="border px-4 rounded-3xl py-1"
+              className="border border-black dark:border-white px-4 rounded-3xl py-1"
             >
               Github
             </a>
             <a
               href="https://work-manager-dquf3uigr-abubokorprog.vercel.app/"
-              className="border px-4 rounded-3xl py-1"
+              className="border border-black dark:border-white px-4 rounded-3xl py-1"
             >
               View
             </a>
