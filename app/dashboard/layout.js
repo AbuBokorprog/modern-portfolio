@@ -11,11 +11,11 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body>
         <Provider>
-          <div className="lg:flex justify-center space-y-5 lg:space-y-0 lg:space-x-3">
+          <div className="lg:flex justify-center space-y-5 lg:space-y-0 ">
             <div className="w-1/5">
               <DashNavbar />
             </div>
-            <div className="mx-auto w-4/5">{children}</div>
+            <div className="mx-auto w-4/5 px-2">{children}</div>
           </div>
         </Provider>
       </body>
