@@ -69,7 +69,7 @@ const Reviews = () => {
               el: ".swiper-pagination",
               renderBullet: function (index, className) {
                 return (
-                  '<span class="' +
+                  '<span className="' +
                   className +
                   '" style="background-color: #000000;"></span>'
                 );
