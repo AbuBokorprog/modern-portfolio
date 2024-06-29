@@ -1,9 +1,13 @@
 "use client";
 import { contextProvider } from "@/provider/contextProvider";
+import { useRouter } from "next/navigation";
 import React, { useContext } from "react";
 
 const Login = () => {
   const { setToken } = useContext(contextProvider);
+
+  const route = useRouter();
+
   const handleSubmit = (e) => {
     e.preventDefault();
 
@@ -11,7 +15,7 @@ const Login = () => {
     const password = e.target.password.value;
     const user = { email, password };
 
-    fetch("http://localhost:5000/api/auth/login", {
+    fetch("https://portfolio-backend-seven-kappa.vercel.app/api/auth/login", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -20,7 +24,10 @@ const Login = () => {
     })
       .then((res) => res.json())
       .then((data) => {
-        setToken(data.data.Access_Token);
+        if (data?.success) {
+          setToken(data?.data?.Access_Token);
+          route.push("/dashboard/admin");
+        }
       });
   };
 

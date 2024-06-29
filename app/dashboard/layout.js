@@ -12,7 +12,7 @@ export default function RootLayout({ children }) {
       <body>
         <Provider>
           <div className="lg:flex justify-center space-y-5 lg:space-y-0 ">
-            <div className="w-1/5">
+            <div className="w-1/5 ">
               <DashNavbar />
             </div>
             <div className="mx-auto w-4/5 px-2">{children}</div>
