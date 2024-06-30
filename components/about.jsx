@@ -12,6 +12,7 @@ import Link from "next/link";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import DOMPurify from "dompurify";
+import sanitizeHtml from "sanitize-html";
 
 const About = () => {
   const [about, setAbout] = useState([]);
@@ -76,7 +77,11 @@ const About = () => {
       });
   }, [setAbout, setSkills]);
 
-  const description = DOMPurify.sanitize(about?.description);
+  const clean = sanitizeHtml(about?.description, {
+    allowedTags: ["p"],
+    allowedAttributes: {},
+  });
+
   return (
     <section
       ref={container}
@@ -102,7 +107,7 @@ const About = () => {
           </div>
           <div className=" slide-up lg:w-1/2 py-2 lg:my-0 dark:text-white mx-auto">
             <div>
-              <div dangerouslySetInnerHTML={{ __html: description }} />
+              <div dangerouslySetInnerHTML={{ __html: clean }} />
             </div>
             <div className="mt-5">
               <Link
@@ -118,7 +123,7 @@ const About = () => {
       <hr className="border border-zinc-600 dark:border-zinc-400" />
       <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-5 my-20 text-center justify-center mx-auto items-center">
         {skills?.map((i) => (
-          <div key={i._Id} className="">
+          <div key={i._id} className="">
             <span className="dark:text-white px-4 rounded-3xl border border-black dark:border-white py-2">
               {i.technology_name}
             </span>
