@@ -28,7 +28,7 @@ const DashNavbar = () => {
       </button>
 
       <aside
-        className={`fixed top-0 left-0 z-40 w-64 xl:w-80 h-screen  sm:translate-x-0  ${
+        className={`fixed top-0 left-0 z-40 w-64 2xl:w-80 h-screen  sm:translate-x-0  ${
           isOpen ? "" : "transition-transform -translate-x-full"
         }`}
       >

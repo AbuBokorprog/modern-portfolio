@@ -45,7 +45,11 @@ const Skill = () => {
       body: formData,
     })
       .then((res) => res.json())
-      .then((data) => console.log(data));
+      .then((data) => {
+        if (data?.success) {
+          alert("successfully");
+        }
+      });
   };
 
   return (

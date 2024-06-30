@@ -13,6 +13,7 @@ const About = () => {
     const description = value;
 
     const image = e.target.image.files[0];
+    console.log(image);
     const data = {
       description: `${description}`,
     };
@@ -25,13 +26,17 @@ const About = () => {
     fetch("http://localhost:5000/api/about", {
       method: "POST",
       headers: {
-        // "Content-Type": "application/json",
         authorization: `Bearer ${token}`,
       },
       body: formData,
     })
       .then((res) => res.json())
-      .then((data) => console.log(data));
+      .then((data) => {
+        console.log(data);
+        if (data?.success) {
+          alert("successfully");
+        }
+      });
   };
 
   return (

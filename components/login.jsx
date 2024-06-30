@@ -15,7 +15,7 @@ const Login = () => {
     const password = e.target.password.value;
     const user = { email, password };
 
-    fetch("http://localhost:5000/api/auth/login", {
+    fetch("https://portfolio-backend-seven-kappa.vercel.app/api/auth/login", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -24,6 +24,7 @@ const Login = () => {
     })
       .then((res) => res.json())
       .then((data) => {
+        console.log(data);
         if (data?.success) {
           setToken(data?.data?.Access_Token);
           route.push("/dashboard/admin");

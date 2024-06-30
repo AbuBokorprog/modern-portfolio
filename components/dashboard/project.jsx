@@ -8,6 +8,7 @@ const Project = () => {
   const [value, setValue] = useState();
   const route = useRouter();
   const [category, setCategory] = useState([]);
+  const [skills, setSkills] = useState([]);
   const [isLoading, setLoading] = useState(true);
   const { token } = useContext(contextProvider);
   const [selectedOptions, setSelectedOptions] = useState([]);
@@ -17,10 +18,19 @@ const Project = () => {
       route.push("/");
     }
 
-    fetch("http://localhost:5000/api/projects-category")
+    fetch(
+      "https://portfolio-backend-seven-kappa.vercel.app/api/projects-category"
+    )
       .then((res) => res.json())
       .then((data) => {
         setCategory(data.data);
+        setLoading(false);
+      });
+
+    fetch("https://portfolio-backend-seven-kappa.vercel.app/api/skills")
+      .then((res) => res.json())
+      .then((data) => {
+        setSkills(data.data);
         setLoading(false);
       });
   }, [token, setCategory, isLoading]);
@@ -46,7 +56,11 @@ const Project = () => {
       }
     )
       .then((res) => res.json())
-      .then((data) => {});
+      .then((data) => {
+        if (data?.success) {
+          alert("successfully");
+        }
+      });
   };
 
   const projectHandler = (e) => {
@@ -73,7 +87,7 @@ const Project = () => {
     formData.append("file", thumbnail);
     formData.append("data", JSON.stringify(data));
 
-    fetch("http://localhost:5000/api/projects", {
+    fetch("https://portfolio-backend-seven-kappa.vercel.app/api/projects", {
       method: "POST",
       headers: {
         // "Content-Type": "application/json",
@@ -82,7 +96,11 @@ const Project = () => {
       body: formData,
     })
       .then((res) => res.json())
-      .then((data) => console.log(data));
+      .then((data) => {
+        if (data?.success) {
+          alert("successfully");
+        }
+      });
   };
 
   const handleSelectChange = (event) => {
@@ -156,10 +174,11 @@ const Project = () => {
           multiple
           onChange={handleSelectChange}
         >
-          <option value="Option 1">Option 1</option>
-          <option value="Option 2">Option 2</option>
-          <option value="Option 3">Option 3</option>
-          <option value="Option 4">Option 4</option>
+          {skills?.map((s) => (
+            <option key={s?._id} value="Option 1">
+              {s?.technology_name}
+            </option>
+          ))}
         </select>
         <div>
           <label
@@ -202,7 +221,7 @@ const Project = () => {
           <div className="">
             <label
               htmlFor="category"
-              className="block  text-sm font-medium text-gray-900 dark:text-white"
+              className="block text-sm font-medium text-gray-900 dark:text-white"
             >
               category
             </label>
