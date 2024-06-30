@@ -1,3 +1,4 @@
+"use server";
 export async function getAbout() {
   const result = await fetch("http://localhost:5000/api/about");
   if (!result.ok) {
