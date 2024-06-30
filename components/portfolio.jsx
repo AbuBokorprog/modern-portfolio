@@ -8,8 +8,9 @@ import image2 from "../public/assets/luminous-home.png";
 import image3 from "../public/assets/center-stone-home.png";
 import image4 from "../public/assets/work-manager.png";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+import sanitizeHtml from "sanitize-html";
 
-const Portfolio = () => {
+const Portfolio = ({ projects, frontend, mern, full }) => {
   gsap.registerPlugin(ScrollTrigger);
   const [tab, setTab] = useState("all");
   const container = useRef();
@@ -112,129 +113,233 @@ const Portfolio = () => {
       {/* all tab */}
       {tab == "all" && (
         <div className=" px-1 grid grid-cols-1 md:grid-cols-2 items-center gap-5">
-          <div
-            className={`portfolio-item mb-6 border border-black dark:border-white text-black dark:text-white p-4 rounded-lg shadow-md `}
-          >
-            <Image
-              src={image1}
-              alt=""
-              width={500}
-              height={500}
-              className="w-full lg:h-96 object-cover mb-4 rounded-md"
-            />
-            <h3 className="text-xl font-semibold uppercase">The Hotel Haven</h3>
-            <p className="">
-              🌟 Hotel Haven, my collaborative masterpiece, is an intuitive
-              online hotel booking platform.
-            </p>
-            <div className="flex justify-between items-center mt-4">
-              <a
-                href="https://github.com/AbuBokorprog/hotel-haven-frontend"
-                className="border border-black dark:border-white px-4 rounded-3xl py-1"
-              >
-                Github
-              </a>
-              <a
-                href="https://hotel-haven-37e44.web.app/"
-                className="border border-black dark:border-white px-4 rounded-3xl py-1"
-              >
-                View
-              </a>
+          {projects?.map((p) => (
+            <div
+              key={p?._id}
+              className={`portfolio-item mb-6 border border-black dark:border-white text-black dark:text-white p-4 rounded-lg shadow-md `}
+            >
+              <Image
+                src={p?.thumbnail}
+                alt={p?.projects_name}
+                width={500}
+                height={500}
+                className="w-full lg:h-96 object-cover mb-4 rounded-md"
+              />
+              <h3 className="text-xl font-semibold uppercase">
+                {p?.projects_name}
+              </h3>
+              <div className="">
+                <div
+                  dangerouslySetInnerHTML={{
+                    __html: sanitizeHtml(p?.short_description, {
+                      allowedTags: ["p"],
+                      allowedAttributes: {},
+                    }),
+                  }}
+                />
+              </div>
+              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 my-8 text-center justify-center mx-auto items-center">
+                {p?.skills?.map((i) => (
+                  <div key={i} className="">
+                    <span className="dark:text-white px-4 rounded-3xl border border-black dark:border-white py-2">
+                      {i}
+                    </span>
+                  </div>
+                ))}
+              </div>
+              <div className="flex justify-between items-center mt-4">
+                <a
+                  href={`${p?.github_url}`}
+                  target="_blank"
+                  className="border border-black dark:border-white px-4 rounded-3xl py-1"
+                >
+                  Github
+                </a>
+                <a
+                  href={`${p?.view_url}`}
+                  target="_blank"
+                  className="border border-black dark:border-white px-4 rounded-3xl py-1"
+                >
+                  View
+                </a>
+              </div>
             </div>
-          </div>
-          <div
-            className={`portfolio-item mb-6 border border-black dark:border-white text-black dark:text-white p-4 rounded-lg shadow-md `}
-          >
-            <Image
-              src={image2}
-              alt=""
-              width={500}
-              height={500}
-              className="w-full lg:h-96 object-cover mb-4 rounded-md"
-            />
-            <h3 className="text-xl font-semibold uppercase">Luminous</h3>
-            <p className="">
-              Luminous Beauty is an eCommerce platform dedicated to beauty and
-              cosmetic products.
-            </p>
-            <div className="flex justify-between items-center mt-4">
-              <a
-                href="https://github.com/AbuBokorprog/Luminous-app"
-                className="border border-black dark:border-white px-4 rounded-3xl py-1"
-              >
-                Github
-              </a>
-              <a
-                href="https://luminous-app.vercel.app/"
-                className="border border-black dark:border-white px-4 rounded-3xl py-1"
-              >
-                View
-              </a>
+          ))}
+        </div>
+      )}
+
+      {/* frontend */}
+
+      {tab == "frontend" && (
+        <div className=" px-1 grid grid-cols-1 md:grid-cols-2 items-center gap-5">
+          {frontend?.map((p) => (
+            <div
+              key={p?._id}
+              className={`portfolio-item mb-6 border border-black dark:border-white text-black dark:text-white p-4 rounded-lg shadow-md `}
+            >
+              <Image
+                src={p?.thumbnail}
+                alt={p?.projects_name}
+                width={500}
+                height={500}
+                className="w-full lg:h-96 object-cover mb-4 rounded-md"
+              />
+              <h3 className="text-xl font-semibold uppercase">
+                {p?.projects_name}
+              </h3>
+              <div className="">
+                <div
+                  dangerouslySetInnerHTML={{
+                    __html: sanitizeHtml(p?.short_description, {
+                      allowedTags: ["p"],
+                      allowedAttributes: {},
+                    }),
+                  }}
+                />
+              </div>
+              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 my-8 text-center justify-center mx-auto items-center">
+                {p?.skills?.map((i) => (
+                  <div key={i} className="">
+                    <span className="dark:text-white px-4 rounded-3xl border border-black dark:border-white py-2">
+                      {i}
+                    </span>
+                  </div>
+                ))}
+              </div>
+              <div className="flex justify-between items-center mt-4">
+                <a
+                  href={`${p?.github_url}`}
+                  target="_blank"
+                  className="border border-black dark:border-white px-4 rounded-3xl py-1"
+                >
+                  Github
+                </a>
+                <a
+                  href={`${p?.view_url}`}
+                  target="_blank"
+                  className="border border-black dark:border-white px-4 rounded-3xl py-1"
+                >
+                  View
+                </a>
+              </div>
             </div>
-          </div>
-          <div
-            className={`portfolio-item mb-6 border border-black dark:border-white text-black dark:text-white p-4 rounded-lg shadow-md `}
-          >
-            <Image
-              src={image3}
-              alt=""
-              width={500}
-              height={500}
-              className="w-full lg:h-96 object-cover mb-4 rounded-md"
-            />
-            <h3 className="text-xl font-semibold uppercase">
-              The Center Stone
-            </h3>
-            <p className="">
-              The Center Stone is an online jewelry shop that offers a wide
-              variety of eye-catching and premium jewelry pieces.
-            </p>
-            <div className="flex justify-between items-center mt-4">
-              <a
-                href="https://github.com/AbuBokorprog/the-center-stone-project"
-                className="border border-black dark:border-white px-4 rounded-3xl py-1"
-              >
-                Github
-              </a>
-              <a
-                href="https://the-center-stone.web.app/"
-                className="border border-black dark:border-white px-4 rounded-3xl py-1"
-              >
-                View
-              </a>
+          ))}
+        </div>
+      )}
+
+      {/* mern */}
+      {tab == "mern-stack" && (
+        <div className=" px-1 grid grid-cols-1 md:grid-cols-2 items-center gap-5">
+          {mern?.map((p) => (
+            <div
+              key={p?._id}
+              className={`portfolio-item mb-6 border border-black dark:border-white text-black dark:text-white p-4 rounded-lg shadow-md `}
+            >
+              <Image
+                src={p?.thumbnail}
+                alt={p?.projects_name}
+                width={500}
+                height={500}
+                className="w-full lg:h-96 object-cover mb-4 rounded-md"
+              />
+              <h3 className="text-xl font-semibold uppercase">
+                {p?.projects_name}
+              </h3>
+              <div className="">
+                <div
+                  dangerouslySetInnerHTML={{
+                    __html: sanitizeHtml(p?.short_description, {
+                      allowedTags: ["p"],
+                      allowedAttributes: {},
+                    }),
+                  }}
+                />
+              </div>
+              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 my-8 text-center justify-center mx-auto items-center">
+                {p?.skills?.map((i) => (
+                  <div key={i} className="">
+                    <span className="dark:text-white px-4 rounded-3xl border border-black dark:border-white py-2">
+                      {i}
+                    </span>
+                  </div>
+                ))}
+              </div>
+              <div className="flex justify-between items-center mt-4">
+                <a
+                  href={`${p?.github_url}`}
+                  target="_blank"
+                  className="border border-black dark:border-white px-4 rounded-3xl py-1"
+                >
+                  Github
+                </a>
+                <a
+                  href={`${p?.view_url}`}
+                  target="_blank"
+                  className="border border-black dark:border-white px-4 rounded-3xl py-1"
+                >
+                  View
+                </a>
+              </div>
             </div>
-          </div>
-          <div
-            className={`portfolio-item mb-6 border border-black dark:border-white text-black dark:text-white p-4 rounded-lg shadow-md `}
-          >
-            <Image
-              src={image4}
-              alt=""
-              width={500}
-              height={500}
-              className="w-full lg:h-96 object-cover mb-4 rounded-md"
-            />
-            <h3 className="text-xl font-semibold uppercase">Work Manager</h3>
-            <p className="">
-              Work Manager is a task management web application that allows
-              users to add, view, edit, and delete tasks. Users can organize
-              their tasks efficiently and enhance their productivity.
-            </p>
-            <div className="flex justify-between items-center mt-4">
-              <a
-                href="https://github.com/AbuBokorprog/work-manager-nextjs"
-                className="border border-black dark:border-white px-4 rounded-3xl py-1"
-              >
-                Github
-              </a>
-              <a
-                href="https://work-manager-dquf3uigr-abubokorprog.vercel.app/"
-                className="border border-black dark:border-white px-4 rounded-3xl py-1"
-              >
-                View
-              </a>
+          ))}
+        </div>
+      )}
+
+      {/* full stack */}
+      {tab == "full-stack" && (
+        <div className=" px-1 grid grid-cols-1 md:grid-cols-2 items-center gap-5">
+          {full?.map((p) => (
+            <div
+              key={p?._id}
+              className={`portfolio-item mb-6 border border-black dark:border-white text-black dark:text-white p-4 rounded-lg shadow-md `}
+            >
+              <Image
+                src={p?.thumbnail}
+                alt={p?.projects_name}
+                width={500}
+                height={500}
+                className="w-full lg:h-96 object-cover mb-4 rounded-md"
+              />
+              <h3 className="text-xl font-semibold uppercase">
+                {p?.projects_name}
+              </h3>
+              <div className="">
+                <div
+                  dangerouslySetInnerHTML={{
+                    __html: sanitizeHtml(p?.short_description, {
+                      allowedTags: ["p"],
+                      allowedAttributes: {},
+                    }),
+                  }}
+                />
+              </div>
+              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 my-8 text-center justify-center mx-auto items-center">
+                {p?.skills?.map((i) => (
+                  <div key={i} className="">
+                    <span className="dark:text-white px-4 rounded-3xl border border-black dark:border-white py-2">
+                      {i}
+                    </span>
+                  </div>
+                ))}
+              </div>
+              <div className="flex justify-between items-center mt-4">
+                <a
+                  href={`${p?.github_url}`}
+                  target="_blank"
+                  className="border border-black dark:border-white px-4 rounded-3xl py-1"
+                >
+                  Github
+                </a>
+                <a
+                  href={`${p?.view_url}`}
+                  target="_blank"
+                  className="border border-black dark:border-white px-4 rounded-3xl py-1"
+                >
+                  View
+                </a>
+              </div>
             </div>
-          </div>
+          ))}
         </div>
       )}
 

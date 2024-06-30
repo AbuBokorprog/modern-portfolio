@@ -39,6 +39,8 @@ const About = () => {
       });
   };
 
+  console.log(value);
+
   return (
     <div>
       <TextEditor setValue={setValue} value={value} />

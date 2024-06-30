@@ -16,9 +16,7 @@ const Project = () => {
       route.push("/");
     }
 
-    fetch(
-      "https://portfolio-backend-seven-kappa.vercel.app/api/projects-category"
-    )
+    fetch("http://localhost:5000/api/projects-category")
       .then((res) => res.json())
       .then((data) => {
         setCategory(data.data);
@@ -35,17 +33,14 @@ const Project = () => {
       category_name: category,
     };
 
-    fetch(
-      "https://portfolio-backend-seven-kappa.vercel.app/api/projects-category",
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          authorization: `Bearer ${token}`,
-        },
-        body: JSON.stringify(data),
-      }
-    )
+    fetch("http://localhost:5000/api/projects-category", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        authorization: `Bearer ${token}`,
+      },
+      body: JSON.stringify(data),
+    })
       .then((res) => res.json())
       .then((data) => {
         if (data?.success) {

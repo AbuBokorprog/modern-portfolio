@@ -14,9 +14,9 @@ import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import DOMPurify from "dompurify";
 import sanitizeHtml from "sanitize-html";
 
-const About = () => {
-  const [about, setAbout] = useState([]);
-  const [skills, setSkills] = useState([]);
+const About = ({ aboutData, skillData }) => {
+  // const [about, setAbout] = useState([]);
+  // const [skills, setSkills] = useState([]);
   const container = useRef();
   gsap.registerPlugin(ScrollTrigger);
 
@@ -63,21 +63,21 @@ const About = () => {
     { scope: container }
   );
 
-  useEffect(() => {
-    fetch("http://localhost:5000/api/about")
-      .then((res) => res.json())
-      .then((data) => {
-        setAbout(data?.data[0]);
-      });
+  // useEffect(() => {
+  //   fetch("http://localhost:5000/api/about")
+  //     .then((res) => res.json())
+  //     .then((data) => {
+  //       setAbout(data?.data[0]);
+  //     });
 
-    fetch("http://localhost:5000/api/skills")
-      .then((res) => res.json())
-      .then((data) => {
-        setSkills(data.data);
-      });
-  }, [setAbout, setSkills]);
+  //   fetch("http://localhost:5000/api/skills")
+  //     .then((res) => res.json())
+  //     .then((data) => {
+  //       setSkills(data.data);
+  //     });
+  // }, [setAbout, setSkills]);
 
-  const clean = sanitizeHtml(about?.description, {
+  const clean = sanitizeHtml(aboutData?.description, {
     allowedTags: ["p"],
     allowedAttributes: {},
   });
@@ -97,7 +97,7 @@ const About = () => {
         <div className="lg:flex mx-auto justify-between items-center">
           <div className="">
             <Image
-              src={about?.image}
+              src={aboutData?.image}
               alt="Abubokor"
               width={500}
               height={400}
@@ -107,7 +107,10 @@ const About = () => {
           </div>
           <div className=" slide-up lg:w-1/2 py-2 lg:my-0 dark:text-white mx-auto">
             <div>
-              <div dangerouslySetInnerHTML={{ __html: clean }} />
+              <div
+                dangerouslySetInnerHTML={{ __html: clean }}
+                className="text-xl"
+              />
             </div>
             <div className="mt-5">
               <Link
@@ -122,7 +125,7 @@ const About = () => {
       </div>
       <hr className="border border-zinc-600 dark:border-zinc-400" />
       <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-5 my-20 text-center justify-center mx-auto items-center">
-        {skills?.map((i) => (
+        {skillData?.map((i) => (
           <div key={i._id} className="">
             <span className="dark:text-white px-4 rounded-3xl border border-black dark:border-white py-2">
               {i.technology_name}

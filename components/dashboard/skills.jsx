@@ -14,7 +14,7 @@ const Skill = () => {
       route.push("/");
     }
 
-    fetch("https://portfolio-backend-seven-kappa.vercel.app/api/skills")
+    fetch("http://localhost:5000/api/skills")
       .then((res) => res.json())
       .then((data) => {
         setSkills(data.data);
