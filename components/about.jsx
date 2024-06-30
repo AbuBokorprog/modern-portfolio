@@ -64,13 +64,13 @@ const About = () => {
   );
 
   useEffect(() => {
-    fetch("https://portfolio-backend-seven-kappa.vercel.app/api/about")
+    fetch("http://localhost:5000/api/about")
       .then((res) => res.json())
       .then((data) => {
         setAbout(data?.data[0]);
       });
 
-    fetch("https://portfolio-backend-seven-kappa.vercel.app/api/skills")
+    fetch("http://localhost:5000/api/skills")
       .then((res) => res.json())
       .then((data) => {
         setSkills(data.data);
@@ -98,7 +98,7 @@ const About = () => {
           <div className="">
             <Image
               src={about?.image}
-              alt=""
+              alt="Abubokor"
               width={500}
               height={400}
               loading="lazy"

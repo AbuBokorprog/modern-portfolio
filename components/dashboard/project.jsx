@@ -8,10 +8,8 @@ const Project = () => {
   const [value, setValue] = useState();
   const route = useRouter();
   const [category, setCategory] = useState([]);
-  const [skills, setSkills] = useState([]);
   const [isLoading, setLoading] = useState(true);
   const { token } = useContext(contextProvider);
-  const [selectedOptions, setSelectedOptions] = useState([]);
 
   useEffect(() => {
     if (!token) {
@@ -24,13 +22,6 @@ const Project = () => {
       .then((res) => res.json())
       .then((data) => {
         setCategory(data.data);
-        setLoading(false);
-      });
-
-    fetch("https://portfolio-backend-seven-kappa.vercel.app/api/skills")
-      .then((res) => res.json())
-      .then((data) => {
-        setSkills(data.data);
         setLoading(false);
       });
   }, [token, setCategory, isLoading]);
@@ -70,9 +61,11 @@ const Project = () => {
     const projects_name = e.target.name.value;
     const github_url = e.target.github.value;
     const view_url = e.target.view.value;
-    const skills = selectedOptions;
+    const skill = e.target.skills.value;
     const thumbnail = e.target.image.files[0];
     const short_description = value;
+    const skills = skill.split(",");
+
     const data = {
       categoryId,
       projects_name,
@@ -87,7 +80,7 @@ const Project = () => {
     formData.append("file", thumbnail);
     formData.append("data", JSON.stringify(data));
 
-    fetch("https://portfolio-backend-seven-kappa.vercel.app/api/projects", {
+    fetch("http://localhost:5000/api/projects", {
       method: "POST",
       headers: {
         // "Content-Type": "application/json",
@@ -97,28 +90,21 @@ const Project = () => {
     })
       .then((res) => res.json())
       .then((data) => {
+        console.log(data);
         if (data?.success) {
           alert("successfully");
         }
       });
   };
 
-  const handleSelectChange = (event) => {
-    const options = Array.from(
-      event.target.selectedOptions,
-      (option) => option.value
-    );
-    setSelectedOptions(options);
-  };
-
   return (
-    <div>
+    <div className="text-black">
       <TextEditor setValue={setValue} value={value} />
-      <form onSubmit={projectHandler} className="mt-10">
-        <div>
+      <form onSubmit={projectHandler} className="mt-20">
+        <div className="w-1/2 mx-auto">
           <label
             htmlFor="name"
-            className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+            className="block mb-2 text-sm font-medium text-black "
           >
             Project Name
           </label>
@@ -126,19 +112,19 @@ const Project = () => {
             type="text"
             id="name"
             placeholder="project name"
-            className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-1/2 mx-auto dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+            className="bg-gray-50 border border-gray-300 text-black text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-full"
           />
         </div>
-        <div>
+        <div className="w-1/2 mx-auto">
           <label
             htmlFor="categories"
-            className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+            className="block mb-2 text-sm font-medium text-black "
           >
             Select an Category
           </label>
           <select
             id="categories"
-            className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-1/2 mx-auto dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+            className="bg-gray-50 border border-gray-300 text-black text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-full dark:placeholder-gray-400  dark:focus:ring-blue-500 dark:focus:border-blue-500"
           >
             <option selected>Choose a category</option>
             {category?.map((c) => (
@@ -148,10 +134,10 @@ const Project = () => {
             ))}
           </select>
         </div>
-        <div>
+        <div className="w-1/2 mx-auto">
           <label
             htmlFor="github"
-            className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+            className="block mb-2 text-sm font-medium text-black "
           >
             Github URL
           </label>
@@ -159,31 +145,27 @@ const Project = () => {
             type="text"
             id="github"
             placeholder="Github-URL"
-            className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-1/2 mx-auto dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+            className="bg-gray-50 border border-gray-300 text-black text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-full   dark:placeholder-gray-400  dark:focus:ring-blue-500 dark:focus:border-blue-500"
           />
         </div>
-        <label
-          htmlFor="skills"
-          className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-        >
-          Choose Skills:
-        </label>
-        <select
-          id="skills"
-          className="h-fit bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-1/2 mx-auto p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-          multiple
-          onChange={handleSelectChange}
-        >
-          {skills?.map((s) => (
-            <option key={s?._id} value={s?.technology_name}>
-              {s?.technology_name}
-            </option>
-          ))}
-        </select>
-        <div>
+        <div className="w-1/2 mx-auto">
+          <label
+            htmlFor="skills"
+            className="block mb-2 text-sm font-medium text-black "
+          >
+            Choose Skills:
+          </label>
+          <input
+            type="text"
+            id="skills"
+            placeholder="Enter skills"
+            className="bg-gray-50 border border-gray-300 text-black text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-full dark:placeholder-gray-400  dark:focus:ring-blue-500 dark:focus:border-blue-500"
+          />
+        </div>
+        <div className="w-1/2 mx-auto">
           <label
             htmlFor="view"
-            className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+            className="block mb-2 text-sm font-medium text-black "
           >
             View URL
           </label>
@@ -191,18 +173,18 @@ const Project = () => {
             type="text"
             id="view"
             placeholder="View-URL"
-            className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-1/2 mx-auto dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+            className="bg-gray-50 border border-gray-300 text-black text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 w-full dark:placeholder-gray-400  dark:focus:ring-blue-500 dark:focus:border-blue-500"
           />
         </div>
-        <div>
+        <div className="w-1/2 mx-auto">
           <label
-            className="block text-sm font-medium text-gray-900 dark:text-white"
+            className="block text-sm font-medium text-black "
             htmlFor="image"
           >
             Upload file
           </label>
           <input
-            className="block text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 p-2.5 w-1/2 mx-auto focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
+            className="block text-sm text-black border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 p-2.5 w-full focus:outline-none dark:placeholder-gray-400"
             id="image"
             type="file"
           />
@@ -218,18 +200,18 @@ const Project = () => {
       <div className="mt-20">
         <h2 className="text-3xl font-bold text-center">Add project-category</h2>
         <form className="my-4" onSubmit={categoryHandler}>
-          <div className="">
+          <div className="w-1/2 mx-auto">
             <label
               htmlFor="category"
-              className="block text-sm font-medium text-gray-900 dark:text-white"
+              className="block text-sm font-medium text-black "
             >
-              category
+              Category name
             </label>
             <input
               type="text"
               id="category"
               placeholder="Type your category."
-              className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-1/2 mx-auto p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              className="bg-gray-50 border border-gray-300 text-black text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  dark:placeholder-gray-400  dark:focus:ring-blue-500 dark:focus:border-blue-500"
             />
           </div>
           <div className="mx-auto text-center mt-2">

@@ -1,18 +1,48 @@
 "use client";
 import React from "react";
 import { useForm } from "react-hook-form";
-
+import emailjs from "emailjs-com";
 const Contact = () => {
   const { register, handleSubmit } = useForm();
+
   const onSubmit = (data) => {
     const subject = data.subject;
     const body = data.message;
-    const mailToLink = `mailto:abubokor1066@gmail.com?subject=${encodeURIComponent(
-      subject
-    )}&body=${encodeURIComponent(body)}`;
+    const email = data.email;
+    const name = data.name;
+    // const encodedSubject = encodeURIComponent(subject);
+    // const encodedBody = encodeURIComponent(body);
+    // const mailToLink = `mailto:abubokor1066@gmail.com?subject=${encodedSubject}&body=${encodedBody}`;
 
-    window.location.href = mailToLink;
+    // window.location.href = mailToLink;
+
+    const templateParams = {
+      to_name: "Abu Bokor",
+      from_name: name,
+      message: body,
+    };
+
+    emailjs
+      .send(
+        "service_7exo6md",
+        "template_x489mwc",
+        templateParams,
+        "TPpFzhZxFK7nDe2XM"
+      )
+      .then(
+        (response) => {
+          console.log(
+            "Email sent successfully!",
+            response.status,
+            response.text
+          );
+        },
+        (err) => {
+          console.error("Failed to send email.", err);
+        }
+      );
   };
+
   return (
     <section id="contact" className="dark:text-white">
       <div className="py-10 overflow-hidden px-2 ">
@@ -46,7 +76,7 @@ const Contact = () => {
                   type="email"
                   placeholder="Type your email address"
                   className="bg-gray-50 border min-w-full border-gray-300 text-gray-900 rounded-lg focus:ring-blue-500 focus:border-blue-500 block  p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                  {...register("email", { required: true, maxLength: 20 })}
+                  {...register("email", { required: true })}
                 />
               </div>
             </div>
