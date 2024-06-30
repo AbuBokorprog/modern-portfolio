@@ -16,3 +16,15 @@ export default function page() {
     </div>
   );
 }
+
+// export async function getStaticProps() {
+//   const res = await fetch(
+//     "https://portfolio-backend-seven-kappa.vercel.app/api/about"
+//   );
+//   const posts = await res.json();
+//   return {
+//     props: {
+//       posts,
+//     },
+//   };
+// }

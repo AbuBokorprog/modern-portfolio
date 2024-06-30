@@ -13,7 +13,7 @@ const About = () => {
     const description = value;
 
     const image = e.target.image.files[0];
-    console.log(image);
+
     const data = {
       description: `${description}`,
     };

@@ -175,7 +175,7 @@ const Project = () => {
           onChange={handleSelectChange}
         >
           {skills?.map((s) => (
-            <option key={s?._id} value="Option 1">
+            <option key={s?._id} value={s?.technology_name}>
               {s?.technology_name}
             </option>
           ))}

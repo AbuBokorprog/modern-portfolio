@@ -36,7 +36,7 @@ const Skill = () => {
     formData.append("file", icon);
     formData.append("data", JSON.stringify(data));
 
-    fetch("https://portfolio-backend-seven-kappa.vercel.app/api/skills", {
+    fetch("http://localhost:5000/api/skills", {
       method: "POST",
       headers: {
         // "Content-Type": "application/json",

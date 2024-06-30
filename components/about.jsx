@@ -1,6 +1,5 @@
 "use client";
-import React, { useRef } from "react";
-import img from "../public/assets/img.jpeg";
+import React, { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import gsap from "gsap";
 import Link from "next/link";
@@ -12,8 +11,11 @@ import Link from "next/link";
 // import image6 from "@/public/assets/accessibility.png";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+import DOMPurify from "dompurify";
 
 const About = () => {
+  const [about, setAbout] = useState([]);
+  const [skills, setSkills] = useState([]);
   const container = useRef();
   gsap.registerPlugin(ScrollTrigger);
 
@@ -60,6 +62,21 @@ const About = () => {
     { scope: container }
   );
 
+  useEffect(() => {
+    fetch("https://portfolio-backend-seven-kappa.vercel.app/api/about")
+      .then((res) => res.json())
+      .then((data) => {
+        setAbout(data?.data[0]);
+      });
+
+    fetch("https://portfolio-backend-seven-kappa.vercel.app/api/skills")
+      .then((res) => res.json())
+      .then((data) => {
+        setSkills(data.data);
+      });
+  }, [setAbout, setSkills]);
+
+  const description = DOMPurify.sanitize(about?.description);
   return (
     <section
       ref={container}
@@ -75,48 +92,17 @@ const About = () => {
         <div className="lg:flex mx-auto justify-between items-center">
           <div className="">
             <Image
-              src={img}
+              src={about?.image}
               alt=""
               width={500}
               height={400}
+              loading="lazy"
               className="mx-auto rounded-xl text-center"
             />
           </div>
           <div className=" slide-up lg:w-1/2 py-2 lg:my-0 dark:text-white mx-auto">
-            <p className="lg:text-xl ">
-              <small>
-                🚀 a passionate frontend developer with hands-on experience in
-                HTML, CSS, JavaScript and TypeScript. I thrive in collaborative
-                environments, showcasing effective communication and
-                problem-solving skills in team projects. Committed to staying
-                current with industry trends, I bring a fresh perspective and
-                innovative mindset. Eager to contribute creativity and technical
-                proficiency to your team, I am not just seeking a job but a
-                journey of continuous learning and meaningful contributions.
-                Let's build the future of web development together. 💻✨
-              </small>
-            </p>
-            <div className=" py-2">
-              <div className="flex gap-10 justify-start">
-                <p className="w-32 font-medium">Birthday:</p>
-                <p>26 June 2004</p>
-              </div>
-              <div className="flex gap-10 justify-start">
-                <p className="w-32 font-medium">Phone:</p>
-                <p>+8801885236058</p>
-              </div>
-              <div className="flex gap-10 justify-start">
-                <p className="w-32 font-medium">Email:</p>
-                <p>abubokor1066@gmail.com</p>
-              </div>
-              <div className="flex gap-10 justify-start">
-                <p className="w-32 font-medium">From:</p>
-                <p>Bangladesh</p>
-              </div>
-              <div className="flex gap-10 justify-start">
-                <p className="w-32 font-medium">Language:</p>
-                <p>Bangla, English</p>
-              </div>
+            <div>
+              <div dangerouslySetInnerHTML={{ __html: description }} />
             </div>
             <div className="mt-5">
               <Link
@@ -131,29 +117,10 @@ const About = () => {
       </div>
       <hr className="border border-zinc-600 dark:border-zinc-400" />
       <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-5 my-20 text-center justify-center mx-auto items-center">
-        {[
-          "HTML",
-          "CSS",
-          "Bootstrap",
-          "Tailwind CSS",
-          "JavaScript",
-          "Typescript",
-          "React",
-          "Next.js",
-          "MongoDB",
-          "mongoose",
-          "Node.js",
-          "Express.js",
-          "GSAP",
-          "Framer Motion",
-          "Git",
-          "Postman",
-          "Firebase",
-          "Figma",
-        ].map((i) => (
-          <div key={i} className="">
+        {skills?.map((i) => (
+          <div key={i._Id} className="">
             <span className="dark:text-white px-4 rounded-3xl border border-black dark:border-white py-2">
-              {i}
+              {i.technology_name}
             </span>
           </div>
         ))}

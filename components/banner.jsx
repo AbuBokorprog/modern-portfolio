@@ -31,7 +31,7 @@ const Banner = () => {
     <section
       ref={container}
       id="#"
-      className=" min-h-screen flex items-center justify-center"
+      className=" min-h-screen flex items-center justify-center dark:text-white"
     >
       <div>
         <h1 className="text-5xl lg:text-9xl title uppercase text-center font-bold">

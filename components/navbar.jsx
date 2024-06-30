@@ -112,7 +112,7 @@ const Navbar = () => {
                   <Link
                     href="/"
                     variants={item}
-                    className="link text-gray-700 text-5xl font-semibold hover:text-gray-900 block py-2"
+                    className="link text-gray-700 text-5xl dark:text-white font-semibold hover:text-gray-900 block py-2"
                   >
                     Home
                   </Link>
@@ -158,10 +158,10 @@ const Navbar = () => {
       </div>
       <nav
         ref={container}
-        className="py-6 big mx-auto hidden md:block fixed top-0 left-0 w-full z-10"
+        className="py-6 dark:text-white big mx-auto hidden md:block fixed top-0 left-0 w-full z-10"
       >
         <div className="md:flex justify-between px-4">
-          <h1 className="text-3xl uppercase font-bold">Abu b.</h1>
+          <h1 className="text-3xl uppercase  font-bold">Abu b.</h1>
           <div className="md:flex text-xl font-semibold justify-center gap-8">
             <Link
               className={`${router === "/" ? "text-red-500" : ""}`}

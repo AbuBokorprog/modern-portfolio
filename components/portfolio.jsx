@@ -43,7 +43,7 @@ const Portfolio = () => {
     <div
       ref={container}
       id="projects"
-      className="portfolio-container rounded-b-xl py-10 min-h-screen text-black dark:text-white px-2 dark:bg-black overflow-hidden"
+      className="portfolio-container rounded-b-xl bg-white py-10 min-h-screen text-black dark:text-white px-2 dark:bg-black overflow-hidden"
     >
       <h2 className="title text-black dark:text-white text-5xl xl:text-8xl uppercase font-bold py-10">
         Selected Works.
