@@ -3,7 +3,11 @@ import Banner from "@/components/banner";
 import Contact from "@/components/contact";
 import Portfolio from "@/components/portfolio";
 // import Reviews from "@/components/reviews";
-import { getAbout, getProjects, getSkills } from "@/components/pages/portfolio";
+import {
+  getAbout,
+  getProjects,
+  getSkills,
+} from "@/components/serversideData/portfolio";
 import React from "react";
 
 export default async function page() {
