@@ -11,7 +11,6 @@ import Link from "next/link";
 // import image6 from "@/public/assets/accessibility.png";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
-import DOMPurify from "dompurify";
 import sanitizeHtml from "sanitize-html";
 
 const About = ({ aboutData, skillData }) => {
@@ -64,13 +63,13 @@ const About = ({ aboutData, skillData }) => {
   );
 
   // useEffect(() => {
-  //   fetch("http://localhost:5000/api/about")
+  //   fetch("https://portfolio-backend-seven-kappa.vercel.app/api/about")
   //     .then((res) => res.json())
   //     .then((data) => {
   //       setAbout(data?.data[0]);
   //     });
 
-  //   fetch("http://localhost:5000/api/skills")
+  //   fetch("https://portfolio-backend-seven-kappa.vercel.app/api/skills")
   //     .then((res) => res.json())
   //     .then((data) => {
   //       setSkills(data.data);

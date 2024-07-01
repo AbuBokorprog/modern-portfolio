@@ -14,7 +14,7 @@ const Skill = () => {
       route.push("/");
     }
 
-    fetch("http://localhost:5000/api/skills")
+    fetch("https://portfolio-backend-seven-kappa.vercel.app/api/skills")
       .then((res) => res.json())
       .then((data) => {
         setSkills(data.data);
@@ -36,7 +36,7 @@ const Skill = () => {
     formData.append("file", icon);
     formData.append("data", JSON.stringify(data));
 
-    fetch("http://localhost:5000/api/skills", {
+    fetch("https://portfolio-backend-seven-kappa.vercel.app/api/skills", {
       method: "POST",
       headers: {
         // "Content-Type": "application/json",

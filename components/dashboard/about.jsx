@@ -23,7 +23,7 @@ const About = () => {
     formData.append("file", image);
     formData.append("data", JSON.stringify(data));
 
-    fetch("http://localhost:5000/api/about", {
+    fetch("https://portfolio-backend-seven-kappa.vercel.app/api/about", {
       method: "POST",
       headers: {
         authorization: `Bearer ${token}`,

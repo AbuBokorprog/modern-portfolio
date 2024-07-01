@@ -128,7 +128,7 @@ const Portfolio = ({ projects, frontend, mern, full }) => {
               <h3 className="text-xl font-semibold uppercase">
                 {p?.projects_name}
               </h3>
-              <div className="">
+              <div className="h-32">
                 <div
                   dangerouslySetInnerHTML={{
                     __html: sanitizeHtml(p?.short_description, {
@@ -138,14 +138,17 @@ const Portfolio = ({ projects, frontend, mern, full }) => {
                   }}
                 />
               </div>
-              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 my-8 text-center justify-center mx-auto items-center">
-                {p?.skills?.map((i) => (
-                  <div key={i} className="">
-                    <span className="dark:text-white px-4 rounded-3xl border border-black dark:border-white py-2">
-                      {i}
-                    </span>
-                  </div>
-                ))}
+              <div className="my-4 h-44">
+                <h3 className="text-xl font-semibold">Technologies</h3>
+                <div className="grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-4 my-3 gap-2 text-center justify-center mx-auto items-center">
+                  {p?.skills?.map((i) => (
+                    <div key={i} className="">
+                      <span className="dark:text-white px-2 rounded-3xl border border-black dark:border-white py-1">
+                        {i}
+                      </span>
+                    </div>
+                  ))}
+                </div>
               </div>
               <div className="flex justify-between items-center mt-4">
                 <a
@@ -343,14 +346,14 @@ const Portfolio = ({ projects, frontend, mern, full }) => {
         </div>
       )}
 
-      <div className="my-6 mx-auto text-center">
+      {/* <div className="my-6 mx-auto text-center">
         <button
           onClick={countHandler}
           className="px-4 py-1.5 rounded-md border"
         >
           Load more
         </button>
-      </div>
+      </div> */}
     </div>
   );
 };

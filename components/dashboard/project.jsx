@@ -16,7 +16,9 @@ const Project = () => {
       route.push("/");
     }
 
-    fetch("http://localhost:5000/api/projects-category")
+    fetch(
+      "https://portfolio-backend-seven-kappa.vercel.app/api/projects-category"
+    )
       .then((res) => res.json())
       .then((data) => {
         setCategory(data.data);
@@ -33,14 +35,17 @@ const Project = () => {
       category_name: category,
     };
 
-    fetch("http://localhost:5000/api/projects-category", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        authorization: `Bearer ${token}`,
-      },
-      body: JSON.stringify(data),
-    })
+    fetch(
+      "https://portfolio-backend-seven-kappa.vercel.app/api/projects-category",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          authorization: `Bearer ${token}`,
+        },
+        body: JSON.stringify(data),
+      }
+    )
       .then((res) => res.json())
       .then((data) => {
         if (data?.success) {
@@ -75,7 +80,7 @@ const Project = () => {
     formData.append("file", thumbnail);
     formData.append("data", JSON.stringify(data));
 
-    fetch("http://localhost:5000/api/projects", {
+    fetch("https://portfolio-backend-seven-kappa.vercel.app/api/projects", {
       method: "POST",
       headers: {
         // "Content-Type": "application/json",

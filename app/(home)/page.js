@@ -16,7 +16,7 @@ export default async function page() {
 
   const projectsData = await getProjects();
   const frontend = projectsData?.data?.filter(
-    (p) => p?.categoryId?.category_name == "frontend"
+    (p) => p?.categoryId?.category_name == "Frontend"
   );
   const mern = projectsData?.data?.filter(
     (p) => p?.categoryId?.category_name == "MERN stack"
