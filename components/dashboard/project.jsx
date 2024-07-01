@@ -3,8 +3,10 @@ import React, { useContext, useEffect, useState } from "react";
 import TextEditor from "../text-editor/editor";
 import { contextProvider } from "@/provider/contextProvider";
 import { useRouter } from "next/navigation";
+import Image from "next/image";
+import sanitizeHtml from "sanitize-html";
 
-const Project = () => {
+const Project = ({ projects }) => {
   const [value, setValue] = useState();
   const route = useRouter();
   const [category, setCategory] = useState([]);
@@ -226,6 +228,57 @@ const Project = () => {
             <li>{c?.category_name}</li>
           </div>
         ))}
+
+        <h2 className="text-3xl text-center font-bold my-4">All Projects</h2>
+        <div className=" px-1 grid grid-cols-1 lg:grid-cols-2 items-center gap-5">
+          {projects?.map((p) => (
+            <div
+              key={p?._id}
+              className={`portfolio-item mb-6 border border-black dark:border-white text-black  p-4 rounded-lg shadow-md `}
+            >
+              <Image
+                src={p?.thumbnail}
+                alt={p?.projects_name}
+                width={500}
+                height={500}
+                className="w-full lg:h-96 object-cover mb-4 rounded-md"
+              />
+              <h3 className="text-xl font-semibold uppercase">
+                {p?.projects_name}
+              </h3>
+              <div className="h-fit lg:h-32">
+                <div
+                  dangerouslySetInnerHTML={{
+                    __html: sanitizeHtml(p?.short_description, {
+                      allowedTags: ["p"],
+                      allowedAttributes: {},
+                    }),
+                  }}
+                />
+              </div>
+              <div className="my-4 h-fit lg:h-44">
+                <h3 className="text-xl font-semibold">Technologies</h3>
+                <div className="grid grid-cols-2 md:grid-cols-5 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-4 my-3 gap-2 md:gap-5 lg:gap-3 text-center justify-center mx-auto items-center">
+                  {p?.skills?.map((i) => (
+                    <div key={i} className="">
+                      <span className=" px-2 rounded-3xl border border-black dark:border-white py-1">
+                        {i}
+                      </span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+              <div className="flex justify-between items-center mt-4">
+                <button className="px-4 py-2 bg-red-500 rounded-lg">
+                  Delete
+                </button>
+                <button className="px-4 py-2 bg-blue-500 rounded-lg">
+                  Edit
+                </button>
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );
