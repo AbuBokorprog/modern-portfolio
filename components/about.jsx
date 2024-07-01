@@ -23,7 +23,7 @@ const About = ({ aboutData, skillData }) => {
     () => {
       gsap.from(container.current, {
         y: 100,
-        duration: 1,
+        duration: 2,
         opacity: 0,
         scrollTrigger: {
           trigger: container.current,
@@ -47,7 +47,7 @@ const About = ({ aboutData, skillData }) => {
 
       gsap.from(".slide-up", {
         y: 100,
-        duration: 1,
+        duration: 2,
         opacity: 0,
         stagger: 0.5,
         scrollTrigger: {

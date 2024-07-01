@@ -3,10 +3,6 @@ import React, { useRef, useState } from "react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import Image from "next/image";
-import image1 from "../public/assets/home1.png";
-import image2 from "../public/assets/luminous-home.png";
-import image3 from "../public/assets/center-stone-home.png";
-import image4 from "../public/assets/work-manager.png";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import sanitizeHtml from "sanitize-html";
 
@@ -15,6 +11,9 @@ const Portfolio = ({ projects, frontend, mern, full }) => {
   const [tab, setTab] = useState("all");
   const container = useRef();
   const [portfolioCount, setPortfolioCount] = useState(4);
+  const [frontCount, setFrontCount] = useState(4);
+  const [mernCount, setMernCount] = useState(4);
+  const [fullCount, setFullCount] = useState(4);
 
   useGSAP(
     () => {
@@ -45,6 +44,21 @@ const Portfolio = ({ projects, frontend, mern, full }) => {
   const countHandler = () => {
     const count = portfolioCount + 4;
     setPortfolioCount(count);
+  };
+
+  const frontendCountHandler = () => {
+    const count = frontCount + 4;
+    setFrontCount(count);
+  };
+
+  const mernCountHandler = () => {
+    const count = mernCount + 4;
+    setMernCount(count);
+  };
+
+  const fullCountHandler = () => {
+    const count = fullCount + 4;
+    setFullCount(count);
   };
 
   return (
@@ -110,259 +124,303 @@ const Portfolio = ({ projects, frontend, mern, full }) => {
         </ul>
       </div>
 
-      {/* all tab */}
-      {tab == "all" && (
-        <div className=" px-1 grid grid-cols-1 md:grid-cols-2 items-center gap-5">
-          {projects?.map((p) => (
-            <div
-              key={p?._id}
-              className={`portfolio-item mb-6 border border-black dark:border-white text-black dark:text-white p-4 rounded-lg shadow-md `}
-            >
-              <Image
-                src={p?.thumbnail}
-                alt={p?.projects_name}
-                width={500}
-                height={500}
-                className="w-full lg:h-96 object-cover mb-4 rounded-md"
-              />
-              <h3 className="text-xl font-semibold uppercase">
-                {p?.projects_name}
-              </h3>
-              <div className="h-32">
-                <div
-                  dangerouslySetInnerHTML={{
-                    __html: sanitizeHtml(p?.short_description, {
-                      allowedTags: ["p"],
-                      allowedAttributes: {},
-                    }),
-                  }}
+      <div>
+        {/* all tab */}
+        {tab == "all" && (
+          <div className=" px-1 grid grid-cols-1 md:grid-cols-2 items-center gap-5">
+            {projects?.slice(0, portfolioCount)?.map((p) => (
+              <div
+                key={p?._id}
+                className={`portfolio-item mb-6 border border-black dark:border-white text-black dark:text-white p-4 rounded-lg shadow-md `}
+              >
+                <Image
+                  src={p?.thumbnail}
+                  alt={p?.projects_name}
+                  width={500}
+                  height={500}
+                  className="w-full lg:h-96 object-cover mb-4 rounded-md"
                 />
-              </div>
-              <div className="my-4 h-44">
-                <h3 className="text-xl font-semibold">Technologies</h3>
-                <div className="grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-4 my-3 gap-2 text-center justify-center mx-auto items-center">
-                  {p?.skills?.map((i) => (
-                    <div key={i} className="">
-                      <span className="dark:text-white px-2 rounded-3xl border border-black dark:border-white py-1">
-                        {i}
-                      </span>
-                    </div>
-                  ))}
+                <h3 className="text-xl font-semibold uppercase">
+                  {p?.projects_name}
+                </h3>
+                <div className="h-32">
+                  <div
+                    dangerouslySetInnerHTML={{
+                      __html: sanitizeHtml(p?.short_description, {
+                        allowedTags: ["p"],
+                        allowedAttributes: {},
+                      }),
+                    }}
+                  />
+                </div>
+                <div className="my-4 h-44">
+                  <h3 className="text-xl font-semibold">Technologies</h3>
+                  <div className="grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-4 my-3 gap-2 text-center justify-center mx-auto items-center">
+                    {p?.skills?.map((i) => (
+                      <div key={i} className="">
+                        <span className="dark:text-white px-2 rounded-3xl border border-black dark:border-white py-1">
+                          {i}
+                        </span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+                <div className="flex justify-between items-center mt-4">
+                  <a
+                    href={`${p?.github_url}`}
+                    target="_blank"
+                    className="border border-black dark:border-white px-4 rounded-3xl py-1"
+                  >
+                    Github
+                  </a>
+                  <a
+                    href={`${p?.view_url}`}
+                    target="_blank"
+                    className="border border-black dark:border-white px-4 rounded-3xl py-1"
+                  >
+                    View
+                  </a>
                 </div>
               </div>
-              <div className="flex justify-between items-center mt-4">
-                <a
-                  href={`${p?.github_url}`}
-                  target="_blank"
-                  className="border border-black dark:border-white px-4 rounded-3xl py-1"
-                >
-                  Github
-                </a>
-                <a
-                  href={`${p?.view_url}`}
-                  target="_blank"
-                  className="border border-black dark:border-white px-4 rounded-3xl py-1"
-                >
-                  View
-                </a>
-              </div>
-            </div>
-          ))}
-        </div>
-      )}
-
-      {/* frontend */}
-
-      {tab == "frontend" && (
-        <div className=" px-1 grid grid-cols-1 md:grid-cols-2 items-center gap-5">
-          {projects?.map((p) => (
-            <div
-              key={p?._id}
-              className={`portfolio-item mb-6 border border-black dark:border-white text-black dark:text-white p-4 rounded-lg shadow-md `}
+            ))}
+          </div>
+        )}
+        {projects?.length > 4 && (
+          <div className="my-6 mx-auto text-center">
+            <button
+              onClick={countHandler}
+              className="px-4 py-1.5 rounded-md border"
             >
-              <Image
-                src={p?.thumbnail}
-                alt={p?.projects_name}
-                width={500}
-                height={500}
-                className="w-full lg:h-96 object-cover mb-4 rounded-md"
-              />
-              <h3 className="text-xl font-semibold uppercase">
-                {p?.projects_name}
-              </h3>
-              <div className="h-32">
-                <div
-                  dangerouslySetInnerHTML={{
-                    __html: sanitizeHtml(p?.short_description, {
-                      allowedTags: ["p"],
-                      allowedAttributes: {},
-                    }),
-                  }}
+              Load more
+            </button>
+          </div>
+        )}
+      </div>
+
+      <div>
+        {/* frontend */}
+
+        {tab == "frontend" && (
+          <div className=" px-1 grid grid-cols-1 md:grid-cols-2 items-center gap-5">
+            {frontend?.slice(0, frontCount)?.map((p) => (
+              <div
+                key={p?._id}
+                className={`portfolio-item mb-6 border border-black dark:border-white text-black dark:text-white p-4 rounded-lg shadow-md `}
+              >
+                <Image
+                  src={p?.thumbnail}
+                  alt={p?.projects_name}
+                  width={500}
+                  height={500}
+                  className="w-full lg:h-96 object-cover mb-4 rounded-md"
                 />
-              </div>
-              <div className="my-4 h-44">
-                <h3 className="text-xl font-semibold">Technologies</h3>
-                <div className="grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-4 my-3 gap-2 text-center justify-center mx-auto items-center">
-                  {p?.skills?.map((i) => (
-                    <div key={i} className="">
-                      <span className="dark:text-white px-2 rounded-3xl border border-black dark:border-white py-1">
-                        {i}
-                      </span>
-                    </div>
-                  ))}
+                <h3 className="text-xl font-semibold uppercase">
+                  {p?.projects_name}
+                </h3>
+                <div className="h-32">
+                  <div
+                    dangerouslySetInnerHTML={{
+                      __html: sanitizeHtml(p?.short_description, {
+                        allowedTags: ["p"],
+                        allowedAttributes: {},
+                      }),
+                    }}
+                  />
+                </div>
+                <div className="my-4 h-44">
+                  <h3 className="text-xl font-semibold">Technologies</h3>
+                  <div className="grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-4 my-3 gap-2 text-center justify-center mx-auto items-center">
+                    {p?.skills?.map((i) => (
+                      <div key={i} className="">
+                        <span className="dark:text-white px-2 rounded-3xl border border-black dark:border-white py-1">
+                          {i}
+                        </span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+                <div className="flex justify-between items-center mt-4">
+                  <a
+                    href={`${p?.github_url}`}
+                    target="_blank"
+                    className="border border-black dark:border-white px-4 rounded-3xl py-1"
+                  >
+                    Github
+                  </a>
+                  <a
+                    href={`${p?.view_url}`}
+                    target="_blank"
+                    className="border border-black dark:border-white px-4 rounded-3xl py-1"
+                  >
+                    View
+                  </a>
                 </div>
               </div>
-              <div className="flex justify-between items-center mt-4">
-                <a
-                  href={`${p?.github_url}`}
-                  target="_blank"
-                  className="border border-black dark:border-white px-4 rounded-3xl py-1"
-                >
-                  Github
-                </a>
-                <a
-                  href={`${p?.view_url}`}
-                  target="_blank"
-                  className="border border-black dark:border-white px-4 rounded-3xl py-1"
-                >
-                  View
-                </a>
-              </div>
-            </div>
-          ))}
-        </div>
-      )}
-
-      {/* mern */}
-      {tab == "mern-stack" && (
-        <div className=" px-1 grid grid-cols-1 md:grid-cols-2 items-center gap-5">
-          {projects?.map((p) => (
-            <div
-              key={p?._id}
-              className={`portfolio-item mb-6 border border-black dark:border-white text-black dark:text-white p-4 rounded-lg shadow-md `}
+            ))}
+          </div>
+        )}
+        {frontend?.length > 4 && (
+          <div className="my-6 mx-auto text-center">
+            <button
+              onClick={frontendCountHandler}
+              className="px-4 py-1.5 rounded-md border"
             >
-              <Image
-                src={p?.thumbnail}
-                alt={p?.projects_name}
-                width={500}
-                height={500}
-                className="w-full lg:h-96 object-cover mb-4 rounded-md"
-              />
-              <h3 className="text-xl font-semibold uppercase">
-                {p?.projects_name}
-              </h3>
-              <div className="h-32">
-                <div
-                  dangerouslySetInnerHTML={{
-                    __html: sanitizeHtml(p?.short_description, {
-                      allowedTags: ["p"],
-                      allowedAttributes: {},
-                    }),
-                  }}
+              Load more
+            </button>
+          </div>
+        )}
+      </div>
+
+      <div>
+        {/* mern */}
+        {tab == "mern-stack" && (
+          <div className=" px-1 grid grid-cols-1 md:grid-cols-2 items-center gap-5">
+            {mern?.slice(0, mernCount)?.map((p) => (
+              <div
+                key={p?._id}
+                className={`portfolio-item mb-6 border border-black dark:border-white text-black dark:text-white p-4 rounded-lg shadow-md `}
+              >
+                <Image
+                  src={p?.thumbnail}
+                  alt={p?.projects_name}
+                  width={500}
+                  height={500}
+                  className="w-full lg:h-96 object-cover mb-4 rounded-md"
                 />
-              </div>
-              <div className="my-4 h-44">
-                <h3 className="text-xl font-semibold">Technologies</h3>
-                <div className="grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-4 my-3 gap-2 text-center justify-center mx-auto items-center">
-                  {p?.skills?.map((i) => (
-                    <div key={i} className="">
-                      <span className="dark:text-white px-2 rounded-3xl border border-black dark:border-white py-1">
-                        {i}
-                      </span>
-                    </div>
-                  ))}
+                <h3 className="text-xl font-semibold uppercase">
+                  {p?.projects_name}
+                </h3>
+                <div className="h-32">
+                  <div
+                    dangerouslySetInnerHTML={{
+                      __html: sanitizeHtml(p?.short_description, {
+                        allowedTags: ["p"],
+                        allowedAttributes: {},
+                      }),
+                    }}
+                  />
+                </div>
+                <div className="my-4 h-44">
+                  <h3 className="text-xl font-semibold">Technologies</h3>
+                  <div className="grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-4 my-3 gap-2 text-center justify-center mx-auto items-center">
+                    {p?.skills?.map((i) => (
+                      <div key={i} className="">
+                        <span className="dark:text-white px-2 rounded-3xl border border-black dark:border-white py-1">
+                          {i}
+                        </span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+                <div className="flex justify-between items-center mt-4">
+                  <a
+                    href={`${p?.github_url}`}
+                    target="_blank"
+                    className="border border-black dark:border-white px-4 rounded-3xl py-1"
+                  >
+                    Github
+                  </a>
+                  <a
+                    href={`${p?.view_url}`}
+                    target="_blank"
+                    className="border border-black dark:border-white px-4 rounded-3xl py-1"
+                  >
+                    View
+                  </a>
                 </div>
               </div>
-              <div className="flex justify-between items-center mt-4">
-                <a
-                  href={`${p?.github_url}`}
-                  target="_blank"
-                  className="border border-black dark:border-white px-4 rounded-3xl py-1"
-                >
-                  Github
-                </a>
-                <a
-                  href={`${p?.view_url}`}
-                  target="_blank"
-                  className="border border-black dark:border-white px-4 rounded-3xl py-1"
-                >
-                  View
-                </a>
-              </div>
+            ))}
+          </div>
+        )}
+        <div>
+          {mern?.length > 4 && (
+            <div className="my-6 mx-auto text-center">
+              <button
+                onClick={mernCountHandler}
+                className="px-4 py-1.5 rounded-md border"
+              >
+                Load more
+              </button>
             </div>
-          ))}
+          )}
         </div>
-      )}
+      </div>
 
-      {/* full stack */}
-      {tab == "full-stack" && (
-        <div className=" px-1 grid grid-cols-1 md:grid-cols-2 items-center gap-5">
-          {projects?.map((p) => (
-            <div
-              key={p?._id}
-              className={`portfolio-item mb-6 border border-black dark:border-white text-black dark:text-white p-4 rounded-lg shadow-md `}
-            >
-              <Image
-                src={p?.thumbnail}
-                alt={p?.projects_name}
-                width={500}
-                height={500}
-                className="w-full lg:h-96 object-cover mb-4 rounded-md"
-              />
-              <h3 className="text-xl font-semibold uppercase">
-                {p?.projects_name}
-              </h3>
-              <div className="h-32">
-                <div
-                  dangerouslySetInnerHTML={{
-                    __html: sanitizeHtml(p?.short_description, {
-                      allowedTags: ["p"],
-                      allowedAttributes: {},
-                    }),
-                  }}
+      <div>
+        {/* full stack */}
+        {tab == "full-stack" && (
+          <div className=" px-1 grid grid-cols-1 md:grid-cols-2 items-center gap-5">
+            {full?.slice(0, fullCount)?.map((p) => (
+              <div
+                key={p?._id}
+                className={`portfolio-item mb-6 border border-black dark:border-white text-black dark:text-white p-4 rounded-lg shadow-md `}
+              >
+                <Image
+                  src={p?.thumbnail}
+                  alt={p?.projects_name}
+                  width={500}
+                  height={500}
+                  className="w-full lg:h-96 object-cover mb-4 rounded-md"
                 />
-              </div>
-              <div className="my-4 h-44">
-                <h3 className="text-xl font-semibold">Technologies</h3>
-                <div className="grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-4 my-3 gap-2 text-center justify-center mx-auto items-center">
-                  {p?.skills?.map((i) => (
-                    <div key={i} className="">
-                      <span className="dark:text-white px-2 rounded-3xl border border-black dark:border-white py-1">
-                        {i}
-                      </span>
-                    </div>
-                  ))}
+                <h3 className="text-xl font-semibold uppercase">
+                  {p?.projects_name}
+                </h3>
+                <div className="h-32">
+                  <div
+                    dangerouslySetInnerHTML={{
+                      __html: sanitizeHtml(p?.short_description, {
+                        allowedTags: ["p"],
+                        allowedAttributes: {},
+                      }),
+                    }}
+                  />
+                </div>
+                <div className="my-4 h-44">
+                  <h3 className="text-xl font-semibold">Technologies</h3>
+                  <div className="grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-4 my-3 gap-2 text-center justify-center mx-auto items-center">
+                    {p?.skills?.map((i) => (
+                      <div key={i} className="">
+                        <span className="dark:text-white px-2 rounded-3xl border border-black dark:border-white py-1">
+                          {i}
+                        </span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+                <div className="flex justify-between items-center mt-4">
+                  <a
+                    href={`${p?.github_url}`}
+                    target="_blank"
+                    className="border border-black dark:border-white px-4 rounded-3xl py-1"
+                  >
+                    Github
+                  </a>
+                  <a
+                    href={`${p?.view_url}`}
+                    target="_blank"
+                    className="border border-black dark:border-white px-4 rounded-3xl py-1"
+                  >
+                    View
+                  </a>
                 </div>
               </div>
-              <div className="flex justify-between items-center mt-4">
-                <a
-                  href={`${p?.github_url}`}
-                  target="_blank"
-                  className="border border-black dark:border-white px-4 rounded-3xl py-1"
-                >
-                  Github
-                </a>
-                <a
-                  href={`${p?.view_url}`}
-                  target="_blank"
-                  className="border border-black dark:border-white px-4 rounded-3xl py-1"
-                >
-                  View
-                </a>
-              </div>
-            </div>
-          ))}
-        </div>
-      )}
+            ))}
+          </div>
+        )}
 
-      {/* <div className="my-6 mx-auto text-center">
-        <button
-          onClick={countHandler}
-          className="px-4 py-1.5 rounded-md border"
-        >
-          Load more
-        </button>
-      </div> */}
+        <div>
+          {full?.length > 4 && (
+            <div className="my-6 mx-auto text-center">
+              <button
+                onClick={fullCountHandler}
+                className="px-4 py-1.5 rounded-md border"
+              >
+                Load more
+              </button>
+            </div>
+          )}
+        </div>
+      </div>
     </div>
   );
 };

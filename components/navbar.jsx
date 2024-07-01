@@ -68,6 +68,7 @@ const Navbar = () => {
     hidden: { opacity: 0 },
     show: { opacity: 1 },
   };
+
   return (
     <div>
       <div className="">
@@ -128,15 +129,6 @@ const Navbar = () => {
                 </motion.li>
                 <motion.li variants={item}>
                   <Link
-                    href={"/#services"}
-                    variants={item}
-                    className="link text-gray-700 text-5xl font-semibold hover:text-gray-900 block py-2"
-                  >
-                    Services
-                  </Link>
-                </motion.li>
-                <motion.li variants={item}>
-                  <Link
                     href={"/#projects"}
                     className="link text-gray-700 text-5xl font-semibold hover:text-gray-900 block py-2"
                   >
@@ -174,12 +166,6 @@ const Navbar = () => {
               href={"/#about"}
             >
               About
-            </Link>
-            <Link
-              className={`${router === "/#services" ? "text-red-500" : ""}`}
-              href={"#services"}
-            >
-              Services
             </Link>
             <Link
               className={`${router === "/#projects" ? "text-red-500" : ""}`}

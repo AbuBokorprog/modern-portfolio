@@ -10,11 +10,6 @@ const Contact = () => {
     const body = data.message;
     const email = data.email;
     const name = data.name;
-    // const encodedSubject = encodeURIComponent(subject);
-    // const encodedBody = encodeURIComponent(body);
-    // const mailToLink = `mailto:abubokor1066@gmail.com?subject=${encodedSubject}&body=${encodedBody}`;
-
-    // window.location.href = mailToLink;
 
     const templateParams = {
       to_name: "Abu Bokor",
