@@ -12,6 +12,7 @@ import Link from "next/link";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import sanitizeHtml from "sanitize-html";
+// import Experience from "./experience";
 
 const About = ({ aboutData, skillData }) => {
   // const [about, setAbout] = useState([]);
@@ -61,20 +62,6 @@ const About = ({ aboutData, skillData }) => {
     },
     { scope: container }
   );
-
-  // useEffect(() => {
-  //   fetch("https://portfolio-backend-seven-kappa.vercel.app/api/about")
-  //     .then((res) => res.json())
-  //     .then((data) => {
-  //       setAbout(data?.data[0]);
-  //     });
-
-  //   fetch("https://portfolio-backend-seven-kappa.vercel.app/api/skills")
-  //     .then((res) => res.json())
-  //     .then((data) => {
-  //       setSkills(data.data);
-  //     });
-  // }, [setAbout, setSkills]);
 
   const clean = sanitizeHtml(aboutData?.description, {
     allowedTags: ["p"],
@@ -132,6 +119,7 @@ const About = ({ aboutData, skillData }) => {
           </div>
         ))}
       </div>
+      {/* <Experience /> */}
       {/* <hr className="border border-zinc-400" /> */}
       {/* <div className="py-10" id="services">
         <h2 className="text-white fade-in text-5xl lg:text-8xl uppercase font-bold py-10">
