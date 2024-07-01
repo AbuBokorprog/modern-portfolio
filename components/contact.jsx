@@ -41,7 +41,7 @@ const Contact = () => {
   return (
     <section id="contact" className="dark:text-white">
       <div className="py-10 overflow-hidden px-2 ">
-        <h2 className=" text-3xl lg:text-[165px] text-center uppercase font-bold py-10">
+        <h2 className=" text-3xl lg:text-[120px] xl:text-[165px] text-center uppercase font-bold py-10">
           Get in touch.
         </h2>
         <div className="lg:flex pt-20 items-start flex-row-reverse">

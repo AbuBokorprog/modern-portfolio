@@ -127,7 +127,7 @@ const Portfolio = ({ projects, frontend, mern, full }) => {
       <div>
         {/* all tab */}
         {tab == "all" && (
-          <div className=" px-1 grid grid-cols-1 md:grid-cols-2 items-center gap-5">
+          <div className=" px-1 grid grid-cols-1 lg:grid-cols-2 items-center gap-5">
             {projects?.slice(0, portfolioCount)?.map((p) => (
               <div
                 key={p?._id}
@@ -143,7 +143,7 @@ const Portfolio = ({ projects, frontend, mern, full }) => {
                 <h3 className="text-xl font-semibold uppercase">
                   {p?.projects_name}
                 </h3>
-                <div className="h-32">
+                <div className="h-fit lg:h-32">
                   <div
                     dangerouslySetInnerHTML={{
                       __html: sanitizeHtml(p?.short_description, {
@@ -153,9 +153,9 @@ const Portfolio = ({ projects, frontend, mern, full }) => {
                     }}
                   />
                 </div>
-                <div className="my-4 h-44">
+                <div className="my-4 h-fit lg:h-44">
                   <h3 className="text-xl font-semibold">Technologies</h3>
-                  <div className="grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-4 my-3 gap-2 text-center justify-center mx-auto items-center">
+                  <div className="grid grid-cols-2 md:grid-cols-5 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-4 my-3 gap-2 md:gap-5 lg:gap-3 text-center justify-center mx-auto items-center">
                     {p?.skills?.map((i) => (
                       <div key={i} className="">
                         <span className="dark:text-white px-2 rounded-3xl border border-black dark:border-white py-1">
@@ -201,7 +201,7 @@ const Portfolio = ({ projects, frontend, mern, full }) => {
         {/* frontend */}
 
         {tab == "frontend" && (
-          <div className=" px-1 grid grid-cols-1 md:grid-cols-2 items-center gap-5">
+          <div className=" px-1 grid grid-cols-1 lg:grid-cols-2 items-center gap-5">
             {frontend?.slice(0, frontCount)?.map((p) => (
               <div
                 key={p?._id}
@@ -217,7 +217,7 @@ const Portfolio = ({ projects, frontend, mern, full }) => {
                 <h3 className="text-xl font-semibold uppercase">
                   {p?.projects_name}
                 </h3>
-                <div className="h-32">
+                <div className="h-fit lg:h-32">
                   <div
                     dangerouslySetInnerHTML={{
                       __html: sanitizeHtml(p?.short_description, {
@@ -227,9 +227,9 @@ const Portfolio = ({ projects, frontend, mern, full }) => {
                     }}
                   />
                 </div>
-                <div className="my-4 h-44">
+                <div className="my-4 h-fit lg:h-44">
                   <h3 className="text-xl font-semibold">Technologies</h3>
-                  <div className="grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-4 my-3 gap-2 text-center justify-center mx-auto items-center">
+                  <div className="grid grid-cols-2 md:grid-cols-5 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-4 my-3 gap-2 md:gap-5 lg:gap-3 text-center justify-center mx-auto items-center">
                     {p?.skills?.map((i) => (
                       <div key={i} className="">
                         <span className="dark:text-white px-2 rounded-3xl border border-black dark:border-white py-1">
@@ -274,7 +274,7 @@ const Portfolio = ({ projects, frontend, mern, full }) => {
       <div>
         {/* mern */}
         {tab == "mern-stack" && (
-          <div className=" px-1 grid grid-cols-1 md:grid-cols-2 items-center gap-5">
+          <div className=" px-1 grid grid-cols-1 lg:grid-cols-2 items-center gap-5">
             {mern?.slice(0, mernCount)?.map((p) => (
               <div
                 key={p?._id}
@@ -290,7 +290,7 @@ const Portfolio = ({ projects, frontend, mern, full }) => {
                 <h3 className="text-xl font-semibold uppercase">
                   {p?.projects_name}
                 </h3>
-                <div className="h-32">
+                <div className="h-fit lg:h-32">
                   <div
                     dangerouslySetInnerHTML={{
                       __html: sanitizeHtml(p?.short_description, {
@@ -300,9 +300,9 @@ const Portfolio = ({ projects, frontend, mern, full }) => {
                     }}
                   />
                 </div>
-                <div className="my-4 h-44">
+                <div className="my-4 h-fit lg:h-44">
                   <h3 className="text-xl font-semibold">Technologies</h3>
-                  <div className="grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-4 my-3 gap-2 text-center justify-center mx-auto items-center">
+                  <div className="grid grid-cols-2 md:grid-cols-5 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-4 my-3 gap-2 md:gap-5 lg:gap-3 text-center justify-center mx-auto items-center">
                     {p?.skills?.map((i) => (
                       <div key={i} className="">
                         <span className="dark:text-white px-2 rounded-3xl border border-black dark:border-white py-1">
@@ -349,7 +349,7 @@ const Portfolio = ({ projects, frontend, mern, full }) => {
       <div>
         {/* full stack */}
         {tab == "full-stack" && (
-          <div className=" px-1 grid grid-cols-1 md:grid-cols-2 items-center gap-5">
+          <div className=" px-1 grid grid-cols-1 lg:grid-cols-2 items-center gap-5">
             {full?.slice(0, fullCount)?.map((p) => (
               <div
                 key={p?._id}
@@ -365,7 +365,7 @@ const Portfolio = ({ projects, frontend, mern, full }) => {
                 <h3 className="text-xl font-semibold uppercase">
                   {p?.projects_name}
                 </h3>
-                <div className="h-32">
+                <div className="h-fit lg:h-32">
                   <div
                     dangerouslySetInnerHTML={{
                       __html: sanitizeHtml(p?.short_description, {
@@ -375,9 +375,9 @@ const Portfolio = ({ projects, frontend, mern, full }) => {
                     }}
                   />
                 </div>
-                <div className="my-4 h-44">
+                <div className="my-4 h-fit lg:h-44">
                   <h3 className="text-xl font-semibold">Technologies</h3>
-                  <div className="grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-4 my-3 gap-2 text-center justify-center mx-auto items-center">
+                  <div className="grid grid-cols-2 md:grid-cols-5 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-4 my-3 gap-2 md:gap-5 lg:gap-3 text-center justify-center mx-auto items-center">
                     {p?.skills?.map((i) => (
                       <div key={i} className="">
                         <span className="dark:text-white px-2 rounded-3xl border border-black dark:border-white py-1">
