@@ -11,10 +11,10 @@ import {
 import React from "react";
 
 export default async function page() {
-  const aboutData = await getAbout();
-  const skillData = await getSkills();
+  const aboutData = getAbout();
+  const skillData = getSkills();
 
-  const projectsData = await getProjects();
+  const projectsData = getProjects();
   const frontend = projectsData?.data?.filter(
     (p) => p?.categoryId?.category_name == "Frontend"
   );
@@ -28,7 +28,10 @@ export default async function page() {
   return (
     <div>
       <Banner />
-      <About aboutData={aboutData?.data[0]} skillData={skillData?.data} />
+      <About
+        aboutData={aboutData?.data && aboutData?.data[0]}
+        skillData={skillData?.data}
+      />
       <Portfolio
         projects={projectsData?.data}
         frontend={frontend}
