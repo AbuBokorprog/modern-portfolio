@@ -78,7 +78,7 @@ const Portfolio = ({ projects, frontend, mern, full }) => {
               onClick={() => setTab("all")}
               className={`${
                 tab == "all"
-                  ? "active dark:text-blue-500 dark:border-blue-500"
+                  ? "active text-blue-500 border-blue-500"
                   : "hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300"
               } inline-block p-4 border-b-2 border-transparent rounded-t-lg `}
             >
@@ -90,7 +90,7 @@ const Portfolio = ({ projects, frontend, mern, full }) => {
               onClick={() => setTab("frontend")}
               className={`${
                 tab == "frontend"
-                  ? "active dark:text-blue-500 dark:border-blue-500"
+                  ? "active text-blue-500 border-blue-500"
                   : "hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300"
               } inline-block p-4 border-b-2 border-transparent rounded-t-lg `}
             >
@@ -102,7 +102,7 @@ const Portfolio = ({ projects, frontend, mern, full }) => {
               onClick={() => setTab("mern-stack")}
               className={`${
                 tab == "mern-stack"
-                  ? "active dark:text-blue-500 dark:border-blue-500"
+                  ? "active text-blue-500 border-blue-500"
                   : "hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300"
               } inline-block p-4 border-b-2 border-transparent rounded-t-lg `}
             >
@@ -114,7 +114,7 @@ const Portfolio = ({ projects, frontend, mern, full }) => {
               onClick={() => setTab("full-stack")}
               className={`${
                 tab == "full-stack"
-                  ? "active dark:text-blue-500 dark:border-blue-500"
+                  ? "active text-blue-500 border-blue-500"
                   : "hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300"
               } inline-block p-4 border-b-2 border-transparent rounded-t-lg `}
             >

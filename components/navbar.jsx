@@ -150,10 +150,10 @@ const Navbar = () => {
       </div>
       <nav
         ref={container}
-        className="py-6 dark:text-white big mx-auto hidden md:block fixed top-0 left-0 w-full z-10"
+        className="py-6 dark:text-white mx-auto hidden md:block fixed top-0 start-0 end-0 container z-20 rounded-lg"
       >
         <div className="md:flex justify-between px-4">
-          <h1 className="text-3xl uppercase  font-bold">Abu b.</h1>
+          <h1 className="text-3xl uppercase font-bold">Abu b.</h1>
           <div className="md:flex text-xl font-semibold justify-center gap-8">
             <Link
               className={`${router === "/" ? "text-red-500" : ""}`}

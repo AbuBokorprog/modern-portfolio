@@ -8,17 +8,18 @@ import Link from "next/link";
 // import image2 from "@/public/assets/accessibility.png";
 // import image3 from "@/public/assets/accessibility.png";
 // import image4 from "@/public/assets/accessibility.png";
-// import image6 from "@/public/assets/accessibility.png";
+// import image6 from "@/public/assets/img.jpeg";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import sanitizeHtml from "sanitize-html";
+import Experience from "./experience";
 // import Experience from "./experience";
 
 const About = ({ aboutData, skillData }) => {
   // const [about, setAbout] = useState([]);
   // const [skills, setSkills] = useState([]);
   const container = useRef();
-  gsap.registerPlugin(ScrollTrigger);
+  gsap.registerPlugin(ScrollTrigger, useGSAP);
 
   useGSAP(
     () => {
@@ -119,8 +120,8 @@ const About = ({ aboutData, skillData }) => {
           </div>
         ))}
       </div>
-      {/* <Experience /> */}
-      {/* <hr className="border border-zinc-400" /> */}
+      <Experience />
+      <hr className="border border-zinc-600 dark:border-zinc-400" />
       {/* <div className="py-10" id="services">
         <h2 className="text-white fade-in text-5xl lg:text-8xl uppercase font-bold py-10">
           Services.

@@ -71,7 +71,7 @@ const Reviews = () => {
                 return (
                   '<span className="' +
                   className +
-                  '" style="background-color: #000000;"></span>'
+                  '" style="background-color: #FFFFFF;"></span>'
                 );
               },
             }}
