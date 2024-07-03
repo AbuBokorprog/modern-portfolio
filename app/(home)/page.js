@@ -11,10 +11,10 @@ import {
 import React from "react";
 
 export default async function page() {
-  const aboutData = getAbout();
-  const skillData = getSkills();
+  const aboutData = await getAbout();
+  const skillData = await getSkills();
 
-  const projectsData = getProjects();
+  const projectsData = await getProjects();
   const frontend = projectsData?.data?.filter(
     (p) => p?.categoryId?.category_name == "Frontend"
   );
