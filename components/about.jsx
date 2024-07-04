@@ -49,7 +49,7 @@ const About = ({ aboutData, skillData }) => {
 
       gsap.from(".slide-up", {
         y: 100,
-        duration: 2,
+        duration: 1,
         opacity: 0,
         stagger: 0.5,
         scrollTrigger: {

@@ -27,7 +27,8 @@ const Portfolio = ({ projects, frontend, mern, full }) => {
           },
         })
         .from(".title", {
-          x: -100,
+          x: -200,
+          delay: 1,
           duration: 3,
           opacity: 0,
         })

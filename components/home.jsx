@@ -1,7 +1,22 @@
-import React from "react";
+"use client";
+import { useState, useEffect } from "react";
+import LoadingComponent from "./LoadingComponent";
 
-const Home = ({ children }) => {
-  return <div>{children}</div>;
-};
+function Home({ children }) {
+  const [isLoading, setIsLoading] = useState(true);
+
+  const handleLoadingComplete = () => {
+    setIsLoading(false);
+  };
+
+  return (
+    <div>
+      {isLoading && (
+        <LoadingComponent onLoadingComplete={handleLoadingComplete} />
+      )}
+      {!isLoading && <div>{children}</div>}
+    </div>
+  );
+}
 
 export default Home;
