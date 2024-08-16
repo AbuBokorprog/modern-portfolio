@@ -170,14 +170,14 @@ const Portfolio = ({ projects, frontend, mern, full }) => {
                   <a
                     href={`${p?.github_url}`}
                     target="_blank"
-                    className="border border-black dark:border-white px-4 rounded-3xl py-1"
+                    className="border border-black dark:border-white px-4 rounded-3xl py-1 hoverable"
                   >
                     Github
                   </a>
                   <a
                     href={`${p?.view_url}`}
                     target="_blank"
-                    className="border border-black dark:border-white px-4 rounded-3xl py-1"
+                    className="border border-black dark:border-white px-4 rounded-3xl py-1 hoverable"
                   >
                     View
                   </a>
@@ -190,7 +190,7 @@ const Portfolio = ({ projects, frontend, mern, full }) => {
           <div className="my-6 mx-auto text-center">
             <button
               onClick={countHandler}
-              className="px-4 py-1.5 rounded-md border"
+              className="px-4 py-1.5 rounded-md border hoverable"
             >
               Load more
             </button>
@@ -244,14 +244,14 @@ const Portfolio = ({ projects, frontend, mern, full }) => {
                   <a
                     href={`${p?.github_url}`}
                     target="_blank"
-                    className="border border-black dark:border-white px-4 rounded-3xl py-1"
+                    className="border border-black dark:border-white px-4 rounded-3xl py-1 hoverable"
                   >
                     Github
                   </a>
                   <a
                     href={`${p?.view_url}`}
                     target="_blank"
-                    className="border border-black dark:border-white px-4 rounded-3xl py-1"
+                    className="border border-black dark:border-white px-4 rounded-3xl py-1 hoverable"
                   >
                     View
                   </a>
@@ -264,7 +264,7 @@ const Portfolio = ({ projects, frontend, mern, full }) => {
           <div className="my-6 mx-auto text-center">
             <button
               onClick={frontendCountHandler}
-              className="px-4 py-1.5 rounded-md border"
+              className="px-4 py-1.5 rounded-md border hoverable"
             >
               Load more
             </button>
@@ -317,14 +317,14 @@ const Portfolio = ({ projects, frontend, mern, full }) => {
                   <a
                     href={`${p?.github_url}`}
                     target="_blank"
-                    className="border border-black dark:border-white px-4 rounded-3xl py-1"
+                    className="border border-black dark:border-white px-4 rounded-3xl py-1 hoverable"
                   >
                     Github
                   </a>
                   <a
                     href={`${p?.view_url}`}
                     target="_blank"
-                    className="border border-black dark:border-white px-4 rounded-3xl py-1"
+                    className="border border-black dark:border-white px-4 rounded-3xl py-1 hoverable"
                   >
                     View
                   </a>
@@ -338,7 +338,7 @@ const Portfolio = ({ projects, frontend, mern, full }) => {
             <div className="my-6 mx-auto text-center">
               <button
                 onClick={mernCountHandler}
-                className="px-4 py-1.5 rounded-md border"
+                className="px-4 py-1.5 rounded-md border hoverable"
               >
                 Load more
               </button>
@@ -392,14 +392,14 @@ const Portfolio = ({ projects, frontend, mern, full }) => {
                   <a
                     href={`${p?.github_url}`}
                     target="_blank"
-                    className="border border-black dark:border-white px-4 rounded-3xl py-1"
+                    className="border border-black dark:border-white px-4 rounded-3xl py-1 hoverable"
                   >
                     Github
                   </a>
                   <a
                     href={`${p?.view_url}`}
                     target="_blank"
-                    className="border border-black dark:border-white px-4 rounded-3xl py-1"
+                    className="border border-black dark:border-white px-4 rounded-3xl py-1 hoverable"
                   >
                     View
                   </a>
@@ -414,7 +414,7 @@ const Portfolio = ({ projects, frontend, mern, full }) => {
             <div className="my-6 mx-auto text-center">
               <button
                 onClick={fullCountHandler}
-                className="px-4 py-1.5 rounded-md border"
+                className="px-4 py-1.5 rounded-md border hoverable"
               >
                 Load more
               </button>

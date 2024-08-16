@@ -153,7 +153,9 @@ const Navbar = () => {
         className="py-6 dark:text-white mx-auto hidden md:block fixed top-0 start-0 end-0 container z-20 rounded-lg"
       >
         <div className="md:flex justify-between px-4">
-          <h1 className="text-3xl uppercase font-bold">Abu b.</h1>
+          <Link href={"/"} className="text-3xl uppercase font-bold hoverable">
+            Abu b.
+          </Link>
           <div className="md:flex text-xl font-semibold justify-center gap-8">
             <Link
               className={`${router === "/" ? "text-red-500" : ""}`}

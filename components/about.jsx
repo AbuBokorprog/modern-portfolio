@@ -102,7 +102,7 @@ const About = ({ aboutData, skillData }) => {
             <div className="mt-5">
               <Link
                 href={"/#contact"}
-                className="px-8 py-2 border border-black dark:border-white rounded-3xl"
+                className="px-8 py-2 border border-black dark:border-white rounded-3xl hoverable"
               >
                 Contact
               </Link>

@@ -26,7 +26,7 @@ export default async function page() {
   );
 
   return (
-    <div>
+    <div className="dark:right left">
       <Banner />
       <About
         aboutData={aboutData?.data && aboutData?.data[0]}
@@ -43,15 +43,3 @@ export default async function page() {
     </div>
   );
 }
-
-// export async function getStaticProps() {
-//   const res = await fetch(
-//     "https://portfolio-backend-seven-kappa.vercel.app/api/about"
-//   );
-//   const posts = await res.json();
-//   return {
-//     props: {
-//       posts,
-//     },
-//   };
-// }

@@ -5,6 +5,7 @@ import Footer from "@/components/footer";
 import Provider from "@/provider/contextProvider";
 import Home from "@/components/home";
 import { ThemeProvider } from "next-themes";
+import Cursor from "@/components/cursor/cursor";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -17,14 +18,13 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`${inter.className} container mx-auto bg-white dark:bg-black`}
+        className={`${inter.className} container mx-auto bg-white dark:bg-black `}
       >
         <Home>
           <ThemeProvider>
             <Provider>
-              <div>
-                <Navbar />
-              </div>
+              <Cursor />
+              <Navbar />
               {children}
               <Footer />
             </Provider>
