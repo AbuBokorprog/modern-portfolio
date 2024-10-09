@@ -1,10 +1,10 @@
-"use client";
-import React, { useContext, useEffect, useState } from "react";
-import TextEditor from "../text-editor/editor";
-import { contextProvider } from "@/provider/contextProvider";
-import { useRouter } from "next/navigation";
-import Image from "next/image";
-import sanitizeHtml from "sanitize-html";
+'use client';
+import React, { useContext, useEffect, useState } from 'react';
+import TextEditor from '../text-editor/editor';
+import { contextProvider } from '@/provider/contextProvider';
+import { useRouter } from 'next/navigation';
+import Image from 'next/image';
+import sanitizeHtml from 'sanitize-html';
 
 const Project = ({ projects }) => {
   const [value, setValue] = useState();
@@ -15,11 +15,11 @@ const Project = ({ projects }) => {
 
   useEffect(() => {
     if (!token) {
-      route.push("/");
+      route.push('/');
     }
 
     fetch(
-      "https://portfolio-backend-seven-kappa.vercel.app/api/projects-category"
+      'https://portfolio-backend-seven-kappa.vercel.app/api/projects-category'
     )
       .then((res) => res.json())
       .then((data) => {
@@ -38,11 +38,11 @@ const Project = ({ projects }) => {
     };
 
     fetch(
-      "https://portfolio-backend-seven-kappa.vercel.app/api/projects-category",
+      'https://portfolio-backend-seven-kappa.vercel.app/api/projects-category',
       {
-        method: "POST",
+        method: 'POST',
         headers: {
-          "Content-Type": "application/json",
+          'Content-Type': 'application/json',
           authorization: `Bearer ${token}`,
         },
         body: JSON.stringify(data),
@@ -51,7 +51,7 @@ const Project = ({ projects }) => {
       .then((res) => res.json())
       .then((data) => {
         if (data?.success) {
-          alert("successfully");
+          alert('successfully');
         }
       });
   };
@@ -66,7 +66,7 @@ const Project = ({ projects }) => {
     const skill = e.target.skills.value;
     const thumbnail = e.target.image.files[0];
     const short_description = value;
-    const skills = skill.split(",");
+    const skills = skill.split(',');
 
     const data = {
       categoryId,
@@ -79,11 +79,11 @@ const Project = ({ projects }) => {
 
     const formData = new FormData();
 
-    formData.append("file", thumbnail);
-    formData.append("data", JSON.stringify(data));
+    formData.append('file', thumbnail);
+    formData.append('data', JSON.stringify(data));
 
-    fetch("https://portfolio-backend-seven-kappa.vercel.app/api/projects", {
-      method: "POST",
+    fetch('https://portfolio-backend-seven-kappa.vercel.app/api/projects', {
+      method: 'POST',
       headers: {
         // "Content-Type": "application/json",
         authorization: `Bearer ${token}`,
@@ -94,7 +94,7 @@ const Project = ({ projects }) => {
       .then((data) => {
         console.log(data);
         if (data?.success) {
-          alert("successfully");
+          alert('successfully');
         }
       });
   };
@@ -250,7 +250,7 @@ const Project = ({ projects }) => {
                 <div
                   dangerouslySetInnerHTML={{
                     __html: sanitizeHtml(p?.short_description, {
-                      allowedTags: ["p"],
+                      allowedTags: ['p'],
                       allowedAttributes: {},
                     }),
                   }}

@@ -1,5 +1,5 @@
-import React from "react";
-import { Timeline, Event } from "react-timeline-scribble";
+import React from 'react';
+import { Timeline, Event } from 'react-timeline-scribble';
 const Experience = () => {
   return (
     <div className="text-black dark:text-white">
@@ -8,17 +8,15 @@ const Experience = () => {
       </h2>
       <Timeline>
         <Event
-          interval={"2024 – Present"}
-          title={"Frontend Developer"}
-          subtitle={"Webcoder-IT"}
+          interval={'2024 – Present'}
+          title={'Frontend Developer at Webcoder IT Institute'}
+          subtitle={'Dhaka, Uttara'}
         >
-          dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-          incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-          quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-          commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-          velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
-          occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-          mollit anim id est laborum.
+          Managed and developed the entire frontend architecture of various
+          projects. Implemented responsive designs, interactive UIs, and ensured
+          cross-browser compatibility using React, JavaScript, and modern web
+          technologies. Collaborated closely with backend teams to deliver
+          high-quality web applications.
         </Event>
       </Timeline>
     </div>

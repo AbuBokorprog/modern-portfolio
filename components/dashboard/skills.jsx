@@ -1,7 +1,7 @@
-"use client";
-import { contextProvider } from "@/provider/contextProvider";
-import { useRouter } from "next/navigation";
-import React, { useContext, useEffect, useState } from "react";
+'use client';
+import { contextProvider } from '@/provider/contextProvider';
+import { useRouter } from 'next/navigation';
+import React, { useContext, useEffect, useState } from 'react';
 
 const Skill = () => {
   const route = useRouter();
@@ -11,10 +11,10 @@ const Skill = () => {
 
   useEffect(() => {
     if (!token) {
-      route.push("/");
+      route.push('/');
     }
 
-    fetch("https://portfolio-backend-seven-kappa.vercel.app/api/skills")
+    fetch('https://portfolio-backend-seven-kappa.vercel.app/api/skills')
       .then((res) => res.json())
       .then((data) => {
         setSkills(data.data);
@@ -33,11 +33,11 @@ const Skill = () => {
       technology_name: `${technology_name}`,
     };
 
-    formData.append("file", icon);
-    formData.append("data", JSON.stringify(data));
+    formData.append('file', icon);
+    formData.append('data', JSON.stringify(data));
 
-    fetch("https://portfolio-backend-seven-kappa.vercel.app/api/skills", {
-      method: "POST",
+    fetch('https://portfolio-backend-seven-kappa.vercel.app/api/skills', {
+      method: 'POST',
       headers: {
         // "Content-Type": "application/json",
         authorization: `Bearer ${token}`,
@@ -47,7 +47,7 @@ const Skill = () => {
       .then((res) => res.json())
       .then((data) => {
         if (data?.success) {
-          alert("successfully");
+          alert('successfully');
         }
       });
   };
