@@ -19,7 +19,7 @@ const Project = ({ projects }) => {
     }
 
     fetch(
-      'https://portfolio-backend-seven-kappa.vercel.app/api/projects-category'
+      'https://portfolio-server-delta-nine.vercel.app/api/projects-category'
     )
       .then((res) => res.json())
       .then((data) => {
@@ -37,17 +37,14 @@ const Project = ({ projects }) => {
       category_name: category,
     };
 
-    fetch(
-      'https://portfolio-backend-seven-kappa.vercel.app/api/projects-category',
-      {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          authorization: `Bearer ${token}`,
-        },
-        body: JSON.stringify(data),
-      }
-    )
+    fetch('http://localhost:5000/api/projects-category', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        authorization: `Bearer ${token}`,
+      },
+      body: JSON.stringify(data),
+    })
       .then((res) => res.json())
       .then((data) => {
         if (data?.success) {
@@ -82,7 +79,7 @@ const Project = ({ projects }) => {
     formData.append('file', thumbnail);
     formData.append('data', JSON.stringify(data));
 
-    fetch('https://portfolio-backend-seven-kappa.vercel.app/api/projects', {
+    fetch('http://localhost:5000/api/projects', {
       method: 'POST',
       headers: {
         // "Content-Type": "application/json",
