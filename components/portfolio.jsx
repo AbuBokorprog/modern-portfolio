@@ -128,11 +128,11 @@ const Portfolio = ({ projects, frontend, mern, full }) => {
       <div>
         {/* all tab */}
         {tab == 'all' && (
-          <div className=" px-1 grid grid-cols-1 lg:grid-cols-3 items-center gap-5">
+          <div className="px-1 grid grid-cols-1 lg:grid-cols-2 items-center gap-5">
             {projects?.slice(0, portfolioCount)?.map((p) => (
               <div
                 key={p?._id}
-                className={`portfolio-item mb-6 border border-black dark:border-white text-black dark:text-white p-4 rounded-lg shadow-md `}
+                className={`portfolio-item mb-6 border border-black dark:border-white text-black dark:text-white p-4 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300`}
               >
                 <Image
                   src={p?.thumbnail}
@@ -141,10 +141,10 @@ const Portfolio = ({ projects, frontend, mern, full }) => {
                   height={500}
                   className="w-full lg:h-96 object-cover mb-4 rounded-md"
                 />
-                <h3 className="text-xl font-semibold uppercase">
+                <h3 className="text-xl font-semibold uppercase mb-2">
                   {p?.projects_name}
                 </h3>
-                <div className="h-fit lg:h-32">
+                <div className="h-fit lg:h-32 mb-4">
                   <div
                     dangerouslySetInnerHTML={{
                       __html: sanitizeHtml(p?.short_description, {
@@ -155,10 +155,10 @@ const Portfolio = ({ projects, frontend, mern, full }) => {
                   />
                 </div>
                 <div className="my-4 h-fit lg:h-44">
-                  <h3 className="text-xl font-semibold">Technologies</h3>
+                  <h3 className="text-xl font-semibold mb-2">Technologies</h3>
                   <div className="grid grid-cols-2 md:grid-cols-5 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-4 my-3 gap-2 md:gap-5 lg:gap-3 text-center justify-center mx-auto items-center">
                     {p?.skills?.map((i) => (
-                      <div key={i} className="">
+                      <div key={i} className="mb-2">
                         <span className="dark:text-white px-2 rounded-3xl border border-black dark:border-white py-1">
                           {i}
                         </span>
@@ -170,14 +170,14 @@ const Portfolio = ({ projects, frontend, mern, full }) => {
                   <a
                     href={`${p?.github_url}`}
                     target="_blank"
-                    className="border border-black dark:border-white px-4 rounded-3xl py-1 hoverable"
+                    className="border border-black dark:border-white px-4 rounded-3xl py-1 hoverable hover:text-blue-500"
                   >
                     Github
                   </a>
                   <a
                     href={`${p?.view_url}`}
                     target="_blank"
-                    className="border border-black dark:border-white px-4 rounded-3xl py-1 hoverable"
+                    className="border border-black dark:border-white px-4 rounded-3xl py-1 hoverable hover:text-blue-500"
                   >
                     View
                   </a>
@@ -202,7 +202,7 @@ const Portfolio = ({ projects, frontend, mern, full }) => {
         {/* frontend */}
 
         {tab == 'frontend' && (
-          <div className=" px-1 grid grid-cols-1 lg:grid-cols-3 items-center gap-5">
+          <div className=" px-1 grid grid-cols-1 lg:grid-cols-2 items-center gap-5">
             {frontend?.slice(0, frontCount)?.map((p) => (
               <div
                 key={p?._id}
@@ -275,7 +275,7 @@ const Portfolio = ({ projects, frontend, mern, full }) => {
       <div>
         {/* mern */}
         {tab == 'mern-stack' && (
-          <div className=" px-1 grid grid-cols-1 lg:grid-cols-3 items-center gap-5">
+          <div className=" px-1 grid grid-cols-1 lg:grid-cols-2 items-center gap-5">
             {mern?.slice(0, mernCount)?.map((p) => (
               <div
                 key={p?._id}
@@ -350,7 +350,7 @@ const Portfolio = ({ projects, frontend, mern, full }) => {
       <div>
         {/* full stack */}
         {tab == 'full-stack' && (
-          <div className=" px-1 grid grid-cols-1 lg:grid-cols-3 items-center gap-5">
+          <div className=" px-1 grid grid-cols-1 lg:grid-cols-2 items-center gap-5">
             {full?.slice(0, fullCount)?.map((p) => (
               <div
                 key={p?._id}
