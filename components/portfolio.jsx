@@ -128,7 +128,7 @@ const Portfolio = ({ projects, frontend, mern, full }) => {
       <div>
         {/* all tab */}
         {tab == 'all' && (
-          <div className=" px-1 grid grid-cols-1 lg:grid-cols-2 items-center gap-5">
+          <div className=" px-1 grid grid-cols-1 lg:grid-cols-3 items-center gap-5">
             {projects?.slice(0, portfolioCount)?.map((p) => (
               <div
                 key={p?._id}
@@ -202,7 +202,7 @@ const Portfolio = ({ projects, frontend, mern, full }) => {
         {/* frontend */}
 
         {tab == 'frontend' && (
-          <div className=" px-1 grid grid-cols-1 lg:grid-cols-2 items-center gap-5">
+          <div className=" px-1 grid grid-cols-1 lg:grid-cols-3 items-center gap-5">
             {frontend?.slice(0, frontCount)?.map((p) => (
               <div
                 key={p?._id}
@@ -275,7 +275,7 @@ const Portfolio = ({ projects, frontend, mern, full }) => {
       <div>
         {/* mern */}
         {tab == 'mern-stack' && (
-          <div className=" px-1 grid grid-cols-1 lg:grid-cols-2 items-center gap-5">
+          <div className=" px-1 grid grid-cols-1 lg:grid-cols-3 items-center gap-5">
             {mern?.slice(0, mernCount)?.map((p) => (
               <div
                 key={p?._id}
@@ -350,7 +350,7 @@ const Portfolio = ({ projects, frontend, mern, full }) => {
       <div>
         {/* full stack */}
         {tab == 'full-stack' && (
-          <div className=" px-1 grid grid-cols-1 lg:grid-cols-2 items-center gap-5">
+          <div className=" px-1 grid grid-cols-1 lg:grid-cols-3 items-center gap-5">
             {full?.slice(0, fullCount)?.map((p) => (
               <div
                 key={p?._id}
