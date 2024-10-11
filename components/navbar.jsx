@@ -1,13 +1,13 @@
-"use client";
-import React, { useRef, useState } from "react";
-import Link from "next/link";
-import gsap from "gsap";
-import { motion } from "framer-motion";
-import { RxCross1 } from "react-icons/rx";
-import { IoMdMenu } from "react-icons/io";
-import { useGSAP } from "@gsap/react";
-import { useRouter } from "next/navigation";
-import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+'use client';
+import React, { useRef, useState } from 'react';
+import Link from 'next/link';
+import gsap from 'gsap';
+import { motion } from 'framer-motion';
+import { RxCross1 } from 'react-icons/rx';
+import { IoMdMenu } from 'react-icons/io';
+import { useGSAP } from '@gsap/react';
+import { useRouter } from 'next/navigation';
+import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -22,19 +22,19 @@ const Navbar = () => {
   const smallContainer = useRef();
 
   useGSAP(() => {
-    gsap.from(".box", {
+    gsap.from('.box', {
       y: -50,
       duration: 0.5,
       delay: 0,
       stagger: 0.5,
     });
     gsap.to(container.current, {
-      backgroundColor: "#ffffff",
-      color: "#000000",
+      backgroundColor: '#ffffff',
+      color: '#000000',
       scrollTrigger: {
         trigger: container.current,
-        start: "top -10%",
-        end: "bottom bottom",
+        start: 'top -10%',
+        end: 'bottom bottom',
         scrub: 2,
       },
     });
@@ -44,8 +44,8 @@ const Navbar = () => {
       opacity: 0,
       scrollTrigger: {
         trigger: smallContainer.current,
-        start: "top -80%",
-        end: "bottom 50%",
+        start: 'top -80%',
+        end: 'bottom 50%',
         scrub: 2,
       },
     });
@@ -60,7 +60,7 @@ const Navbar = () => {
         duration: 2,
         opacity: 1,
         staggerChildren: 0.5,
-        ease: "linear",
+        ease: 'linear',
       },
     },
   };
@@ -78,7 +78,7 @@ const Navbar = () => {
             <button
               ref={smallContainer}
               onClick={handleToggle}
-              className="p-4 focus:outline-none"
+              className="p-4 hoverable focus:outline-none"
             >
               <IoMdMenu className="w-12 h-12 text-black dark:text-white bg-white rounded-full" />
             </button>
@@ -96,7 +96,7 @@ const Navbar = () => {
               <div className="flex justify-end">
                 <button
                   onClick={handleToggle}
-                  className="text-gray-500 hover:text-gray-700 focus:outline-none"
+                  className="text-gray-500 hoverable hover:text-gray-700 focus:outline-none"
                 >
                   <RxCross1 className="w-16 h-16 link" />
                 </button>
@@ -113,32 +113,32 @@ const Navbar = () => {
                   <Link
                     href="/"
                     variants={item}
-                    className="link text-gray-700 text-5xl dark:text-white font-semibold hover:text-gray-900 block py-2"
+                    className="link hoverable text-gray-700 text-5xl dark:text-white font-semibold hover:text-gray-900 block py-2"
                   >
                     Home
                   </Link>
                 </motion.li>
                 <motion.li variants={item}>
                   <Link
-                    href={"/#about"}
+                    href={'/#about'}
                     variants={item}
-                    className="link text-gray-700 text-5xl font-semibold hover:text-gray-900 block py-2"
+                    className="link hoverable text-gray-700 text-5xl font-semibold hover:text-gray-900 block py-2"
                   >
                     About
                   </Link>
                 </motion.li>
                 <motion.li variants={item}>
                   <Link
-                    href={"/#projects"}
-                    className="link text-gray-700 text-5xl font-semibold hover:text-gray-900 block py-2"
+                    href={'/#projects'}
+                    className="link hoverable text-gray-700 text-5xl font-semibold hover:text-gray-900 block py-2"
                   >
                     Projects
                   </Link>
                 </motion.li>
                 <motion.li variants={item}>
                   <Link
-                    href={"/#contact"}
-                    className="link text-gray-700 text-5xl font-semibold hover:text-gray-900 block py-2"
+                    href={'/#contact'}
+                    className="link hoverable text-gray-700 text-5xl font-semibold hover:text-gray-900 block py-2"
                   >
                     Contact
                   </Link>
@@ -150,34 +150,40 @@ const Navbar = () => {
       </div>
       <nav
         ref={container}
-        className="py-6 dark:text-white mx-auto hidden md:block fixed top-0 start-0 end-0 container z-20 rounded-lg"
+        className="py-6 dark:text-white hidden md:block fixed top-0 start-0 end-0  z-20 rounded-lg"
       >
-        <div className="md:flex justify-between px-4">
-          <Link href={"/"} className="text-3xl uppercase font-bold hoverable">
+        <div className="md:flex justify-between px-4 container mx-auto">
+          <Link href={'/'} className="text-3xl uppercase font-bold hoverable">
             Abu b.
           </Link>
           <div className="md:flex text-xl font-semibold justify-center gap-8">
             <Link
-              className={`${router === "/" ? "text-red-500" : ""}`}
-              href={"#"}
+              className={`${router === '/' ? 'text-red-500' : ''} hoverable`}
+              href={'#'}
             >
               Home
             </Link>
             <Link
-              className={`${router === "/#about" ? "text-red-500" : ""}`}
-              href={"/#about"}
+              className={`${
+                router === '/#about' ? 'text-red-500' : ''
+              } hoverable`}
+              href={'/#about'}
             >
               About
             </Link>
             <Link
-              className={`${router === "/#projects" ? "text-red-500" : ""}`}
-              href={"#projects"}
+              className={`${
+                router === '/#projects' ? 'text-red-500' : ''
+              } hoverable`}
+              href={'#projects'}
             >
               Projects
             </Link>
             <Link
-              className={`${router === "/#contact" ? "text-red-500" : ""}`}
-              href={"#contact"}
+              className={`${
+                router === '/#contact' ? 'text-red-500' : ''
+              } hoverable`}
+              href={'#contact'}
             >
               Contact
             </Link>

@@ -1,18 +1,18 @@
-"use client";
-import React, { useEffect, useRef, useState } from "react";
-import Image from "next/image";
-import gsap from "gsap";
-import Link from "next/link";
+'use client';
+import React, { useEffect, useRef, useState } from 'react';
+import Image from 'next/image';
+import gsap from 'gsap';
+import Link from 'next/link';
 // import image5 from "@/public/assets/accessibility.png";
 // import image1 from "@/public/assets/accessibility.png";
 // import image2 from "@/public/assets/accessibility.png";
 // import image3 from "@/public/assets/accessibility.png";
 // import image4 from "@/public/assets/accessibility.png";
 // import image6 from "@/public/assets/img.jpeg";
-import { useGSAP } from "@gsap/react";
-import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
-import sanitizeHtml from "sanitize-html";
-import Experience from "./experience";
+import { useGSAP } from '@gsap/react';
+import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
+import sanitizeHtml from 'sanitize-html';
+import Experience from './experience';
 // import Experience from "./experience";
 
 const About = ({ aboutData, skillData }) => {
@@ -29,33 +29,33 @@ const About = ({ aboutData, skillData }) => {
         opacity: 0,
         scrollTrigger: {
           trigger: container.current,
-          start: "top 50%",
-          end: "bottom 30%",
+          start: 'top 50%',
+          end: 'bottom 30%',
           // markers: true,
         },
       });
 
-      gsap.from(".fade-in", {
+      gsap.from('.fade-in', {
         opacity: 0,
         duration: 2,
         stagger: 0.2,
         scrollTrigger: {
           trigger: container.current,
-          start: "top 50%",
-          end: "bottom 30%",
+          start: 'top 50%',
+          end: 'bottom 30%',
           // markers: true,
         },
       });
 
-      gsap.from(".slide-up", {
+      gsap.from('.slide-up', {
         y: 100,
         duration: 1,
         opacity: 0,
         stagger: 0.5,
         scrollTrigger: {
           trigger: container.current,
-          start: "top 50%",
-          end: "bottom bottom",
+          start: 'top 50%',
+          end: 'bottom bottom',
           // scrub: true,
           // markers: true,
         },
@@ -65,7 +65,7 @@ const About = ({ aboutData, skillData }) => {
   );
 
   const clean = sanitizeHtml(aboutData?.description, {
-    allowedTags: ["p"],
+    allowedTags: ['p'],
     allowedAttributes: {},
   });
 
@@ -101,7 +101,7 @@ const About = ({ aboutData, skillData }) => {
             </div>
             <div className="mt-5">
               <Link
-                href={"/#contact"}
+                href={'/#contact'}
                 className="px-8 py-2 border border-black dark:border-white rounded-3xl hoverable"
               >
                 Contact
@@ -114,7 +114,7 @@ const About = ({ aboutData, skillData }) => {
       <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-5 my-20 text-center justify-center mx-auto items-center">
         {skillData?.map((i) => (
           <div key={i._id} className="">
-            <span className="dark:text-white px-4 rounded-3xl border border-black dark:border-white py-2">
+            <span className="dark:text-white hoverable px-4 rounded-3xl border border-black dark:border-white py-2">
               {i.technology_name}
             </span>
           </div>
