@@ -1,7 +1,7 @@
-"use client";
-import { contextProvider } from "@/provider/contextProvider";
-import { useRouter } from "next/navigation";
-import React, { useContext } from "react";
+'use client';
+import { contextProvider } from '@/provider/contextProvider';
+import { useRouter } from 'next/navigation';
+import React, { useContext } from 'react';
 
 const Login = () => {
   const { setToken } = useContext(contextProvider);
@@ -15,10 +15,10 @@ const Login = () => {
     const password = e.target.password.value;
     const user = { email, password };
 
-    fetch("https://portfolio-backend-seven-kappa.vercel.app/api/auth/login", {
-      method: "POST",
+    fetch('https://portfolio-server-delta-nine.vercel.app/api/auth/login', {
+      method: 'POST',
       headers: {
-        "Content-Type": "application/json",
+        'Content-Type': 'application/json',
       },
       body: JSON.stringify(user),
     })
@@ -27,7 +27,7 @@ const Login = () => {
         console.log(data);
         if (data?.success) {
           setToken(data?.data?.Access_Token);
-          route.push("/dashboard/admin");
+          route.push('/dashboard/admin');
         }
       });
   };

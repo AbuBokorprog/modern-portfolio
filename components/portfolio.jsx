@@ -132,7 +132,7 @@ const Portfolio = ({ projects, frontend, mern, full }) => {
             {projects?.slice(0, portfolioCount)?.map((p) => (
               <div
                 key={p?._id}
-                className={`portfolio-item mb-6 border border-black dark:border-white text-black dark:text-white p-4 rounded-lg shadow-md `}
+                className={`portfolio-item mb-6 border border-black dark:border-white text-black dark:text-white p-4 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300`}
               >
                 <Image
                   src={p?.thumbnail}
@@ -141,7 +141,7 @@ const Portfolio = ({ projects, frontend, mern, full }) => {
                   height={500}
                   className="w-full lg:h-96 object-cover mb-4 rounded-md"
                 />
-                <h3 className="text-xl font-semibold uppercase">
+                <h3 className="text-xl font-semibold uppercase mb-2">
                   {p?.projects_name}
                 </h3>
                 <div className="h-fit lg:h-44 hidden">
@@ -158,7 +158,7 @@ const Portfolio = ({ projects, frontend, mern, full }) => {
                   <h3 className="text-xl font-semibold">Technologies</h3>
                   <div className="grid grid-cols-2 md:grid-cols-5 lg:grid-cols-3 xl:grid-cools-4 my-3 gap-2 md:gap-5 lg:gap-3 text-center justify-center mx-auto items-center">
                     {p?.skills?.map((i) => (
-                      <div key={i} className="">
+                      <div key={i} className="mb-2">
                         <span className="dark:text-white px-2 rounded-3xl border border-black dark:border-white py-1">
                           {i}
                         </span>
@@ -170,14 +170,14 @@ const Portfolio = ({ projects, frontend, mern, full }) => {
                   <a
                     href={`${p?.github_url}`}
                     target="_blank"
-                    className="border border-black dark:border-white px-4 rounded-3xl py-1 hoverable"
+                    className="border border-black dark:border-white px-4 rounded-3xl py-1 hoverable hover:text-blue-500"
                   >
                     Github
                   </a>
                   <a
                     href={`${p?.view_url}`}
                     target="_blank"
-                    className="border border-black dark:border-white px-4 rounded-3xl py-1 hoverable"
+                    className="border border-black dark:border-white px-4 rounded-3xl py-1 hoverable hover:text-blue-500"
                   >
                     View
                   </a>

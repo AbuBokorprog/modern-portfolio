@@ -1,7 +1,7 @@
-"use client";
-import React, { useContext, useState } from "react";
-import TextEditor from "../text-editor/editor";
-import { contextProvider } from "@/provider/contextProvider";
+'use client';
+import React, { useContext, useState } from 'react';
+import TextEditor from '../text-editor/editor';
+import { contextProvider } from '@/provider/contextProvider';
 
 const About = () => {
   const [value, setValue] = useState();
@@ -20,11 +20,11 @@ const About = () => {
 
     const formData = new FormData();
 
-    formData.append("file", image);
-    formData.append("data", JSON.stringify(data));
+    formData.append('file', image);
+    formData.append('data', JSON.stringify(data));
 
-    fetch("https://portfolio-backend-seven-kappa.vercel.app/api/about", {
-      method: "POST",
+    fetch('https://portfolio-server-delta-nine.vercel.app/api/about', {
+      method: 'POST',
       headers: {
         authorization: `Bearer ${token}`,
       },
@@ -34,7 +34,7 @@ const About = () => {
       .then((data) => {
         console.log(data);
         if (data?.success) {
-          alert("successfully");
+          alert('successfully');
         }
       });
   };
