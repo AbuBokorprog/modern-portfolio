@@ -28,16 +28,6 @@ const Navbar = () => {
       delay: 0,
       stagger: 0.5,
     });
-    // gsap.to(container.current, {
-    //   backgroundColor: '#ffffff',
-    //   color: '#000000',
-    //   scrollTrigger: {
-    //     trigger: container.current,
-    //     start: 'top -10%',
-    //     end: 'bottom bottom',
-    //     scrub: 2,
-    //   },
-    // });
     gsap.from(smallContainer.current, {
       y: -50,
       duration: 1,
