@@ -106,7 +106,7 @@ const Contact = () => {
               <input
                 type="submit"
                 value={'Send Message'}
-                className="text-white bg-gradient-to-bl from-fuchsia-500 to-rose-800 focus:ring-4 focus:ring-rose-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 hoverable"
+                className="dark:text-white text-black bg-gradient-to-bl from-fuchsia-500 to-rose-800 focus:ring-4 focus:ring-rose-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 hoverable"
               />
             </div>
           </form>

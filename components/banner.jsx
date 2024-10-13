@@ -49,16 +49,16 @@ const Banner = () => {
         </h1>
         <div className="flex justify-center items-center gap-4 md:gap-8 mt-8">
           <a href="https://github.com/AbuBokorprog" className="hoverable">
-            <FaGithub className="w-8 lg:w-12 h-8 lg:h-12" />
+            <FaGithub className="w-8 lg:w-12 h-8 lg:h-12 dark:text-white text-black" />
           </a>
           <a
             href="https://www.linkedin.com/in/md-abu-bokor/"
             className="hoverable"
           >
-            <FaLinkedin className="w-8 lg:w-12 h-8 lg:h-12 " />
+            <FaLinkedin className="w-8 lg:w-12 h-8 lg:h-12 dark:text-white text-black" />
           </a>
           <a href="#" className="hoverable">
-            <FaInstagramSquare className="w-8 lg:w-12 h-8 lg:h-12 " />
+            <FaInstagramSquare className="w-8 lg:w-12 h-8 lg:h-12 dark:text-white text-black" />
           </a>
         </div>
       </div>

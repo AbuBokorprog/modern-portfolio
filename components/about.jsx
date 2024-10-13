@@ -73,7 +73,7 @@ const About = ({ aboutData, skillData }) => {
     <section
       ref={container}
       id="about"
-      className="dark:bg-black rounded-t-xl about overflow-hidden px-2"
+      className="dark:bg-black bg-white rounded-t-xl about overflow-hidden px-2"
     >
       <div className="py-10">
         <div className="fade-in">
@@ -92,7 +92,7 @@ const About = ({ aboutData, skillData }) => {
               className="mx-auto rounded-xl text-center"
             />
           </div>
-          <div className=" slide-up lg:w-1/2 py-2 lg:my-0 dark:text-white mx-auto">
+          <div className=" slide-up lg:w-1/2 py-2 lg:my-0 text-black dark:text-white mx-auto">
             <div>
               <div
                 dangerouslySetInnerHTML={{ __html: clean }}
@@ -102,7 +102,7 @@ const About = ({ aboutData, skillData }) => {
             <div className="mt-5">
               <Link
                 href={'/#contact'}
-                className="bg-gradient-to-bl from-fuchsia-500 to-rose-800 px-4 rounded-3xl py-1 hoverable "
+                className="bg-gradient-to-bl dark:text-white text-black from-fuchsia-500 to-rose-800 px-4 rounded-3xl py-1 hoverable "
               >
                 Contact
               </Link>
@@ -114,7 +114,7 @@ const About = ({ aboutData, skillData }) => {
       <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-5 my-20 text-center justify-center mx-auto items-center">
         {skillData?.map((i) => (
           <div key={i._id} className="">
-            <span className="dark:text-white hoverable px-4 rounded-3xl border border-black dark:border-white py-2">
+            <span className="dark:text-white text-black hoverable px-4 rounded-3xl border border-black dark:border-white py-2">
               {i.technology_name}
             </span>
           </div>

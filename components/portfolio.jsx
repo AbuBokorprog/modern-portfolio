@@ -170,14 +170,14 @@ const Portfolio = ({ projects, frontend, mern, full }) => {
                   <a
                     href={`${p?.github_url}`}
                     target="_blank"
-                    className="bg-gradient-to-bl from-fuchsia-500 to-rose-800 px-4 rounded-3xl py-1 hoverable "
+                    className="bg-gradient-to-bl from-fuchsia-500 to-rose-800 text-black dark:text-white px-4 rounded-3xl py-1 hoverable "
                   >
                     Github
                   </a>
                   <a
                     href={`${p?.view_url}`}
                     target="_blank"
-                    className="bg-gradient-to-bl from-fuchsia-500 to-rose-800 px-4 rounded-3xl py-1 hoverable "
+                    className="bg-gradient-to-bl from-fuchsia-500 to-rose-800 text-black dark:text-white px-4 rounded-3xl py-1 hoverable "
                   >
                     View
                   </a>
@@ -244,14 +244,14 @@ const Portfolio = ({ projects, frontend, mern, full }) => {
                   <a
                     href={`${p?.github_url}`}
                     target="_blank"
-                    className="bg-gradient-to-bl from-fuchsia-500 to-rose-800 px-4 rounded-3xl py-1 hoverable "
+                    className="bg-gradient-to-bl from-fuchsia-500 to-rose-800 text-black dark:text-white px-4 rounded-3xl py-1 hoverable "
                   >
                     Github
                   </a>
                   <a
                     href={`${p?.view_url}`}
                     target="_blank"
-                    className="bg-gradient-to-bl from-fuchsia-500 to-rose-800 px-4 rounded-3xl py-1 hoverable "
+                    className="bg-gradient-to-bl from-fuchsia-500 to-rose-800 text-black dark:text-white px-4 rounded-3xl py-1 hoverable "
                   >
                     View
                   </a>
@@ -317,14 +317,14 @@ const Portfolio = ({ projects, frontend, mern, full }) => {
                   <a
                     href={`${p?.github_url}`}
                     target="_blank"
-                    className="bg-gradient-to-bl from-fuchsia-500 to-rose-800 px-4 rounded-3xl py-1 hoverable "
+                    className="bg-gradient-to-bl from-fuchsia-500 to-rose-800 text-black dark:text-white px-4 rounded-3xl py-1 hoverable "
                   >
                     Github
                   </a>
                   <a
                     href={`${p?.view_url}`}
                     target="_blank"
-                    className="bg-gradient-to-bl from-fuchsia-500 to-rose-800 px-4 rounded-3xl py-1 hoverable "
+                    className="bg-gradient-to-bl from-fuchsia-500 to-rose-800 text-black dark:text-white px-4 rounded-3xl py-1 hoverable "
                   >
                     View
                   </a>
@@ -392,14 +392,14 @@ const Portfolio = ({ projects, frontend, mern, full }) => {
                   <a
                     href={`${p?.github_url}`}
                     target="_blank"
-                    className="bg-gradient-to-bl from-fuchsia-500 to-rose-800 px-4 rounded-3xl py-1 hoverable "
+                    className="bg-gradient-to-bl from-fuchsia-500 to-rose-800 text-black dark:text-white px-4 rounded-3xl py-1 hoverable "
                   >
                     Github
                   </a>
                   <a
                     href={`${p?.view_url}`}
                     target="_blank"
-                    className="bg-gradient-to-bl from-fuchsia-500 to-rose-800 px-4 rounded-3xl py-1 hoverable "
+                    className="bg-gradient-to-bl from-fuchsia-500 to-rose-800 text-black dark:text-white px-4 rounded-3xl py-1 hoverable "
                   >
                     View
                   </a>

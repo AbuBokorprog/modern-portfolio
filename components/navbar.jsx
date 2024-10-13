@@ -28,16 +28,16 @@ const Navbar = () => {
       delay: 0,
       stagger: 0.5,
     });
-    gsap.to(container.current, {
-      backgroundColor: '#ffffff',
-      color: '#000000',
-      scrollTrigger: {
-        trigger: container.current,
-        start: 'top -10%',
-        end: 'bottom bottom',
-        scrub: 2,
-      },
-    });
+    // gsap.to(container.current, {
+    //   backgroundColor: '#ffffff',
+    //   color: '#000000',
+    //   scrollTrigger: {
+    //     trigger: container.current,
+    //     start: 'top -10%',
+    //     end: 'bottom bottom',
+    //     scrub: 2,
+    //   },
+    // });
     gsap.from(smallContainer.current, {
       y: -50,
       duration: 1,
@@ -151,7 +151,7 @@ const Navbar = () => {
       {/* large device */}
       <nav
         ref={container}
-        className="py-6 dark:text-white hidden md:block fixed top-0 start-0 end-0  z-20 rounded-lg"
+        className="py-6 dark:text-white dark:bg-black bg-white text-black border-b hidden md:block fixed top-0 start-0 end-0 z-20"
       >
         <div className="md:flex justify-between px-4 container mx-auto">
           <Link
