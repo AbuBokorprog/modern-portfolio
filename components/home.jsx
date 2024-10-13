@@ -1,6 +1,6 @@
-"use client";
-import { useState, useEffect } from "react";
-import LoadingComponent from "./LoadingComponent";
+'use client';
+import { useState, useEffect } from 'react';
+import LoadingComponent from './LoadingComponent';
 
 function Home({ children }) {
   const [isLoading, setIsLoading] = useState(true);
@@ -14,7 +14,9 @@ function Home({ children }) {
       {isLoading && (
         <LoadingComponent onLoadingComplete={handleLoadingComplete} />
       )}
-      {!isLoading && <div>{children}</div>}
+      {!isLoading && (
+        <div className="container mx-auto border-x">{children}</div>
+      )}
     </div>
   );
 }
