@@ -25,6 +25,7 @@
     "react-quill": "^2.0.0",
     "react-timeline-scribble": "^1.0.14",
     "sanitize-html": "^2.13.0",
+    "simplex-noise": "^4.0.3",
     "swiper": "^11.0.7"
   },
   "devDependencies": {

@@ -3,7 +3,7 @@ import { Timeline, Event } from 'react-timeline-scribble';
 const Experience = () => {
   return (
     <div className="text-black dark:text-white">
-      <h2 className="dark:text-white text-5xl lg:text-8xl uppercase font-bold py-10">
+      <h2 className="text-5xl lg:text-8xl font-bold uppercase bg-gradient-to-bl from-fuchsia-500 to-rose-800 bg-clip-text text-transparent py-10">
         Experience.
       </h2>
       <Timeline>

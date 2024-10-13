@@ -1,7 +1,7 @@
-"use client";
-import React from "react";
-import { useForm } from "react-hook-form";
-import emailjs from "emailjs-com";
+'use client';
+import React from 'react';
+import { useForm } from 'react-hook-form';
+import emailjs from 'emailjs-com';
 const Contact = () => {
   const { register, handleSubmit } = useForm();
 
@@ -12,28 +12,28 @@ const Contact = () => {
     const name = data.name;
 
     const templateParams = {
-      to_name: "Abu Bokor",
+      to_name: 'Abu Bokor',
       from_name: name,
       message: body,
     };
 
     emailjs
       .send(
-        "service_7exo6md",
-        "template_x489mwc",
+        'service_7exo6md',
+        'template_x489mwc',
         templateParams,
-        "TPpFzhZxFK7nDe2XM"
+        'TPpFzhZxFK7nDe2XM'
       )
       .then(
         (response) => {
           console.log(
-            "Email sent successfully!",
+            'Email sent successfully!',
             response.status,
             response.text
           );
         },
         (err) => {
-          console.error("Failed to send email.", err);
+          console.error('Failed to send email.', err);
         }
       );
   };
@@ -41,7 +41,7 @@ const Contact = () => {
   return (
     <section id="contact" className="dark:text-white">
       <div className="py-10 overflow-hidden px-2 ">
-        <h2 className=" text-3xl lg:text-[120px] xl:text-[165px] text-center uppercase font-bold py-10">
+        <h2 className="text-3xl lg:text-[120px] xl:text-[165px] text-center font-bold uppercase bg-gradient-to-bl from-fuchsia-500 to-rose-800 bg-clip-text text-transparent py-10">
           Get in touch.
         </h2>
         <div className="lg:flex pt-20 items-start flex-row-reverse">
@@ -57,7 +57,7 @@ const Contact = () => {
                 <input
                   placeholder="Type your name"
                   className="bg-gray-50 min-w-full border border-gray-300 text-gray-900 rounded-lg focus:ring-blue-500 focus:border-blue-500 block  p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                  {...register("name", { required: true, maxLength: 20 })}
+                  {...register('name', { required: true, maxLength: 20 })}
                 />
               </div>
               <div className="w-full">
@@ -71,7 +71,7 @@ const Contact = () => {
                   type="email"
                   placeholder="Type your email address"
                   className="bg-gray-50 border min-w-full border-gray-300 text-gray-900 rounded-lg focus:ring-blue-500 focus:border-blue-500 block  p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                  {...register("email", { required: true })}
+                  {...register('email', { required: true })}
                 />
               </div>
             </div>
@@ -85,7 +85,7 @@ const Contact = () => {
               <input
                 placeholder="Type your subject"
                 className="bg-gray-50 min-w-full border border-gray-300 text-gray-900 rounded-lg focus:ring-blue-500 focus:border-blue-500 block  p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                {...register("subject", { required: true, maxLength: 20 })}
+                {...register('subject', { required: true, maxLength: 20 })}
               />
             </div>
             <div className="w-full">
@@ -99,14 +99,14 @@ const Contact = () => {
                 placeholder="Type your message"
                 rows={5}
                 className="bg-gray-50 min-w-full border border-gray-300 text-gray-900 rounded-lg focus:ring-blue-500 focus:border-blue-500 block  p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                {...register("message", { required: true, maxLength: 20 })}
+                {...register('message', { required: true, maxLength: 20 })}
               />
             </div>
             <div className="flex justify-center items-center my-4">
               <input
                 type="submit"
-                value={"Send Message"}
-                className="text-white bg-blue-600 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800 hoverable"
+                value={'Send Message'}
+                className="text-white bg-gradient-to-bl from-fuchsia-500 to-rose-800 focus:ring-4 focus:ring-rose-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 hoverable"
               />
             </div>
           </form>

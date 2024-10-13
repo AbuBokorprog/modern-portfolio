@@ -13,7 +13,7 @@ import { useGSAP } from '@gsap/react';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 import sanitizeHtml from 'sanitize-html';
 import Experience from './experience';
-// import Experience from "./experience";
+import Picture from '../public/assets/1000045760-01.jpeg';
 
 const About = ({ aboutData, skillData }) => {
   // const [about, setAbout] = useState([]);
@@ -77,14 +77,14 @@ const About = ({ aboutData, skillData }) => {
     >
       <div className="py-10">
         <div className="fade-in">
-          <h2 className="dark:text-white text-5xl lg:text-8xl uppercase font-bold py-10">
+          <h3 className="text-5xl lg:text-8xl font-bold uppercase bg-gradient-to-bl from-fuchsia-500 to-rose-800 bg-clip-text text-transparent py-10">
             About Me.
-          </h2>
+          </h3>
         </div>
         <div className="lg:flex mx-auto justify-between items-center">
           <div className="">
             <Image
-              src={aboutData?.image}
+              src={Picture}
               alt="Abubokor"
               width={500}
               height={400}
@@ -102,7 +102,7 @@ const About = ({ aboutData, skillData }) => {
             <div className="mt-5">
               <Link
                 href={'/#contact'}
-                className="px-8 py-2 border border-black dark:border-white rounded-3xl hoverable"
+                className="bg-gradient-to-bl from-fuchsia-500 to-rose-800 px-4 rounded-3xl py-1 hoverable "
               >
                 Contact
               </Link>

@@ -1,21 +1,30 @@
-"use client";
-import gsap from "gsap";
-import React, { useRef } from "react";
-import { useGSAP } from "@gsap/react";
-import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
-import { FaGithub, FaInstagramSquare, FaLinkedin } from "react-icons/fa";
+'use client';
+import gsap from 'gsap';
+import React, { useRef } from 'react';
+import { useGSAP } from '@gsap/react';
+import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
+import { FaGithub, FaInstagramSquare, FaLinkedin } from 'react-icons/fa';
 gsap.registerPlugin(ScrollTrigger);
 
 const Banner = () => {
   const container = useRef();
 
   useGSAP(() => {
+    const tl = gsap.timeline();
+    tl.from('.title span', {
+      y: 100,
+      opacity: 0,
+      duration: 1.5,
+      ease: 'power4.out',
+      stagger: 0.3,
+    });
+
     gsap
       .timeline({
         scrollTrigger: {
           trigger: container.current,
-          start: "top 50%",
-          end: "bottom 30%",
+          start: 'top 50%',
+          end: 'bottom 30%',
           scrub: 5,
         },
       })
@@ -31,10 +40,10 @@ const Banner = () => {
     <section
       ref={container}
       id="#"
-      className=" min-h-screen flex items-center justify-center dark:text-white"
+      className="relative min-h-screen flex items-center justify-center dark:text-white"
     >
       <div>
-        <h1 className="text-5xl lg:text-9xl title uppercase text-center font-bold">
+        <h1 className="text-4xl lg:text-9xl font-extrabold text-center bg-gradient-to-bl from-fuchsia-500 to-rose-800 bg-clip-text text-transparent">
           <span className="lg:pe-20">Hi there, I'm</span> <br />
           <span className="lg:ps-20">Abu Bokor.</span>
         </h1>

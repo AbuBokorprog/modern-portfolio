@@ -1,6 +1,6 @@
-import { useEffect, useRef } from "react";
-import { gsap } from "gsap";
-import { useTheme } from "next-themes";
+import { useEffect, useRef } from 'react';
+import { gsap } from 'gsap';
+import { useTheme } from 'next-themes';
 
 const LoadingComponent = ({ onLoadingComplete }) => {
   const containerRef = useRef(null);
@@ -19,17 +19,17 @@ const LoadingComponent = ({ onLoadingComplete }) => {
       y: 0,
       opacity: 1,
       duration: 0.5,
-      ease: "power3.out",
+      ease: 'power3.out',
     });
 
     // Animate dots
-    tl.to(".dot", {
+    tl.to('.dot', {
       scale: 1.5,
       duration: 0.4,
       stagger: 0.1,
       repeat: 3,
       yoyo: true,
-      ease: "power2.inOut",
+      ease: 'power2.inOut',
     });
 
     // Pause at the end
@@ -38,10 +38,10 @@ const LoadingComponent = ({ onLoadingComplete }) => {
     // Fade out
     gsap.to(containerRef.current, {
       scaleY: 0,
-      transformOrigin: "top",
+      transformOrigin: 'top',
       delay: 1,
       duration: 0.8,
-      ease: "power4.inOut",
+      ease: 'power4.inOut',
       onComplete: onLoadingComplete,
     });
 
@@ -53,14 +53,17 @@ const LoadingComponent = ({ onLoadingComplete }) => {
       ref={containerRef}
       className={`fixed inset-0 flex flex-col items-center justify-center bg-black text-white dark:bg-white dark:text-black`}
     >
-      <div ref={textRef} className="text-4xl font-bold">
-        Welcome to Abu Bokor's Portfolio
+      <div
+        ref={textRef}
+        className="text-3xl lg:text-6xl font-bold text-center mx-auto"
+      >
+        "Crafting Innovative Solutions in Tech"
         <span className="inline-flex ml-2">
           {[...Array(3)].map((_, i) => (
             <span
               key={i}
               className={`dot w-2 h-2 rounded-full mx-1 ${
-                theme === "dark" ? "bg-black" : "bg-white"
+                theme === 'dark' ? 'bg-black' : 'bg-white'
               }`}
             ></span>
           ))}

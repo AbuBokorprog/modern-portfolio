@@ -80,7 +80,7 @@ const Navbar = () => {
               onClick={handleToggle}
               className="p-4 hoverable focus:outline-none"
             >
-              <IoMdMenu className="w-12 h-12 text-black dark:text-white bg-white rounded-full" />
+              <IoMdMenu className="w-12 h-12 text-black dark:text-white dark:bg-black bg-white rounded-full" />
             </button>
           </div>
         </nav>
@@ -148,12 +148,16 @@ const Navbar = () => {
           </div>
         )}
       </div>
+      {/* large device */}
       <nav
         ref={container}
         className="py-6 dark:text-white hidden md:block fixed top-0 start-0 end-0  z-20 rounded-lg"
       >
         <div className="md:flex justify-between px-4 container mx-auto">
-          <Link href={'/'} className="text-3xl uppercase font-bold hoverable">
+          <Link
+            href={'/'}
+            className="text-3xl uppercase font-bold bg-gradient-to-r from-fuchsia-500 to-rose-800 bg-clip-text text-transparent hover:opacity-75"
+          >
             Abu b.
           </Link>
           <div className="md:flex text-xl font-semibold justify-center gap-8">
@@ -187,6 +191,11 @@ const Navbar = () => {
             >
               Contact
             </Link>
+          </div>
+          <div>
+            <button className="text-white bg-gradient-to-bl from-fuchsia-500 to-rose-800 focus:ring-4 focus:ring-rose-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 hoverable">
+              Resume
+            </button>
           </div>
         </div>
       </nav>

@@ -68,7 +68,7 @@ const Portfolio = ({ projects, frontend, mern, full }) => {
       id="projects"
       className="portfolio-container rounded-b-xl bg-white py-10 min-h-screen text-black dark:text-white px-2 dark:bg-black overflow-hidden"
     >
-      <h2 className="title text-black dark:text-white text-5xl xl:text-8xl uppercase font-bold py-10">
+      <h2 className="text-5xl title lg:text-8xl font-bold uppercase bg-gradient-to-bl from-fuchsia-500 to-rose-800 bg-clip-text text-transparent py-10">
         Selected Works.
       </h2>
 
@@ -170,14 +170,14 @@ const Portfolio = ({ projects, frontend, mern, full }) => {
                   <a
                     href={`${p?.github_url}`}
                     target="_blank"
-                    className="border border-black dark:border-white px-4 rounded-3xl py-1 hoverable hover:text-blue-500"
+                    className="bg-gradient-to-bl from-fuchsia-500 to-rose-800 px-4 rounded-3xl py-1 hoverable "
                   >
                     Github
                   </a>
                   <a
                     href={`${p?.view_url}`}
                     target="_blank"
-                    className="border border-black dark:border-white px-4 rounded-3xl py-1 hoverable hover:text-blue-500"
+                    className="bg-gradient-to-bl from-fuchsia-500 to-rose-800 px-4 rounded-3xl py-1 hoverable "
                   >
                     View
                   </a>
@@ -244,14 +244,14 @@ const Portfolio = ({ projects, frontend, mern, full }) => {
                   <a
                     href={`${p?.github_url}`}
                     target="_blank"
-                    className="border border-black dark:border-white px-4 rounded-3xl py-1 hoverable"
+                    className="bg-gradient-to-bl from-fuchsia-500 to-rose-800 px-4 rounded-3xl py-1 hoverable "
                   >
                     Github
                   </a>
                   <a
                     href={`${p?.view_url}`}
                     target="_blank"
-                    className="border border-black dark:border-white px-4 rounded-3xl py-1 hoverable"
+                    className="bg-gradient-to-bl from-fuchsia-500 to-rose-800 px-4 rounded-3xl py-1 hoverable "
                   >
                     View
                   </a>
@@ -317,14 +317,14 @@ const Portfolio = ({ projects, frontend, mern, full }) => {
                   <a
                     href={`${p?.github_url}`}
                     target="_blank"
-                    className="border border-black dark:border-white px-4 rounded-3xl py-1 hoverable"
+                    className="bg-gradient-to-bl from-fuchsia-500 to-rose-800 px-4 rounded-3xl py-1 hoverable "
                   >
                     Github
                   </a>
                   <a
                     href={`${p?.view_url}`}
                     target="_blank"
-                    className="border border-black dark:border-white px-4 rounded-3xl py-1 hoverable"
+                    className="bg-gradient-to-bl from-fuchsia-500 to-rose-800 px-4 rounded-3xl py-1 hoverable "
                   >
                     View
                   </a>
@@ -392,14 +392,14 @@ const Portfolio = ({ projects, frontend, mern, full }) => {
                   <a
                     href={`${p?.github_url}`}
                     target="_blank"
-                    className="border border-black dark:border-white px-4 rounded-3xl py-1 hoverable"
+                    className="bg-gradient-to-bl from-fuchsia-500 to-rose-800 px-4 rounded-3xl py-1 hoverable "
                   >
                     Github
                   </a>
                   <a
                     href={`${p?.view_url}`}
                     target="_blank"
-                    className="border border-black dark:border-white px-4 rounded-3xl py-1 hoverable"
+                    className="bg-gradient-to-bl from-fuchsia-500 to-rose-800 px-4 rounded-3xl py-1 hoverable "
                   >
                     View
                   </a>

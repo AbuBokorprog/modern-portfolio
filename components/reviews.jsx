@@ -1,45 +1,45 @@
-"use client";
-import React, { useRef } from "react";
-import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/css";
-import "swiper/css/pagination";
-import "swiper/css/navigation";
-import { Pagination, Navigation } from "swiper/modules";
+'use client';
+import React, { useRef } from 'react';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
+import 'swiper/css/pagination';
+import 'swiper/css/navigation';
+import { Pagination, Navigation } from 'swiper/modules';
 const Reviews = () => {
   const feedbackData = [
     {
       id: 1,
-      name: "John Doe",
-      email: "john@example.com",
-      message: "Great website! I love the design and user experience.",
-      date: "2024-03-14",
+      name: 'John Doe',
+      email: 'john@example.com',
+      message: 'Great website! I love the design and user experience.',
+      date: '2024-03-14',
     },
     {
       id: 2,
-      name: "Jane Smith",
-      email: "jane@example.com",
+      name: 'Jane Smith',
+      email: 'jane@example.com',
       message:
-        "The content on your website is very informative. Keep up the good work!",
-      date: "2024-03-13",
+        'The content on your website is very informative. Keep up the good work!',
+      date: '2024-03-13',
     },
     {
       id: 3,
-      name: "Alice Johnson",
-      email: "alice@example.com",
-      message: "I found a small bug on the contact form. Please check it out.",
-      date: "2024-03-12",
+      name: 'Alice Johnson',
+      email: 'alice@example.com',
+      message: 'I found a small bug on the contact form. Please check it out.',
+      date: '2024-03-12',
     },
     {
       id: 4,
-      name: "Alice Johnson",
-      email: "alice@example.com",
-      message: "I found a small bug on the contact form. Please check it out.",
-      date: "2024-03-12",
+      name: 'Alice Johnson',
+      email: 'alice@example.com',
+      message: 'I found a small bug on the contact form. Please check it out.',
+      date: '2024-03-12',
     },
   ];
   return (
     <div className="py-10 overflow-hidden px-2" id="reviews">
-      <h2 className="text-5xl lg:text-8xl uppercase font-bold py-10">
+      <h2 className="text-5xl lg:text-8xl font-bold uppercase bg-gradient-to-bl from-fuchsia-500 to-rose-800 bg-clip-text text-transparent py-10">
         What my clients says.
       </h2>
       <div>
@@ -66,7 +66,7 @@ const Reviews = () => {
             }}
             pagination={{
               clickable: true,
-              el: ".swiper-pagination",
+              el: '.swiper-pagination',
               renderBullet: function (index, className) {
                 return (
                   '<span className="' +

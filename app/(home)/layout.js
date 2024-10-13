@@ -10,8 +10,8 @@ import Cursor from '@/components/cursor/cursor';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata = {
-  title: 'Abu Bokor || Front-End Developer',
-  description: 'Frontend Developer Portfolio',
+  title: 'Abu Bokor',
+  description: 'Abu Bokor full stack developer Portfolio',
 };
 
 export default function RootLayout({ children }) {
