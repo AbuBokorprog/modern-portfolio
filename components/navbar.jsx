@@ -34,8 +34,9 @@ const Navbar = () => {
       opacity: 0,
       scrollTrigger: {
         trigger: smallContainer.current,
-        start: 'top -80%',
-        end: 'bottom 50%',
+        start: 'top -50%',
+        end: 'bottom 70%',
+        markers: true,
         scrub: 2,
       },
     });
@@ -68,9 +69,9 @@ const Navbar = () => {
             <button
               ref={smallContainer}
               onClick={handleToggle}
-              className="p-4 hoverable focus:outline-none"
+              className="p-4 hoverable focus:outline-none "
             >
-              <IoMdMenu className="w-12 h-12 text-black dark:text-white dark:bg-black bg-white rounded-full" />
+              <IoMdMenu className="w-12 h-12 text-black dark:text-white dark:bg-black bg-white rounded-full border" />
             </button>
           </div>
         </nav>
@@ -115,6 +116,15 @@ const Navbar = () => {
                     className="link hoverable text-gray-700 text-xl font-semibold hover:text-gray-900 block py-2"
                   >
                     About
+                  </Link>
+                </motion.li>
+                <motion.li variants={item}>
+                  <Link
+                    href={'/#services'}
+                    variants={item}
+                    className="link hoverable text-gray-700 text-xl font-semibold hover:text-gray-900 block py-2"
+                  >
+                    Services
                   </Link>
                 </motion.li>
                 <motion.li variants={item}>
@@ -170,6 +180,14 @@ const Navbar = () => {
               href={'/#about'}
             >
               About
+            </Link>
+            <Link
+              className={`${
+                router === '/#about' ? 'text-red-500' : ''
+              } hoverable`}
+              href={'/#services'}
+            >
+              Services
             </Link>
             <Link
               className={`${

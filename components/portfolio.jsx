@@ -128,24 +128,30 @@ const Portfolio = ({ projects, frontend, mern, full }) => {
       <div>
         {/* all tab */}
         {tab == 'all' && (
-          <div className=" px-1 grid grid-cols-1 lg:grid-cols-3 items-center gap-5">
+          <div className="px-2 lg:px-4 py-8 grid grid-cols-1 lg:grid-cols-3 gap-6">
             {projects?.slice(0, portfolioCount)?.map((p) => (
               <div
                 key={p?._id}
-                className={`portfolio-item mb-6 border border-black dark:border-white text-black dark:text-white p-4 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300`}
+                className="portfolio-item mb-6 border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-950 text-black dark:text-white p-6 rounded-lg shadow-lg transition-transform duration-300 hover:scale-105"
               >
+                {/* Thumbnail Image */}
                 <Image
                   src={p?.thumbnail}
                   alt={p?.projects_name}
                   width={500}
                   height={500}
-                  className="w-full lg:h-96 object-cover mb-4 rounded-md"
+                  className="w-full h-64 object-cover mb-4 rounded-lg shadow-md"
                 />
-                <h3 className="text-xl font-semibold uppercase mb-2">
+
+                {/* Project Title */}
+                <h3 className="text-2xl font-semibold uppercase mb-3 tracking-wide">
                   {p?.projects_name}
                 </h3>
-                <div className="h-fit lg:h-44 hidden">
+
+                {/* Short Description */}
+                <div className="hidden lg:block mb-4">
                   <div
+                    className="text-sm text-gray-700 dark:text-gray-300"
                     dangerouslySetInnerHTML={{
                       __html: sanitizeHtml(p?.short_description, {
                         allowedTags: ['p'],
@@ -154,30 +160,35 @@ const Portfolio = ({ projects, frontend, mern, full }) => {
                     }}
                   />
                 </div>
-                <div className="my-4 h-fit lg:h-52">
-                  <h3 className="text-xl font-semibold">Technologies</h3>
-                  <div className="grid grid-cols-2 md:grid-cols-5 lg:grid-cols-3 xl:grid-cools-4 my-3 gap-2 md:gap-5 lg:gap-3 text-center justify-center mx-auto items-center">
+
+                {/* Technologies Used */}
+                <div className="my-4">
+                  <h3 className="text-lg font-semibold mb-2">Technologies</h3>
+                  <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-3 gap-2 text-center">
                     {p?.skills?.map((i) => (
-                      <div key={i} className="mb-2">
-                        <span className="dark:text-white px-2 rounded-3xl border border-black dark:border-white py-1">
-                          {i}
-                        </span>
+                      <div
+                        key={i}
+                        className="py-1 px-2 bg-gray-100 dark:bg-gray-700 rounded-full text-sm font-medium"
+                      >
+                        {i}
                       </div>
                     ))}
                   </div>
                 </div>
+
+                {/* Action Buttons */}
                 <div className="flex justify-between items-center mt-4">
                   <a
                     href={`${p?.github_url}`}
                     target="_blank"
-                    className="bg-gradient-to-bl dark:from-fuchsia-800 dark:to-rose-800 from-fuchsia-500 to-rose-500 text-black dark:text-white px-4 rounded-3xl py-1 hoverable "
+                    className="bg-gradient-to-bl dark:from-fuchsia-800 dark:to-rose-800 from-fuchsia-500 to-rose-500 text-white px-4 py-2 rounded-lg shadow hover:bg-rose-600 transition-colors duration-200"
                   >
                     Github
                   </a>
                   <a
                     href={`${p?.view_url}`}
                     target="_blank"
-                    className="bg-gradient-to-bl dark:from-fuchsia-800 dark:to-rose-800 from-fuchsia-500 to-rose-500 text-black dark:text-white px-4 rounded-3xl py-1 hoverable "
+                    className="bg-gradient-to-bl dark:from-fuchsia-800 dark:to-rose-800 from-fuchsia-500 to-rose-500 text-white px-4 py-2 rounded-lg shadow hover:bg-fuchsia-600 transition-colors duration-200"
                   >
                     View
                   </a>
@@ -186,11 +197,11 @@ const Portfolio = ({ projects, frontend, mern, full }) => {
             ))}
           </div>
         )}
-        {projects?.length > 4 && (
+        {projects?.length > 6 && (
           <div className="my-6 mx-auto text-center">
             <button
               onClick={countHandler}
-              className="px-4 py-1.5 rounded-md border hoverable"
+              className="dark:text-white text-black bg-gradient-to-bl dark:from-fuchsia-800 dark:to-rose-800 from-fuchsia-500 to-rose-500 focus:ring-4 focus:ring-rose-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 hoverable"
             >
               Load more
             </button>
@@ -202,24 +213,30 @@ const Portfolio = ({ projects, frontend, mern, full }) => {
         {/* frontend */}
 
         {tab == 'frontend' && (
-          <div className=" px-1 grid grid-cols-1 lg:grid-cols-3 items-center gap-5">
+          <div className="px-2 lg:px-4 py-8 grid grid-cols-1 lg:grid-cols-3 gap-6">
             {frontend?.slice(0, frontCount)?.map((p) => (
               <div
                 key={p?._id}
-                className={`portfolio-item mb-6 border border-black dark:border-white text-black dark:text-white p-4 rounded-lg shadow-md `}
+                className="portfolio-item mb-6 border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-950 text-black dark:text-white p-6 rounded-lg shadow-lg transition-transform duration-300 hover:scale-105"
               >
+                {/* Thumbnail Image */}
                 <Image
                   src={p?.thumbnail}
                   alt={p?.projects_name}
                   width={500}
                   height={500}
-                  className="w-full lg:h-96 object-cover mb-4 rounded-md"
+                  className="w-full h-64 object-cover mb-4 rounded-lg shadow-md"
                 />
-                <h3 className="text-xl font-semibold uppercase">
+
+                {/* Project Title */}
+                <h3 className="text-2xl font-semibold uppercase mb-3 tracking-wide">
                   {p?.projects_name}
                 </h3>
-                <div className="h-fit lg:h-32 hidden">
+
+                {/* Short Description */}
+                <div className="hidden lg:block mb-4">
                   <div
+                    className="text-sm text-gray-700 dark:text-gray-300"
                     dangerouslySetInnerHTML={{
                       __html: sanitizeHtml(p?.short_description, {
                         allowedTags: ['p'],
@@ -228,30 +245,35 @@ const Portfolio = ({ projects, frontend, mern, full }) => {
                     }}
                   />
                 </div>
-                <div className="my-4 h-fit lg:h-52">
-                  <h3 className="text-xl font-semibold">Technologies</h3>
-                  <div className="grid grid-cols-2 md:grid-cols-5 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-4 my-3 gap-2 md:gap-5 lg:gap-3 text-center justify-center mx-auto items-center">
+
+                {/* Technologies Used */}
+                <div className="my-4">
+                  <h3 className="text-lg font-semibold mb-2">Technologies</h3>
+                  <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-3 gap-2 text-center">
                     {p?.skills?.map((i) => (
-                      <div key={i} className="">
-                        <span className="dark:text-white px-2 rounded-3xl border border-black dark:border-white py-1">
-                          {i}
-                        </span>
+                      <div
+                        key={i}
+                        className="py-1 px-2 bg-gray-100 dark:bg-gray-700 rounded-full text-sm font-medium"
+                      >
+                        {i}
                       </div>
                     ))}
                   </div>
                 </div>
+
+                {/* Action Buttons */}
                 <div className="flex justify-between items-center mt-4">
                   <a
                     href={`${p?.github_url}`}
                     target="_blank"
-                    className="bg-gradient-to-bl dark:from-fuchsia-800 dark:to-rose-800 from-fuchsia-500 to-rose-500 text-black dark:text-white px-4 rounded-3xl py-1 hoverable "
+                    className="bg-gradient-to-bl dark:from-fuchsia-800 dark:to-rose-800 from-fuchsia-500 to-rose-500 text-white px-4 py-2 rounded-lg shadow hover:bg-rose-600 transition-colors duration-200"
                   >
                     Github
                   </a>
                   <a
                     href={`${p?.view_url}`}
                     target="_blank"
-                    className="bg-gradient-to-bl dark:from-fuchsia-800 dark:to-rose-800 from-fuchsia-500 to-rose-500 text-black dark:text-white px-4 rounded-3xl py-1 hoverable "
+                    className="bg-gradient-to-bl dark:from-fuchsia-800 dark:to-rose-800 from-fuchsia-500 to-rose-500 text-white px-4 py-2 rounded-lg shadow hover:bg-fuchsia-600 transition-colors duration-200"
                   >
                     View
                   </a>
@@ -260,11 +282,11 @@ const Portfolio = ({ projects, frontend, mern, full }) => {
             ))}
           </div>
         )}
-        {frontend?.length > 4 && (
+        {frontend?.length > 6 && (
           <div className="my-6 mx-auto text-center">
             <button
               onClick={frontendCountHandler}
-              className="px-4 py-1.5 rounded-md border hoverable"
+              className="dark:text-white text-black bg-gradient-to-bl dark:from-fuchsia-800 dark:to-rose-800 from-fuchsia-500 to-rose-500 focus:ring-4 focus:ring-rose-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 hoverable"
             >
               Load more
             </button>
@@ -275,24 +297,30 @@ const Portfolio = ({ projects, frontend, mern, full }) => {
       <div>
         {/* mern */}
         {tab == 'mern-stack' && (
-          <div className=" px-1 grid grid-cols-1 lg:grid-cols-3 items-center gap-5">
+          <div className="px-2 lg:px-4 py-8 grid grid-cols-1 lg:grid-cols-3 gap-6">
             {mern?.slice(0, mernCount)?.map((p) => (
               <div
                 key={p?._id}
-                className={`portfolio-item mb-6 border border-black dark:border-white text-black dark:text-white p-4 rounded-lg shadow-md `}
+                className="portfolio-item mb-6 border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-950 text-black dark:text-white p-6 rounded-lg shadow-lg transition-transform duration-300 hover:scale-105"
               >
+                {/* Thumbnail Image */}
                 <Image
                   src={p?.thumbnail}
                   alt={p?.projects_name}
                   width={500}
                   height={500}
-                  className="w-full lg:h-96 object-cover mb-4 rounded-md"
+                  className="w-full h-64 object-cover mb-4 rounded-lg shadow-md"
                 />
-                <h3 className="text-xl font-semibold uppercase">
+
+                {/* Project Title */}
+                <h3 className="text-2xl font-semibold uppercase mb-3 tracking-wide">
                   {p?.projects_name}
                 </h3>
-                <div className="h-fit lg:h-32 hidden">
+
+                {/* Short Description */}
+                <div className="hidden lg:block mb-4">
                   <div
+                    className="text-sm text-gray-700 dark:text-gray-300"
                     dangerouslySetInnerHTML={{
                       __html: sanitizeHtml(p?.short_description, {
                         allowedTags: ['p'],
@@ -301,30 +329,35 @@ const Portfolio = ({ projects, frontend, mern, full }) => {
                     }}
                   />
                 </div>
-                <div className="my-4 h-fit lg:h-52">
-                  <h3 className="text-xl font-semibold">Technologies</h3>
-                  <div className="grid grid-cols-2 md:grid-cols-5 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-4 my-3 gap-2 md:gap-5 lg:gap-3 text-center justify-center mx-auto items-center">
+
+                {/* Technologies Used */}
+                <div className="my-4">
+                  <h3 className="text-lg font-semibold mb-2">Technologies</h3>
+                  <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-3 gap-2 text-center">
                     {p?.skills?.map((i) => (
-                      <div key={i} className="">
-                        <span className="dark:text-white px-2 rounded-3xl border border-black dark:border-white py-1">
-                          {i}
-                        </span>
+                      <div
+                        key={i}
+                        className="py-1 px-2 bg-gray-100 dark:bg-gray-700 rounded-full text-sm font-medium"
+                      >
+                        {i}
                       </div>
                     ))}
                   </div>
                 </div>
+
+                {/* Action Buttons */}
                 <div className="flex justify-between items-center mt-4">
                   <a
                     href={`${p?.github_url}`}
                     target="_blank"
-                    className="bg-gradient-to-bl dark:from-fuchsia-800 dark:to-rose-800 from-fuchsia-500 to-rose-500 text-black dark:text-white px-4 rounded-3xl py-1 hoverable "
+                    className="bg-gradient-to-bl dark:from-fuchsia-800 dark:to-rose-800 from-fuchsia-500 to-rose-500 text-white px-4 py-2 rounded-lg shadow hover:bg-rose-600 transition-colors duration-200"
                   >
                     Github
                   </a>
                   <a
                     href={`${p?.view_url}`}
                     target="_blank"
-                    className="bg-gradient-to-bl dark:from-fuchsia-800 dark:to-rose-800 from-fuchsia-500 to-rose-500 text-black dark:text-white px-4 rounded-3xl py-1 hoverable "
+                    className="bg-gradient-to-bl dark:from-fuchsia-800 dark:to-rose-800 from-fuchsia-500 to-rose-500 text-white px-4 py-2 rounded-lg shadow hover:bg-fuchsia-600 transition-colors duration-200"
                   >
                     View
                   </a>
@@ -334,11 +367,11 @@ const Portfolio = ({ projects, frontend, mern, full }) => {
           </div>
         )}
         <div>
-          {mern?.length > 4 && (
+          {mern?.length > 6 && (
             <div className="my-6 mx-auto text-center">
               <button
                 onClick={mernCountHandler}
-                className="px-4 py-1.5 rounded-md border hoverable"
+                className="dark:text-white text-black bg-gradient-to-bl dark:from-fuchsia-800 dark:to-rose-800 from-fuchsia-500 to-rose-500 focus:ring-4 focus:ring-rose-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 hoverable"
               >
                 Load more
               </button>
@@ -350,24 +383,30 @@ const Portfolio = ({ projects, frontend, mern, full }) => {
       <div>
         {/* full stack */}
         {tab == 'full-stack' && (
-          <div className=" px-1 grid grid-cols-1 lg:grid-cols-2 items-center gap-5">
+          <div className="px-2 lg:px-4 py-8 grid grid-cols-1 lg:grid-cols-3 gap-6">
             {full?.slice(0, fullCount)?.map((p) => (
               <div
                 key={p?._id}
-                className={`portfolio-item mb-6 border border-black dark:border-white text-black dark:text-white p-4 rounded-lg shadow-md `}
+                className="portfolio-item mb-6 border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-950 text-black dark:text-white p-6 rounded-lg shadow-lg transition-transform duration-300 hover:scale-105"
               >
+                {/* Thumbnail Image */}
                 <Image
                   src={p?.thumbnail}
                   alt={p?.projects_name}
                   width={500}
                   height={500}
-                  className="w-full lg:h-96 object-cover mb-4 rounded-md"
+                  className="w-full h-64 object-cover mb-4 rounded-lg shadow-md"
                 />
-                <h3 className="text-xl font-semibold uppercase">
+
+                {/* Project Title */}
+                <h3 className="text-2xl font-semibold uppercase mb-3 tracking-wide">
                   {p?.projects_name}
                 </h3>
-                <div className="h-fit lg:h-32">
+
+                {/* Short Description */}
+                <div className="hidden lg:block mb-4">
                   <div
+                    className="text-sm text-gray-700 dark:text-gray-300"
                     dangerouslySetInnerHTML={{
                       __html: sanitizeHtml(p?.short_description, {
                         allowedTags: ['p'],
@@ -376,30 +415,35 @@ const Portfolio = ({ projects, frontend, mern, full }) => {
                     }}
                   />
                 </div>
-                <div className="my-4 h-fit lg:h-44">
-                  <h3 className="text-xl font-semibold">Technologies</h3>
-                  <div className="grid grid-cols-2 md:grid-cols-5 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-4 my-3 gap-2 md:gap-5 lg:gap-3 text-center justify-center mx-auto items-center">
+
+                {/* Technologies Used */}
+                <div className="my-4">
+                  <h3 className="text-lg font-semibold mb-2">Technologies</h3>
+                  <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-3 gap-2 text-center">
                     {p?.skills?.map((i) => (
-                      <div key={i} className="">
-                        <span className="dark:text-white px-2 rounded-3xl border border-black dark:border-white py-1">
-                          {i}
-                        </span>
+                      <div
+                        key={i}
+                        className="py-1 px-2 bg-gray-100 dark:bg-gray-700 rounded-full text-sm font-medium"
+                      >
+                        {i}
                       </div>
                     ))}
                   </div>
                 </div>
+
+                {/* Action Buttons */}
                 <div className="flex justify-between items-center mt-4">
                   <a
                     href={`${p?.github_url}`}
                     target="_blank"
-                    className="bg-gradient-to-bl dark:from-fuchsia-800 dark:to-rose-800 from-fuchsia-500 to-rose-500 text-black dark:text-white px-4 rounded-3xl py-1 hoverable "
+                    className="bg-gradient-to-bl dark:from-fuchsia-800 dark:to-rose-800 from-fuchsia-500 to-rose-500 text-white px-4 py-2 rounded-lg shadow hover:bg-rose-600 transition-colors duration-200"
                   >
                     Github
                   </a>
                   <a
                     href={`${p?.view_url}`}
                     target="_blank"
-                    className="bg-gradient-to-bl dark:from-fuchsia-800 dark:to-rose-800 from-fuchsia-500 to-rose-500 text-black dark:text-white px-4 rounded-3xl py-1 hoverable "
+                    className="bg-gradient-to-bl dark:from-fuchsia-800 dark:to-rose-800 from-fuchsia-500 to-rose-500 text-white px-4 py-2 rounded-lg shadow hover:bg-fuchsia-600 transition-colors duration-200"
                   >
                     View
                   </a>
@@ -410,11 +454,11 @@ const Portfolio = ({ projects, frontend, mern, full }) => {
         )}
 
         <div>
-          {full?.length > 4 && (
+          {full?.length > 6 && (
             <div className="my-6 mx-auto text-center">
               <button
                 onClick={fullCountHandler}
-                className="px-4 py-1.5 rounded-md border hoverable"
+                className="dark:text-white text-black bg-gradient-to-bl dark:from-fuchsia-800 dark:to-rose-800 from-fuchsia-500 to-rose-500 focus:ring-4 focus:ring-rose-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 hoverable"
               >
                 Load more
               </button>
