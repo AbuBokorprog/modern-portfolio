@@ -36,7 +36,6 @@ const Navbar = () => {
         trigger: smallContainer.current,
         start: 'top -50%',
         end: 'bottom 70%',
-        markers: true,
         scrub: 2,
       },
     });
