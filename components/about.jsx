@@ -154,6 +154,7 @@ const About = ({ aboutData, skillData }) => {
         </div>
       </div>
       <hr className="border border-zinc-600 dark:border-zinc-400" />
+      {/* skills */}
       <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-5 my-20 text-center justify-center mx-auto items-center">
         {skillData?.map((skill) => (
           <div key={skill._id} className="flex flex-col items-center">
@@ -170,8 +171,10 @@ const About = ({ aboutData, skillData }) => {
           </div>
         ))}
       </div>
+      {/* experience */}
       <Experience />
       <hr className="border border-zinc-600 dark:border-zinc-400" />
+      {/* services */}
       <div className="py-10" id="services">
         <h3 className="text-5xl lg:text-8xl font-bold uppercase bg-gradient-to-bl dark:from-fuchsia-800 dark:to-rose-800 from-fuchsia-500 to-rose-500 bg-clip-text text-transparent py-10">
           Services.
