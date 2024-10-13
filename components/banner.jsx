@@ -4,6 +4,7 @@ import React, { useRef } from 'react';
 import { useGSAP } from '@gsap/react';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 import { FaGithub, FaInstagramSquare, FaLinkedin } from 'react-icons/fa';
+import { TypeAnimation } from 'react-type-animation';
 gsap.registerPlugin(ScrollTrigger);
 
 const Banner = () => {
@@ -11,10 +12,10 @@ const Banner = () => {
 
   useGSAP(() => {
     const tl = gsap.timeline();
-    tl.from('.title span', {
+    tl.from('.title', {
       y: 100,
       opacity: 0,
-      duration: 1.5,
+      duration: 0.5,
       ease: 'power4.out',
       stagger: 0.3,
     });
@@ -30,8 +31,8 @@ const Banner = () => {
       })
       .to(container.current, {
         y: -30,
-        delay: 1,
-        duration: 1,
+        delay: 0.5,
+        duration: 0.5,
         opacity: 0,
       });
   }, []);
@@ -40,14 +41,29 @@ const Banner = () => {
     <section
       ref={container}
       id="#"
-      className="relative min-h-screen flex items-center justify-center dark:text-white"
+      className="relative mt-16 min-h-screen flex items-center justify-center dark:text-white"
     >
       <div>
         <h1 className="text-6xl lg:text-9xl font-extrabold text-center bg-gradient-to-bl dark:from-fuchsia-800 dark:to-rose-800 from-fuchsia-500 to-rose-500 bg-clip-text text-transparent">
-          <span className="lg:pe-20">Hi there, I'm</span> <br />
-          <span className="lg:ps-20">Abu Bokor.</span>
+          <span className="lg:pe-20 title">Hi there, I'm</span> <br />
+          <span className="lg:ps-20 title">Abu Bokor.</span>
         </h1>
-        <div className="flex justify-center items-center gap-4 md:gap-8 mt-8">
+        {/* Typing Animation for roles */}
+        <div className="mt-5 title text-center text-2xl lg:text-4xl font-medium text-white">
+          <TypeAnimation
+            sequence={[
+              'Frontend Developer',
+              2000,
+              'MERN Stack Developer',
+              2000,
+              'Full Stack Developer',
+              2000,
+            ]}
+            repeat={Infinity}
+            speed={40}
+          />
+        </div>
+        <div className="flex title justify-center items-center gap-4 md:gap-8 mt-8">
           <a href="https://github.com/AbuBokorprog" className="hoverable">
             <FaGithub className="w-8 lg:w-12 h-8 lg:h-12 dark:text-white text-black" />
           </a>

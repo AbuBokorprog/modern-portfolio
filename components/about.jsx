@@ -5,7 +5,7 @@ import gsap from 'gsap';
 import Link from 'next/link';
 import { useGSAP } from '@gsap/react';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
-import sanitizeHtml from 'sanitize-html';
+// import sanitizeHtml from 'sanitize-html';
 import Experience from './experience';
 import Picture from '../public/assets/1000045760-01.jpeg';
 import database from '../public/assets/database-management.png';
@@ -47,25 +47,27 @@ const About = ({ aboutData, skillData }) => {
 
       gsap.from('.slide-up', {
         y: 100,
-        duration: 1,
         opacity: 0,
-        stagger: 0.5,
+        duration: 1.5, // Increased the duration for a smoother effect
+        ease: 'power3.out', // Using a more fluid easing for the animation
+        stagger: 0.3, // Reduced the stagger time for quicker animations
         scrollTrigger: {
           trigger: container.current,
-          start: 'top 50%',
-          end: 'bottom bottom',
-          // scrub: true,
-          // markers: true,
+          start: 'top 80%', // Adjusted for a more noticeable start
+          end: 'bottom top', // Ensures it stops at the right point
+          // scrub: 1, // Ensures the animation is tied to scroll position for smooth interaction
+          once: true, // The animation only happens once for better performance
+          // markers: false, // Removed markers unless for debugging
         },
       });
     },
     { scope: container }
   );
 
-  const clean = sanitizeHtml(aboutData?.description, {
-    allowedTags: ['p'],
-    allowedAttributes: {},
-  });
+  // const clean = sanitizeHtml(aboutData?.description, {
+  //   allowedTags: ['p'],
+  //   allowedAttributes: {},
+  // });
 
   const serviceData = [
     {
@@ -135,20 +137,47 @@ const About = ({ aboutData, skillData }) => {
               className="mx-auto rounded-xl text-center"
             />
           </div>
-          <div className=" slide-up lg:w-1/2 py-2 lg:my-0 text-black dark:text-white mx-auto">
+          <div className="slide-up lg:w-1/2 py-4 lg:my-0 text-black dark:text-white mx-auto">
             <div>
-              <div
-                dangerouslySetInnerHTML={{ __html: clean }}
-                className="text-xl"
-              />
-            </div>
-            <div className="mt-5">
-              <Link
-                href={'/#contact'}
-                className="dark:text-white text-black bg-gradient-to-bl dark:from-fuchsia-800 dark:to-rose-800 from-fuchsia-500 to-rose-500 focus:ring-4 focus:ring-rose-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 hoverable"
-              >
-                Contact
-              </Link>
+              <div className="text-xl leading-relaxed">
+                🌟 <strong>A dedicated Full Stack Developer</strong> with
+                extensive experience in both frontend and backend technologies,
+                including HTML, CSS, JavaScript, TypeScript, Node.js, and
+                various frameworks. I excel in building dynamic and responsive
+                web applications that provide seamless user experiences. My
+                problem-solving abilities and collaborative approach allow me to
+                thrive in team environments, where I contribute effectively to
+                project success.
+                <br />
+                <br />
+                Committed to continuous learning, I stay updated on industry
+                trends and best practices. I am eager to leverage my creativity
+                and technical skills to tackle complex challenges and deliver
+                impactful solutions. Let's work together to shape the future of
+                web development! 🚀💻
+              </div>
+              <div className="mt-6 grid grid-cols-1 md:grid-cols-2 gap-4 text-lg">
+                <div>
+                  <strong>Phone:</strong> +8801885236058
+                </div>
+                <div>
+                  <strong>Email:</strong> abubokor1066@gmail.com
+                </div>
+                <div>
+                  <strong>Location:</strong> Bangladesh
+                </div>
+                <div>
+                  <strong>Languages:</strong> Bangla, English
+                </div>
+              </div>
+              <div className="mt-8">
+                <Link
+                  href={'/#contact'}
+                  className="dark:text-white text-black bg-gradient-to-bl dark:from-fuchsia-800 dark:to-rose-800 from-fuchsia-500 to-rose-500 focus:ring-4 focus:ring-rose-300 font-medium rounded-lg text-sm px-5 py-2.5 hover:shadow-lg transition-all hoverable"
+                >
+                  Contact Me
+                </Link>
+              </div>
             </div>
           </div>
         </div>

@@ -1,8 +1,8 @@
-import React from "react";
+import React from 'react';
 
 const Footer = () => {
   return (
-    <footer className="text-black rounded-lg shadow">
+    <footer className="text-black shadow border-t">
       <div className="w-full mx-auto max-w-screen-xl p-4 md:flex md:items-center md:justify-between">
         <span className="text-sm text-gray-600 sm:text-center dark:text-gray-400">
           © 2024. All Rights Reserved.
