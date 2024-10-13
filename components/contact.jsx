@@ -41,7 +41,7 @@ const Contact = () => {
   return (
     <section id="contact" className="dark:text-white">
       <div className="py-10 overflow-hidden px-2 ">
-        <h2 className="text-3xl lg:text-[120px] xl:text-[165px] text-center font-bold uppercase bg-gradient-to-bl from-fuchsia-500 to-rose-800 bg-clip-text text-transparent py-10">
+        <h2 className="text-3xl lg:text-[120px] xl:text-[165px] text-center font-bold uppercase bg-gradient-to-bl dark:from-fuchsia-800 dark:to-rose-800 from-fuchsia-500 to-rose-500 bg-clip-text text-transparent py-10">
           Get in touch.
         </h2>
         <div className="lg:flex pt-20 items-start flex-row-reverse">
@@ -106,7 +106,7 @@ const Contact = () => {
               <input
                 type="submit"
                 value={'Send Message'}
-                className="dark:text-white text-black bg-gradient-to-bl from-fuchsia-500 to-rose-800 focus:ring-4 focus:ring-rose-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 hoverable"
+                className="dark:text-white text-black bg-gradient-to-bl dark:from-fuchsia-800 dark:to-rose-800 from-fuchsia-500 to-rose-500 focus:ring-4 focus:ring-rose-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 hoverable"
               />
             </div>
           </form>

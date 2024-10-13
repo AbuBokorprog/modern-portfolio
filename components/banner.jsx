@@ -43,7 +43,7 @@ const Banner = () => {
       className="relative min-h-screen flex items-center justify-center dark:text-white"
     >
       <div>
-        <h1 className="text-4xl lg:text-9xl font-extrabold text-center bg-gradient-to-bl from-fuchsia-500 to-rose-800 bg-clip-text text-transparent">
+        <h1 className="text-4xl lg:text-9xl font-extrabold text-center bg-gradient-to-bl dark:from-fuchsia-800 dark:to-rose-800 from-fuchsia-500 to-rose-500 bg-clip-text text-transparent">
           <span className="lg:pe-20">Hi there, I'm</span> <br />
           <span className="lg:ps-20">Abu Bokor.</span>
         </h1>

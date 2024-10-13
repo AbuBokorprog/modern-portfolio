@@ -57,7 +57,7 @@ const Navbar = () => {
       opacity: 1,
       x: 50,
       transition: {
-        duration: 2,
+        duration: 1,
         opacity: 1,
         staggerChildren: 0.5,
         ease: 'linear',
@@ -98,7 +98,7 @@ const Navbar = () => {
                   onClick={handleToggle}
                   className="text-gray-500 hoverable hover:text-gray-700 focus:outline-none"
                 >
-                  <RxCross1 className="w-16 h-16 link" />
+                  <RxCross1 className="w-12 h-12 link" />
                 </button>
               </div>
 
@@ -113,7 +113,7 @@ const Navbar = () => {
                   <Link
                     href="/"
                     variants={item}
-                    className="link hoverable text-gray-700 text-5xl dark:text-white font-semibold hover:text-gray-900 block py-2"
+                    className="link hoverable text-gray-700 text-xl dark:text-white font-semibold hover:text-gray-900 block py-2"
                   >
                     Home
                   </Link>
@@ -122,7 +122,7 @@ const Navbar = () => {
                   <Link
                     href={'/#about'}
                     variants={item}
-                    className="link hoverable text-gray-700 text-5xl font-semibold hover:text-gray-900 block py-2"
+                    className="link hoverable text-gray-700 text-xl font-semibold hover:text-gray-900 block py-2"
                   >
                     About
                   </Link>
@@ -130,7 +130,7 @@ const Navbar = () => {
                 <motion.li variants={item}>
                   <Link
                     href={'/#projects'}
-                    className="link hoverable text-gray-700 text-5xl font-semibold hover:text-gray-900 block py-2"
+                    className="link hoverable text-gray-700 text-xl font-semibold hover:text-gray-900 block py-2"
                   >
                     Projects
                   </Link>
@@ -138,16 +138,22 @@ const Navbar = () => {
                 <motion.li variants={item}>
                   <Link
                     href={'/#contact'}
-                    className="link hoverable text-gray-700 text-5xl font-semibold hover:text-gray-900 block py-2"
+                    className="link hoverable text-gray-700 text-xl font-semibold hover:text-gray-900 block py-2"
                   >
                     Contact
                   </Link>
+                </motion.li>
+                <motion.li>
+                  <button className="dark:text-white text-black bg-gradient-to-bl dark:from-fuchsia-800 dark:to-rose-800 from-fuchsia-500 to-rose-500 focus:ring-4 focus:ring-rose-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 hoverable">
+                    Resume
+                  </button>
                 </motion.li>
               </motion.ul>
             </div>
           </div>
         )}
       </div>
+
       {/* large device */}
       <nav
         ref={container}
@@ -156,7 +162,7 @@ const Navbar = () => {
         <div className="md:flex justify-between px-4 container mx-auto">
           <Link
             href={'/'}
-            className="text-3xl uppercase font-bold bg-gradient-to-r from-fuchsia-500 to-rose-800 bg-clip-text text-transparent hover:opacity-75"
+            className="text-3xl uppercase font-bold bg-gradient-to-r dark:from-fuchsia-800 dark:to-rose-800 from-fuchsia-500 to-rose-500 bg-clip-text text-transparent hover:opacity-75"
           >
             Abu b.
           </Link>
@@ -193,7 +199,7 @@ const Navbar = () => {
             </Link>
           </div>
           <div>
-            <button className="text-white bg-gradient-to-bl from-fuchsia-500 to-rose-800 focus:ring-4 focus:ring-rose-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 hoverable">
+            <button className="dark:text-white text-black bg-gradient-to-bl dark:from-fuchsia-800 dark:to-rose-800 from-fuchsia-500 to-rose-500 focus:ring-4 focus:ring-rose-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 hoverable">
               Resume
             </button>
           </div>

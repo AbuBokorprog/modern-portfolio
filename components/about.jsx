@@ -77,7 +77,7 @@ const About = ({ aboutData, skillData }) => {
     >
       <div className="py-10">
         <div className="fade-in">
-          <h3 className="text-5xl lg:text-8xl font-bold uppercase bg-gradient-to-bl from-fuchsia-500 to-rose-800 bg-clip-text text-transparent py-10">
+          <h3 className="text-5xl lg:text-8xl font-bold uppercase bg-gradient-to-bl dark:from-fuchsia-800 dark:to-rose-800 from-fuchsia-500 to-rose-500 bg-clip-text text-transparent py-10">
             About Me.
           </h3>
         </div>
@@ -102,7 +102,7 @@ const About = ({ aboutData, skillData }) => {
             <div className="mt-5">
               <Link
                 href={'/#contact'}
-                className="bg-gradient-to-bl dark:text-white text-black from-fuchsia-500 to-rose-800 px-4 rounded-3xl py-1 hoverable "
+                className="dark:text-white text-black bg-gradient-to-bl dark:from-fuchsia-800 dark:to-rose-800 from-fuchsia-500 to-rose-500 focus:ring-4 focus:ring-rose-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 hoverable"
               >
                 Contact
               </Link>
