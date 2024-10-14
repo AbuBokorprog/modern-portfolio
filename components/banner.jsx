@@ -6,6 +6,7 @@ import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 import { FaGithub, FaInstagramSquare, FaLinkedin } from 'react-icons/fa';
 import { TypeAnimation } from 'react-type-animation';
 import { BackgroundBeamsWithCollision } from './ui/background-beams-with-collision';
+import { Element } from 'react-scroll';
 gsap.registerPlugin(ScrollTrigger);
 
 const Banner = () => {
@@ -21,30 +22,30 @@ const Banner = () => {
       stagger: 0.3,
     });
 
-    gsap
-      .timeline({
-        scrollTrigger: {
-          trigger: container.current,
-          start: 'top 50%',
-          end: 'bottom 30%',
-          scrub: 5,
-        },
-      })
-      .to(container.current, {
-        y: -30,
-        delay: 0.5,
-        duration: 0.5,
-        opacity: 0,
-      });
+    // gsap
+    //   .timeline({
+    //     scrollTrigger: {
+    //       trigger: container.current,
+    //       start: 'top 50%',
+    //       end: 'bottom 30%',
+    //       scrub: 5,
+    //     },
+    //   })
+    //   .to(container.current, {
+    //     y: -30,
+    //     delay: 0.5,
+    //     duration: 0.5,
+    //     opacity: 0,
+    //   });
   }, []);
 
   return (
-    <>
+    <Element>
       <BackgroundBeamsWithCollision>
         <section
+          name="home"
           ref={container}
-          id="#"
-          className="relative h-96 md:h-[40rem] flex items-center justify-center dark:text-white"
+          className="relative h-[100vh] xl:h-[40rem] flex items-center justify-center dark:text-white"
         >
           <div>
             <h1 className="text-6xl md:text-8xl lg:text-9xl font-extrabold text-center bg-gradient-to-bl dark:from-fuchsia-800 dark:to-rose-800 from-fuchsia-500 to-rose-500 bg-clip-text text-transparent">
@@ -83,7 +84,7 @@ const Banner = () => {
           </div>
         </section>
       </BackgroundBeamsWithCollision>
-    </>
+    </Element>
   );
 };
 

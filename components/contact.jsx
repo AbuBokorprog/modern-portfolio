@@ -2,6 +2,7 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
 import emailjs from 'emailjs-com';
+import { Element } from 'react-scroll';
 const Contact = () => {
   const { register, handleSubmit } = useForm();
 
@@ -39,80 +40,82 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="dark:text-white">
-      <div className="py-10 overflow-hidden px-2 ">
-        <h2 className="text-4xl lg:text-[120px] xl:text-[165px] text-center font-bold uppercase bg-gradient-to-bl dark:from-fuchsia-800 dark:to-rose-800 from-fuchsia-500 to-rose-500 bg-clip-text text-transparent py-10">
-          Get in touch.
-        </h2>
-        <div className="lg:flex pt-20 items-start flex-row-reverse">
-          <form onSubmit={handleSubmit(onSubmit)} className=" w-full">
-            <div className=" lg:flex gap-4 items-center">
+    <Element>
+      <section name="contact" className="dark:text-white">
+        <div className="py-10 overflow-hidden px-2 ">
+          <h2 className="text-4xl lg:text-[120px] xl:text-[165px] text-center font-bold uppercase bg-gradient-to-bl dark:from-fuchsia-800 dark:to-rose-800 from-fuchsia-500 to-rose-500 bg-clip-text text-transparent py-10">
+            Get in touch.
+          </h2>
+          <div className="lg:flex pt-20 items-start flex-row-reverse">
+            <form onSubmit={handleSubmit(onSubmit)} className=" w-full">
+              <div className=" lg:flex gap-4 items-center">
+                <div className="w-full">
+                  <label
+                    htmlFor="name"
+                    className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                  >
+                    Name:*
+                  </label>
+                  <input
+                    placeholder="Type your name"
+                    className="bg-gray-50 min-w-full border border-gray-300 text-gray-900 rounded-lg p-2.5 dark:bg-gray-900 dark:border-gray-600 dark:text-white "
+                    {...register('name', { required: true, maxLength: 20 })}
+                  />
+                </div>
+                <div className="w-full">
+                  <label
+                    htmlFor="email"
+                    className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                  >
+                    Email:*
+                  </label>
+                  <input
+                    type="email"
+                    placeholder="Type your email address"
+                    className="bg-gray-50 min-w-full border border-gray-300 text-gray-900 rounded-lg p-2.5 dark:bg-gray-900 dark:border-gray-600 dark:text-white "
+                    {...register('email', { required: true })}
+                  />
+                </div>
+              </div>
               <div className="w-full">
                 <label
-                  htmlFor="name"
+                  htmlFor="subject"
                   className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
                 >
-                  Name:*
+                  Subject:*
                 </label>
                 <input
-                  placeholder="Type your name"
+                  placeholder="Type your subject"
                   className="bg-gray-50 min-w-full border border-gray-300 text-gray-900 rounded-lg p-2.5 dark:bg-gray-900 dark:border-gray-600 dark:text-white "
-                  {...register('name', { required: true, maxLength: 20 })}
+                  {...register('subject', { required: true, maxLength: 20 })}
                 />
               </div>
               <div className="w-full">
                 <label
-                  htmlFor="email"
+                  htmlFor="message"
                   className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
                 >
-                  Email:*
+                  Message:*
                 </label>
-                <input
-                  type="email"
-                  placeholder="Type your email address"
+                <textarea
+                  placeholder="Type your message"
+                  rows={5}
                   className="bg-gray-50 min-w-full border border-gray-300 text-gray-900 rounded-lg p-2.5 dark:bg-gray-900 dark:border-gray-600 dark:text-white "
-                  {...register('email', { required: true })}
+                  {...register('message', { required: true, maxLength: 20 })}
                 />
               </div>
-            </div>
-            <div className="w-full">
-              <label
-                htmlFor="subject"
-                className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-              >
-                Subject:*
-              </label>
-              <input
-                placeholder="Type your subject"
-                className="bg-gray-50 min-w-full border border-gray-300 text-gray-900 rounded-lg p-2.5 dark:bg-gray-900 dark:border-gray-600 dark:text-white "
-                {...register('subject', { required: true, maxLength: 20 })}
-              />
-            </div>
-            <div className="w-full">
-              <label
-                htmlFor="message"
-                className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-              >
-                Message:*
-              </label>
-              <textarea
-                placeholder="Type your message"
-                rows={5}
-                className="bg-gray-50 min-w-full border border-gray-300 text-gray-900 rounded-lg p-2.5 dark:bg-gray-900 dark:border-gray-600 dark:text-white "
-                {...register('message', { required: true, maxLength: 20 })}
-              />
-            </div>
-            <div className="flex justify-center items-center my-4">
-              <input
-                type="submit"
-                value={'Send Message'}
-                className="dark:text-white text-black bg-gradient-to-bl dark:from-fuchsia-800 dark:to-rose-800 from-fuchsia-500 to-rose-500 focus:ring-4 focus:ring-rose-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 hoverable"
-              />
-            </div>
-          </form>
+              <div className="flex justify-center items-center my-4">
+                <input
+                  type="submit"
+                  value={'Send Message'}
+                  className="dark:text-white text-black bg-gradient-to-bl dark:from-fuchsia-800 dark:to-rose-800 from-fuchsia-500 to-rose-500 focus:ring-4 focus:ring-rose-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 hoverable"
+                />
+              </div>
+            </form>
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </Element>
   );
 };
 

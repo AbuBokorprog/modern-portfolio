@@ -14,6 +14,7 @@ import responsive from '../public/assets/responsive-design.png';
 import optimization from '../public/assets/optimization.png';
 import fullStack from '../public/assets/web-development.png';
 import accessibility from '../public/assets/accessibility.png';
+import { Element } from 'react-scroll';
 
 const About = ({ aboutData, skillData }) => {
   const container = useRef();
@@ -115,125 +116,129 @@ const About = ({ aboutData, skillData }) => {
   ];
 
   return (
-    <section
-      ref={container}
-      id="about"
-      className="dark:bg-black bg-white rounded-t-xl about overflow-hidden px-2"
-    >
-      <div className="py-10">
-        <div className="fade-in">
-          <h3 className="text-5xl lg:text-8xl font-bold uppercase bg-gradient-to-bl dark:from-fuchsia-800 dark:to-rose-800 from-fuchsia-500 to-rose-500 bg-clip-text text-transparent py-10">
-            About Me.
-          </h3>
-        </div>
-        <div className="lg:flex mx-auto justify-between items-center">
-          <div className="">
-            <Image
-              src={Picture}
-              alt="Abubokor"
-              width={500}
-              height={400}
-              loading="lazy"
-              className="mx-auto rounded-xl text-center"
-            />
+    <Element>
+      <section
+        name="about"
+        ref={container}
+        className="element dark:bg-black bg-white rounded-t-xl about overflow-hidden px-2"
+      >
+        <div className="py-10">
+          <div className="fade-in">
+            <h3 className="text-5xl lg:text-8xl font-bold uppercase bg-gradient-to-bl dark:from-fuchsia-800 dark:to-rose-800 from-fuchsia-500 to-rose-500 bg-clip-text text-transparent py-10">
+              About Me.
+            </h3>
           </div>
-          <div className="slide-up lg:w-1/2 py-4 lg:my-0 text-black dark:text-white mx-auto">
-            <div>
-              <div className="text-xl leading-relaxed">
-                🌟 <strong>A dedicated Full Stack Developer</strong> with
-                extensive experience in both frontend and backend technologies,
-                including HTML, CSS, JavaScript, TypeScript, Node.js, and
-                various frameworks. I excel in building dynamic and responsive
-                web applications that provide seamless user experiences. My
-                problem-solving abilities and collaborative approach allow me to
-                thrive in team environments, where I contribute effectively to
-                project success.
-                <br />
-                <br />
-                Committed to continuous learning, I stay updated on industry
-                trends and best practices. I am eager to leverage my creativity
-                and technical skills to tackle complex challenges and deliver
-                impactful solutions. Let's work together to shape the future of
-                web development! 🚀💻
-              </div>
-              <div className="mt-6 grid grid-cols-1 md:grid-cols-2 gap-4 text-lg">
-                <div>
-                  <strong>Phone:</strong> +8801885236058
-                </div>
-                <div>
-                  <strong>Email:</strong> abubokor1066@gmail.com
-                </div>
-                <div>
-                  <strong>Location:</strong> Bangladesh
-                </div>
-                <div>
-                  <strong>Languages:</strong> Bangla, English
-                </div>
-              </div>
-              <div className="mt-8">
-                <Link
-                  href={'/#contact'}
-                  className="dark:text-white text-black bg-gradient-to-bl dark:from-fuchsia-800 dark:to-rose-800 from-fuchsia-500 to-rose-500 focus:ring-4 focus:ring-rose-300 font-medium rounded-lg text-sm px-5 py-2.5 hover:shadow-lg transition-all hoverable"
-                >
-                  Contact Me
-                </Link>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <hr className="border border-zinc-600 dark:border-zinc-400" />
-      {/* skills */}
-      <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-5 my-20 text-center justify-center mx-auto items-center">
-        {skillData?.map((skill) => (
-          <div key={skill._id} className="flex flex-col items-center">
-            <div className="bg-gray-200 dark:bg-gray-900 p-4 rounded-full mb-2">
-              <img
-                src={skill.icon}
-                alt={`${skill.technology_name} icon`}
-                className="w-12 h-12" // Adjust size as needed
-              />
-            </div>
-            <span className="dark:text-white text-black hoverable flex items-center justify-center px-4 rounded-3xl border border-black dark:border-white py-2 transition-transform duration-200 hover:bg-gray-200 dark:hover:bg-gray-700 shadow-md transform hover:scale-105">
-              {skill.technology_name}
-            </span>
-          </div>
-        ))}
-      </div>
-      {/* experience */}
-      <Experience />
-      <hr className="border border-zinc-600 dark:border-zinc-400" />
-      {/* services */}
-      <div className="py-10" id="services">
-        <h3 className="text-5xl lg:text-8xl font-bold uppercase bg-gradient-to-bl dark:from-fuchsia-800 dark:to-rose-800 from-fuchsia-500 to-rose-500 bg-clip-text text-transparent py-10">
-          Services.
-        </h3>
-        <div className="grid w-full px-4 md:grid-cols-2 lg:grid-cols-3 justify-center mx-auto mt-10 gap-6">
-          {serviceData.map((service, index) => (
-            <div
-              key={index}
-              className="p-6 card hover:border-b-4 hover:border-rose-400 dark:hover:border-fuchsia-800 transition-all duration-300 w-full border border-gray-200 dark:border-gray-700 rounded-lg bg-white dark:bg-gray-950 shadow-xl"
-            >
+          <div className="lg:flex mx-auto justify-between items-center">
+            <div className="">
               <Image
-                src={service.image}
-                alt={service.title}
-                width={100}
-                height={100}
-                className="w-20 h-20 object-cover mx-auto mb-4 rounded-full"
+                src={Picture}
+                alt="Abubokor"
+                width={500}
+                height={400}
+                loading="lazy"
+                className="mx-auto rounded-xl text-center"
               />
-              <div className="text-center">
-                <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">
-                  {service.title}
-                </h3>
-                <p className="text-gray-600 dark:text-gray-300 mb-4">
-                  {service.description}
-                </p>
+            </div>
+            <div className="slide-up lg:w-1/2 py-4 lg:my-0 text-black dark:text-white mx-auto">
+              <div>
+                <div className="text-xl leading-relaxed">
+                  🌟 <strong>A dedicated Full Stack Developer</strong> with
+                  extensive experience in both frontend and backend
+                  technologies, including HTML, CSS, JavaScript, TypeScript,
+                  Node.js, and various frameworks. I excel in building dynamic
+                  and responsive web applications that provide seamless user
+                  experiences. My problem-solving abilities and collaborative
+                  approach allow me to thrive in team environments, where I
+                  contribute effectively to project success.
+                  <br />
+                  <br />
+                  Committed to continuous learning, I stay updated on industry
+                  trends and best practices. I am eager to leverage my
+                  creativity and technical skills to tackle complex challenges
+                  and deliver impactful solutions. Let's work together to shape
+                  the future of web development! 🚀💻
+                </div>
+                <div className="mt-6 grid grid-cols-1 md:grid-cols-2 gap-4 text-lg">
+                  <div>
+                    <strong>Phone:</strong> +8801885236058
+                  </div>
+                  <div>
+                    <strong>Email:</strong> abubokor1066@gmail.com
+                  </div>
+                  <div>
+                    <strong>Location:</strong> Bangladesh
+                  </div>
+                  <div>
+                    <strong>Languages:</strong> Bangla, English
+                  </div>
+                </div>
+                <div className="mt-8">
+                  <Link
+                    href={'/#contact'}
+                    className="dark:text-white text-black bg-gradient-to-bl dark:from-fuchsia-800 dark:to-rose-800 from-fuchsia-500 to-rose-500 focus:ring-4 focus:ring-rose-300 font-medium rounded-lg text-sm px-5 py-2.5 hover:shadow-lg transition-all hoverable"
+                  >
+                    Contact Me
+                  </Link>
+                </div>
               </div>
+            </div>
+          </div>
+        </div>
+        <hr className="border border-zinc-600 dark:border-zinc-400" />
+        {/* skills */}
+        <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-5 my-20 text-center justify-center mx-auto items-center">
+          {skillData?.map((skill) => (
+            <div key={skill._id} className="flex flex-col items-center">
+              <div className="bg-gray-200 dark:bg-gray-900 p-4 rounded-full mb-2">
+                <img
+                  src={skill.icon}
+                  alt={`${skill.technology_name} icon`}
+                  className="w-12 h-12" // Adjust size as needed
+                />
+              </div>
+              <span className="dark:text-white text-black hoverable flex items-center justify-center px-4 rounded-3xl border border-black dark:border-white py-2 transition-transform duration-200 hover:bg-gray-200 dark:hover:bg-gray-700 shadow-md transform hover:scale-105">
+                {skill.technology_name}
+              </span>
             </div>
           ))}
         </div>
-      </div>
-    </section>
+        {/* experience */}
+        <Experience />
+        <hr className="border border-zinc-600 dark:border-zinc-400" />
+        {/* services */}
+      </section>
+      <section name="services">
+        <div className="py-10" id="services">
+          <h3 className="text-5xl lg:text-8xl font-bold uppercase bg-gradient-to-bl dark:from-fuchsia-800 dark:to-rose-800 from-fuchsia-500 to-rose-500 bg-clip-text text-transparent py-10">
+            Services.
+          </h3>
+          <div className="grid w-full px-4 md:grid-cols-2 lg:grid-cols-3 justify-center mx-auto mt-10 gap-6">
+            {serviceData.map((service, index) => (
+              <div
+                key={index}
+                className="p-6 card hover:border-b-4 hover:border-rose-400 dark:hover:border-fuchsia-800 transition-all duration-300 w-full border border-gray-200 dark:border-gray-700 rounded-lg bg-white dark:bg-gray-950 shadow-xl"
+              >
+                <Image
+                  src={service.image}
+                  alt={service.title}
+                  width={100}
+                  height={100}
+                  className="w-20 h-20 object-cover mx-auto mb-4 rounded-full"
+                />
+                <div className="text-center">
+                  <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">
+                    {service.title}
+                  </h3>
+                  <p className="text-gray-600 dark:text-gray-300 mb-4">
+                    {service.description}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+    </Element>
   );
 };
 

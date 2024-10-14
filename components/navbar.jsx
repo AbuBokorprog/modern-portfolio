@@ -1,6 +1,5 @@
 'use client';
-import React, { useRef, useState } from 'react';
-import Link from 'next/link';
+import React, { useEffect, useRef, useState } from 'react';
 import gsap from 'gsap';
 import { motion } from 'framer-motion';
 import { RxCross1 } from 'react-icons/rx';
@@ -8,6 +7,7 @@ import { IoMdMenu } from 'react-icons/io';
 import { useGSAP } from '@gsap/react';
 import { useRouter } from 'next/navigation';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
+import { Link, Events, scrollSpy, animateScroll as scroll } from 'react-scroll';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -58,6 +58,32 @@ const Navbar = () => {
     hidden: { opacity: 0 },
     show: { opacity: 1 },
   };
+
+  // Function to handle the activation of a link.
+  const handleSetActive = (to) => {
+    console.log(to);
+  };
+
+  useEffect(() => {
+    // Registering the 'begin' event and logging it to the console when triggered.
+    Events.scrollEvent.register('begin', (to, element) => {
+      console.log('begin', to, element);
+    });
+
+    // Registering the 'end' event and logging it to the console when triggered.
+    Events.scrollEvent.register('end', (to, element) => {
+      console.log('end', to, element);
+    });
+
+    // Updating scrollSpy when the component mounts.
+    scrollSpy.update();
+
+    // Returning a cleanup function to remove the registered events when the component unmounts.
+    return () => {
+      Events.scrollEvent.remove('begin');
+      Events.scrollEvent.remove('end');
+    };
+  }, []);
 
   return (
     <div>
@@ -173,46 +199,58 @@ const Navbar = () => {
         <div className="md:flex items-center justify-between px-4 container mx-auto">
           <Link
             href={'/'}
-            className="text-3xl uppercase font-bold bg-gradient-to-r dark:from-fuchsia-800 dark:to-rose-800 from-fuchsia-500 to-rose-500 bg-clip-text text-transparent hover:opacity-75"
+            className="text-3xl font-bold bg-gradient-to-r dark:from-fuchsia-800 dark:to-rose-800 from-fuchsia-500 to-rose-500 bg-clip-text text-transparent hover:opacity-75"
           >
-            Abu b.
+            &lt;Bokor&gt;
           </Link>
           <div className="md:flex text-xl font-semibold justify-center gap-8">
             <Link
-              className={`${router === '/' ? 'text-red-500' : ''} hoverable`}
-              href={'#'}
+              activeClass="text-red-500"
+              to="home"
+              spy={true}
+              smooth={true}
+              offset={5}
+              duration={500}
             >
               Home
             </Link>
             <Link
-              className={`${
-                router === '/#about' ? 'text-red-500' : ''
-              } hoverable`}
-              href={'/#about'}
+              to="about"
+              activeClass="text-red-500"
+              spy={true}
+              smooth={true}
+              offset={5}
+              duration={500}
             >
               About
             </Link>
             <Link
-              className={`${
-                router === '/#about' ? 'text-red-500' : ''
-              } hoverable`}
-              href={'/#services'}
+              to="services"
+              activeClass="text-red-500"
+              spy={true}
+              smooth={true}
+              offset={5}
+              duration={500}
             >
               Services
             </Link>
             <Link
-              className={`${
-                router === '/#projects' ? 'text-red-500' : ''
-              } hoverable`}
-              href={'#projects'}
+              to="projects"
+              activeClass="text-red-500"
+              spy={true}
+              smooth={true}
+              offset={5}
+              duration={500}
             >
               Projects
             </Link>
             <Link
-              className={`${
-                router === '/#contact' ? 'text-red-500' : ''
-              } hoverable`}
-              href={'#contact'}
+              to="contact"
+              activeClass="text-red-500"
+              spy={true}
+              smooth={true}
+              offset={5}
+              duration={500}
             >
               Contact
             </Link>
