@@ -7,7 +7,7 @@ import { useGSAP } from '@gsap/react';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 // import sanitizeHtml from 'sanitize-html';
 import Experience from './experience';
-import Picture from '../public/assets/1000045760-01.jpeg';
+import Picture from '../public/assets/abubokor.jpeg';
 import database from '../public/assets/database-management.png';
 import integration from '../public/assets/integration.png';
 import responsive from '../public/assets/responsive-design.png';

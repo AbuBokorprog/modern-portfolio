@@ -1,7 +1,9 @@
+// 'use client';
 import About from '@/components/about';
 import Banner from '@/components/banner';
 import Contact from '@/components/contact';
 import Portfolio from '@/components/portfolio';
+// import { Link, Element } from 'react-scroll';
 // import Reviews from "@/components/reviews";
 import {
   getAbout,

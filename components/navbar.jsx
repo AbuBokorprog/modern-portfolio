@@ -49,7 +49,7 @@ const Navbar = () => {
       transition: {
         duration: 1,
         opacity: 1,
-        staggerChildren: 0.5,
+        staggerChildren: 0.3,
         ease: 'linear',
       },
     },
@@ -63,12 +63,20 @@ const Navbar = () => {
     <div>
       <div className="">
         {/* Navbar */}
-        <nav className="md:hidden block ">
-          <div className="fixed top-0 left-0 w-full z-10 text-right">
+        <nav className="lg:hidden block ">
+          <div
+            ref={smallContainer}
+            className="flex p-4 items-center justify-between fixed top-0 left-0 w-full z-10 text-right dark:bg-white bg-black"
+          >
+            <Link
+              href={'/'}
+              className="text-3xl uppercase font-bold bg-gradient-to-r dark:from-fuchsia-800 dark:to-rose-800 from-fuchsia-500 to-rose-500 bg-clip-text text-transparent hover:opacity-75"
+            >
+              Abu b.
+            </Link>
             <button
-              ref={smallContainer}
               onClick={handleToggle}
-              className="p-4 hoverable focus:outline-none "
+              className=" hoverable focus:outline-none "
             >
               <IoMdMenu className="w-12 h-12 text-black dark:text-white dark:bg-black bg-white rounded-full border" />
             </button>
@@ -142,10 +150,14 @@ const Navbar = () => {
                     Contact
                   </Link>
                 </motion.li>
-                <motion.li>
-                  <button className="dark:text-white text-black bg-gradient-to-bl dark:from-fuchsia-800 dark:to-rose-800 from-fuchsia-500 to-rose-500 focus:ring-4 focus:ring-rose-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 hoverable">
+                <motion.li className="my-4">
+                  <a
+                    href="/Abu-bokor-mern-developer.pdf"
+                    download
+                    className="dark:text-white text-black bg-gradient-to-bl dark:from-fuchsia-800 dark:to-rose-800 from-fuchsia-500 to-rose-500 focus:ring-4 focus:ring-rose-300 font-medium rounded-lg px-5 py-2.5 me-2 my-2 hoverable"
+                  >
                     Resume
-                  </button>
+                  </a>
                 </motion.li>
               </motion.ul>
             </div>
@@ -156,7 +168,7 @@ const Navbar = () => {
       {/* large device */}
       <nav
         ref={container}
-        className="py-6 dark:text-white dark:bg-black bg-white text-black border-b hidden md:block fixed top-0 start-0 end-0 z-20"
+        className="py-6 dark:text-white dark:bg-black bg-white text-black border-b hidden lg:block fixed top-0 start-0 end-0 z-20"
       >
         <div className="md:flex items-center justify-between px-4 container mx-auto">
           <Link
@@ -206,9 +218,13 @@ const Navbar = () => {
             </Link>
           </div>
           <div>
-            <button className="dark:text-white text-black bg-gradient-to-bl dark:from-fuchsia-800 dark:to-rose-800 from-fuchsia-500 to-rose-500 focus:ring-4 focus:ring-rose-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 hoverable">
+            <a
+              href="/Abu-bokor-mern-developer.pdf"
+              download
+              className="dark:text-white text-black bg-gradient-to-bl dark:from-fuchsia-800 dark:to-rose-800 from-fuchsia-500 to-rose-500 focus:ring-4 focus:ring-rose-300 font-medium rounded-lg px-5 py-2.5 me-2 mb-2 hoverable"
+            >
               Resume
-            </button>
+            </a>
           </div>
         </div>
       </nav>
