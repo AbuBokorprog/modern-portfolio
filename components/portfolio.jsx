@@ -67,14 +67,14 @@ const Portfolio = ({ projects, frontend, mern, full }) => {
     <Element name="projects">
       <div
         ref={container}
-        className="portfolio-container rounded-b-xl bg-white py-10 min-h-screen text-black dark:text-white px-2 dark:bg-black overflow-hidden"
+        className="portfolio-container rounded-b-xl bg-white min-h-screen text-black dark:text-white px-2 dark:bg-black overflow-hidden"
       >
         <h2 className="text-5xl selectTitle lg:text-8xl font-bold uppercase bg-gradient-to-bl dark:from-fuchsia-800 dark:to-rose-800 from-fuchsia-500 to-rose-500 bg-clip-text text-transparent py-10">
           Selected Works.
         </h2>
 
-        <div className="text-sm my-6 mx-auto font-medium text-center text-gray-500 border-b border-gray-200 dark:text-gray-400 dark:border-gray-700">
-          <ul className="flex flex-wrap -mb-px justify-center">
+        <div className="text-sm mx-auto font-medium text-center text-gray-500 border-b border-gray-200 dark:text-gray-400 dark:border-gray-700">
+          <ul className="flex flex-wrap justify-center">
             <li className="me-2">
               <button
                 onClick={() => setTab('all')}

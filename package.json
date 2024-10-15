@@ -29,6 +29,7 @@
     "react-timeline-scribble": "^1.0.14",
     "react-type-animation": "^3.2.0",
     "sanitize-html": "^2.13.0",
+    "sharp": "^0.33.5",
     "swiper": "^11.0.7",
     "tailwind-merge": "^2.5.4"
   },

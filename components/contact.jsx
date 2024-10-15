@@ -42,11 +42,11 @@ const Contact = () => {
   return (
     <Element>
       <section name="contact" className="dark:text-white">
-        <div className="py-10 overflow-hidden px-2 ">
+        <div className="overflow-hidden px-2 ">
           <h2 className="text-4xl lg:text-[120px] xl:text-[165px] text-center font-bold uppercase bg-gradient-to-bl dark:from-fuchsia-800 dark:to-rose-800 from-fuchsia-500 to-rose-500 bg-clip-text text-transparent py-10">
             Get in touch.
           </h2>
-          <div className="lg:flex pt-20 items-start flex-row-reverse">
+          <div className="lg:flex pt-10 items-start flex-row-reverse">
             <form onSubmit={handleSubmit(onSubmit)} className=" w-full">
               <div className=" lg:flex gap-4 items-center">
                 <div className="w-full">

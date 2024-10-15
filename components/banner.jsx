@@ -22,21 +22,21 @@ const Banner = () => {
       stagger: 0.3,
     });
 
-    // gsap
-    //   .timeline({
-    //     scrollTrigger: {
-    //       trigger: container.current,
-    //       start: 'top 50%',
-    //       end: 'bottom 30%',
-    //       scrub: 5,
-    //     },
-    //   })
-    //   .to(container.current, {
-    //     y: -30,
-    //     delay: 0.5,
-    //     duration: 0.5,
-    //     opacity: 0,
-    //   });
+    gsap
+      .timeline({
+        scrollTrigger: {
+          trigger: container.current,
+          start: 'top 50%',
+          end: 'bottom 30%',
+          scrub: 5,
+        },
+      })
+      .to(container.current, {
+        y: -30,
+        delay: 0.5,
+        duration: 0.5,
+        opacity: 0,
+      });
   }, []);
 
   return (
@@ -45,7 +45,7 @@ const Banner = () => {
         <section
           name="home"
           ref={container}
-          className="relative h-[100vh] xl:h-[40rem] flex items-center justify-center dark:text-white"
+          className="relative h-screen xl:h-[93vh] flex items-center justify-center dark:text-white"
         >
           <div>
             <h1 className="text-6xl md:text-8xl lg:text-9xl font-extrabold text-center bg-gradient-to-bl dark:from-fuchsia-800 dark:to-rose-800 from-fuchsia-500 to-rose-500 bg-clip-text text-transparent">
