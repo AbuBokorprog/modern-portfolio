@@ -28,8 +28,7 @@ const Portfolio = ({ projects, frontend, mern, full }) => {
           },
         })
         .from('.selectTitle', {
-          x: -200,
-          delay: 1,
+          x: -100,
           duration: 3,
           opacity: 0,
         })
@@ -69,7 +68,7 @@ const Portfolio = ({ projects, frontend, mern, full }) => {
         ref={container}
         className="portfolio-container rounded-b-xl bg-white min-h-screen text-black dark:text-white px-2 dark:bg-black overflow-hidden"
       >
-        <h2 className="text-5xl selectTitle lg:text-8xl font-bold uppercase bg-gradient-to-bl dark:from-fuchsia-800 dark:to-rose-800 from-fuchsia-500 to-rose-500 bg-clip-text text-transparent py-10">
+        <h2 className="text-5xl selectTitle lg:text-8xl font-bold uppercase bg-gradient-to-bl dark:from-fuchsia-800 dark:to-rose-800 from-fuchsia-500 to-rose-500 bg-clip-text text-transparent py-10 lg:py-16">
           Selected Works.
         </h2>
 

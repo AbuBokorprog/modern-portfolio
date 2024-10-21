@@ -51,7 +51,7 @@ const About = ({ aboutData, skillData }) => {
         opacity: 0,
         duration: 1.5, // Increased the duration for a smoother effect
         ease: 'power3.out', // Using a more fluid easing for the animation
-        stagger: 0.3, // Reduced the stagger time for quicker animations
+        stagger: 0.5, // Reduced the stagger time for quicker animations
         scrollTrigger: {
           trigger: container.current,
           start: 'top 80%', // Adjusted for a more noticeable start
@@ -124,7 +124,7 @@ const About = ({ aboutData, skillData }) => {
       >
         <div className="">
           <div className="fade-in">
-            <h3 className="text-5xl lg:text-8xl font-bold uppercase bg-gradient-to-bl dark:from-fuchsia-800 dark:to-rose-800 from-fuchsia-500 to-rose-500 bg-clip-text text-transparent py-10">
+            <h3 className="text-5xl lg:text-8xl font-bold uppercase bg-gradient-to-bl dark:from-fuchsia-800 dark:to-rose-800 from-fuchsia-500 to-rose-500 bg-clip-text text-transparent py-10 lg:py-16">
               About Me.
             </h3>
           </div>
@@ -186,7 +186,7 @@ const About = ({ aboutData, skillData }) => {
         </div>
         <hr className="border border-zinc-600 dark:border-zinc-400" />
         {/* skills */}
-        <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-5 py-10 text-center justify-center mx-auto items-center">
+        <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-5 py-10 lg:py-16 text-center justify-center mx-auto items-center">
           {skillData?.map((skill) => (
             <div key={skill._id} className="flex flex-col items-center">
               <div className="bg-gray-200 dark:bg-gray-900 p-4 rounded-full mb-2">
@@ -203,13 +203,13 @@ const About = ({ aboutData, skillData }) => {
           ))}
         </div>
         <hr className="border border-zinc-600 dark:border-zinc-400" />
-        {/* services */}
       </section>
       {/* experience */}
       <Experience />
-      <section name="services">
+      {/* services */}
+      <section name="services slide-up">
         <div id="services">
-          <h3 className="text-5xl lg:text-8xl font-bold uppercase bg-gradient-to-bl dark:from-fuchsia-800 dark:to-rose-800 from-fuchsia-500 to-rose-500 bg-clip-text text-transparent py-10">
+          <h3 className="text-5xl lg:text-8xl font-bold uppercase bg-gradient-to-bl dark:from-fuchsia-800 dark:to-rose-800 from-fuchsia-500 to-rose-500 bg-clip-text text-transparent py-10 lg:py-16">
             Services.
           </h3>
           <div className="grid w-full px-4 md:grid-cols-2 lg:grid-cols-3 justify-center mx-auto gap-6">
