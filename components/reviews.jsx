@@ -80,7 +80,7 @@ const Reviews = () => {
           >
             {feedbackData.map((f) => (
               <SwiperSlide key={f.id}>
-                <div className="border rounded-lg shadow-lg p-2 my-10 h-60 bg-gray-100">
+                <div className="border text-black dark:text-white rounded-lg shadow-lg p-2 my-10 h-60 dark:bg-gray-900 bg-gray-100">
                   <h3 className="text-2xl  font-medium">User</h3>
                   <p>
                     Lorem ipsum dolor sit amet, consectetur adipisicing elit.

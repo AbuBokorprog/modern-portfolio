@@ -124,7 +124,7 @@ const About = ({ aboutData, skillData }) => {
       >
         <div className="">
           <div className="fade-in">
-            <h3 className="text-5xl lg:text-8xl font-bold uppercase bg-gradient-to-bl dark:from-fuchsia-800 dark:to-rose-800 from-fuchsia-500 to-rose-500 bg-clip-text text-transparent py-10 lg:py-16">
+            <h3 className="text-5xl lg:text-8xl font-bold uppercase bg-gradient-to-bl from-fuchsia-800 to-rose-800 dark:from-fuchsia-500 dark:to-rose-500 bg-clip-text text-transparent py-10 lg:py-16">
               About Me.
             </h3>
           </div>
@@ -175,7 +175,7 @@ const About = ({ aboutData, skillData }) => {
                 <div className="mt-8">
                   <Link
                     href={'/#contact'}
-                    className="dark:text-white text-black bg-gradient-to-bl dark:from-fuchsia-800 dark:to-rose-800 from-fuchsia-500 to-rose-500 focus:ring-4 focus:ring-rose-300 font-medium rounded-lg text-sm px-5 py-2.5 hover:shadow-lg transition-all hoverable"
+                    className="text-white dark:text-black bg-gradient-to-bl from-fuchsia-800 to-rose-800 dark:from-fuchsia-500 dark:to-rose-500 focus:ring-4 focus:ring-rose-300 font-medium rounded-lg text-sm px-5 py-2.5 hover:shadow-lg transition-all hoverable"
                   >
                     Contact Me
                   </Link>
@@ -186,19 +186,19 @@ const About = ({ aboutData, skillData }) => {
         </div>
         <hr className="border border-zinc-600 dark:border-zinc-400" />
         {/* skills */}
-        <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-5 py-10 lg:py-16 text-center justify-center mx-auto items-center">
+        <div className="grid grid-cols-3 md:grid-cols-5 lg:grid-cols-7 xl:grid-cols-10 gap-5 py-10 lg:py-16 text-center justify-center mx-auto items-center">
           {skillData?.map((skill) => (
             <div key={skill._id} className="flex flex-col items-center">
-              <div className="bg-gray-200 dark:bg-gray-900 p-4 rounded-full mb-2">
+              <div className="bg-gray-300 dark:bg-gray-50 p-4 rounded-full mb-2">
                 <img
                   src={skill.icon}
                   alt={`${skill.technology_name} icon`}
                   className="w-12 h-12" // Adjust size as needed
                 />
               </div>
-              <span className="dark:text-white text-black hoverable flex items-center justify-center px-4 rounded-3xl border border-black dark:border-white py-2 transition-transform duration-200 hover:bg-gray-200 dark:hover:bg-gray-700 shadow-md transform hover:scale-105">
+              {/* <span className="dark:text-white text-black hoverable flex items-center justify-center px-4 rounded-3xl border border-black dark:border-white py-2 transition-transform duration-200 hover:bg-gray-200 dark:hover:bg-gray-700 shadow-md transform hover:scale-105">
                 {skill.technology_name}
-              </span>
+              </span> */}
             </div>
           ))}
         </div>
@@ -209,7 +209,7 @@ const About = ({ aboutData, skillData }) => {
       {/* services */}
       <section name="services slide-up">
         <div id="services">
-          <h3 className="text-5xl lg:text-8xl font-bold uppercase bg-gradient-to-bl dark:from-fuchsia-800 dark:to-rose-800 from-fuchsia-500 to-rose-500 bg-clip-text text-transparent py-10 lg:py-16">
+          <h3 className="text-5xl lg:text-8xl font-bold uppercase bg-gradient-to-bl from-fuchsia-800 to-rose-800 dark:from-fuchsia-500 dark:to-rose-500 bg-clip-text text-transparent py-10 lg:py-16">
             Services.
           </h3>
           <div className="grid w-full px-4 md:grid-cols-2 lg:grid-cols-3 justify-center mx-auto gap-6">

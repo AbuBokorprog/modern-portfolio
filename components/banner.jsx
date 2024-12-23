@@ -48,12 +48,12 @@ const Banner = () => {
           className="relative h-screen xl:h-[93vh] flex items-center justify-center dark:text-white"
         >
           <div>
-            <h1 className="text-6xl md:text-8xl lg:text-9xl font-extrabold text-center bg-gradient-to-bl dark:from-fuchsia-800 dark:to-rose-800 from-fuchsia-500 to-rose-500 bg-clip-text text-transparent">
+            <h1 className="text-6xl md:text-8xl lg:text-9xl font-extrabold text-center bg-gradient-to-bl from-fuchsia-800 to-rose-800 dark:from-fuchsia-500 dark:to-rose-500 bg-clip-text text-transparent">
               <span className="lg:pe-20 title">Hi there, I'm</span> <br />
               <span className="lg:ps-20 title">Abu Bokor.</span>
             </h1>
             {/* Typing Animation for roles */}
-            <div className="mt-5 title text-center text-2xl md:text-4xl font-medium text-white">
+            <div className="mt-5 title text-center text-2xl md:text-4xl font-medium text-black dark:text-white">
               <TypeAnimation
                 sequence={[
                   'Frontend Developer',

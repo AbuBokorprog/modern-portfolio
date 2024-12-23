@@ -68,7 +68,7 @@ const Portfolio = ({ projects, frontend, mern, full }) => {
         ref={container}
         className="portfolio-container rounded-b-xl bg-white min-h-screen text-black dark:text-white px-2 dark:bg-black overflow-hidden"
       >
-        <h2 className="text-5xl selectTitle lg:text-8xl font-bold uppercase bg-gradient-to-bl dark:from-fuchsia-800 dark:to-rose-800 from-fuchsia-500 to-rose-500 bg-clip-text text-transparent py-10 lg:py-16">
+        <h2 className="text-5xl selectTitle lg:text-8xl font-bold uppercase bg-gradient-to-bl from-fuchsia-800 to-rose-800 dark:from-fuchsia-500 dark:to-rose-500 bg-clip-text text-transparent py-10 lg:py-16">
           Selected Works.
         </h2>
 
@@ -181,16 +181,16 @@ const Portfolio = ({ projects, frontend, mern, full }) => {
                     <a
                       href={`${p?.github_url}`}
                       target="_blank"
-                      className="bg-gradient-to-bl dark:from-fuchsia-800 dark:to-rose-800 from-fuchsia-500 to-rose-500 text-white px-4 py-2 rounded-lg shadow hover:bg-rose-600 transition-colors duration-200"
+                      className="bg-gradient-to-bl from-fuchsia-800 to-rose-800 dark:from-fuchsia-500 dark:to-rose-500 text-white dark:text-black px-4 py-2 rounded-lg shadow hover:bg-rose-600 transition-colors duration-200 hoverable"
                     >
                       Github
                     </a>
                     <a
                       href={`${p?.view_url}`}
                       target="_blank"
-                      className="bg-gradient-to-bl dark:from-fuchsia-800 dark:to-rose-800 from-fuchsia-500 to-rose-500 text-white px-4 py-2 rounded-lg shadow hover:bg-fuchsia-600 transition-colors duration-200"
+                      className="bg-gradient-to-bl from-fuchsia-800 to-rose-800 dark:from-fuchsia-500 dark:to-rose-500 text-white dark:text-black px-4 py-2 rounded-lg shadow hover:bg-fuchsia-600 transition-colors duration-200 hoverable"
                     >
-                      View
+                      Preview
                     </a>
                   </div>
                 </div>
@@ -201,7 +201,7 @@ const Portfolio = ({ projects, frontend, mern, full }) => {
             <div className="my-6 mx-auto text-center">
               <button
                 onClick={countHandler}
-                className="dark:text-white text-black bg-gradient-to-bl dark:from-fuchsia-800 dark:to-rose-800 from-fuchsia-500 to-rose-500 focus:ring-4 focus:ring-rose-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 hoverable"
+                className="dark:text-white text-black bg-gradient-to-bl from-fuchsia-800 to-rose-800 dark:from-fuchsia-500 dark:to-rose-500 focus:ring-4 focus:ring-rose-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 hoverable"
               >
                 Load more
               </button>
@@ -266,14 +266,14 @@ const Portfolio = ({ projects, frontend, mern, full }) => {
                     <a
                       href={`${p?.github_url}`}
                       target="_blank"
-                      className="bg-gradient-to-bl dark:from-fuchsia-800 dark:to-rose-800 from-fuchsia-500 to-rose-500 text-white px-4 py-2 rounded-lg shadow hover:bg-rose-600 transition-colors duration-200"
+                      className="bg-gradient-to-bl from-fuchsia-800 to-rose-800 dark:from-fuchsia-500 dark:to-rose-500 text-white px-4 py-2 rounded-lg shadow hover:bg-rose-600 transition-colors duration-200"
                     >
                       Github
                     </a>
                     <a
                       href={`${p?.view_url}`}
                       target="_blank"
-                      className="bg-gradient-to-bl dark:from-fuchsia-800 dark:to-rose-800 from-fuchsia-500 to-rose-500 text-white px-4 py-2 rounded-lg shadow hover:bg-fuchsia-600 transition-colors duration-200"
+                      className="bg-gradient-to-bl from-fuchsia-800 to-rose-800 dark:from-fuchsia-500 dark:to-rose-500 text-white px-4 py-2 rounded-lg shadow hover:bg-fuchsia-600 transition-colors duration-200"
                     >
                       View
                     </a>
@@ -286,7 +286,7 @@ const Portfolio = ({ projects, frontend, mern, full }) => {
             <div className="my-6 mx-auto text-center">
               <button
                 onClick={frontendCountHandler}
-                className="dark:text-white text-black bg-gradient-to-bl dark:from-fuchsia-800 dark:to-rose-800 from-fuchsia-500 to-rose-500 focus:ring-4 focus:ring-rose-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 hoverable"
+                className="dark:text-white text-black bg-gradient-to-bl from-fuchsia-800 to-rose-800 dark:from-fuchsia-500 dark:to-rose-500 focus:ring-4 focus:ring-rose-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 hoverable"
               >
                 Load more
               </button>
@@ -350,14 +350,14 @@ const Portfolio = ({ projects, frontend, mern, full }) => {
                     <a
                       href={`${p?.github_url}`}
                       target="_blank"
-                      className="bg-gradient-to-bl dark:from-fuchsia-800 dark:to-rose-800 from-fuchsia-500 to-rose-500 text-white px-4 py-2 rounded-lg shadow hover:bg-rose-600 transition-colors duration-200"
+                      className="bg-gradient-to-bl from-fuchsia-800 to-rose-800 dark:from-fuchsia-500 dark:to-rose-500 text-white px-4 py-2 rounded-lg shadow hover:bg-rose-600 transition-colors duration-200"
                     >
                       Github
                     </a>
                     <a
                       href={`${p?.view_url}`}
                       target="_blank"
-                      className="bg-gradient-to-bl dark:from-fuchsia-800 dark:to-rose-800 from-fuchsia-500 to-rose-500 text-white px-4 py-2 rounded-lg shadow hover:bg-fuchsia-600 transition-colors duration-200"
+                      className="bg-gradient-to-bl from-fuchsia-800 to-rose-800 dark:from-fuchsia-500 dark:to-rose-500 text-white px-4 py-2 rounded-lg shadow hover:bg-fuchsia-600 transition-colors duration-200"
                     >
                       View
                     </a>
@@ -371,7 +371,7 @@ const Portfolio = ({ projects, frontend, mern, full }) => {
               <div className="my-6 mx-auto text-center">
                 <button
                   onClick={mernCountHandler}
-                  className="dark:text-white text-black bg-gradient-to-bl dark:from-fuchsia-800 dark:to-rose-800 from-fuchsia-500 to-rose-500 focus:ring-4 focus:ring-rose-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 hoverable"
+                  className="dark:text-white text-black bg-gradient-to-bl from-fuchsia-800 to-rose-800 dark:from-fuchsia-500 dark:to-rose-500 focus:ring-4 focus:ring-rose-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 hoverable"
                 >
                   Load more
                 </button>
@@ -436,14 +436,14 @@ const Portfolio = ({ projects, frontend, mern, full }) => {
                     <a
                       href={`${p?.github_url}`}
                       target="_blank"
-                      className="bg-gradient-to-bl dark:from-fuchsia-800 dark:to-rose-800 from-fuchsia-500 to-rose-500 text-white px-4 py-2 rounded-lg shadow hover:bg-rose-600 transition-colors duration-200"
+                      className="bg-gradient-to-bl from-fuchsia-800 to-rose-800 dark:from-fuchsia-500 dark:to-rose-500 text-white px-4 py-2 rounded-lg shadow hover:bg-rose-600 transition-colors duration-200"
                     >
                       Github
                     </a>
                     <a
                       href={`${p?.view_url}`}
                       target="_blank"
-                      className="bg-gradient-to-bl dark:from-fuchsia-800 dark:to-rose-800 from-fuchsia-500 to-rose-500 text-white px-4 py-2 rounded-lg shadow hover:bg-fuchsia-600 transition-colors duration-200"
+                      className="bg-gradient-to-bl from-fuchsia-800 to-rose-800 dark:from-fuchsia-500 dark:to-rose-500 text-white px-4 py-2 rounded-lg shadow hover:bg-fuchsia-600 transition-colors duration-200"
                     >
                       View
                     </a>
@@ -458,7 +458,7 @@ const Portfolio = ({ projects, frontend, mern, full }) => {
               <div className="my-6 mx-auto text-center">
                 <button
                   onClick={fullCountHandler}
-                  className="dark:text-white text-black bg-gradient-to-bl dark:from-fuchsia-800 dark:to-rose-800 from-fuchsia-500 to-rose-500 focus:ring-4 focus:ring-rose-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 hoverable"
+                  className="dark:text-white text-black bg-gradient-to-bl from-fuchsia-800 to-rose-800 dark:from-fuchsia-500 dark:to-rose-500 focus:ring-4 focus:ring-rose-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 hoverable"
                 >
                   Load more
                 </button>

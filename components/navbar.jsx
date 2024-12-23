@@ -180,7 +180,7 @@ const Navbar = () => {
                   <a
                     href="/Abu-bokor-mern-developer.pdf"
                     download
-                    className="dark:text-white text-black bg-gradient-to-bl dark:from-fuchsia-800 dark:to-rose-800 from-fuchsia-500 to-rose-500 focus:ring-4 focus:ring-rose-300 font-medium rounded-lg px-5 py-2.5 me-2 my-2 hoverable"
+                    className="text-white dark:text-black bg-gradient-to-bl from-fuchsia-800 to-rose-800 dark:from-fuchsia-500 dark:to-rose-500 focus:ring-4 focus:ring-rose-300 font-medium rounded-lg px-5 py-2.5 me-2 my-2 hoverable"
                   >
                     Resume
                   </a>
@@ -199,7 +199,7 @@ const Navbar = () => {
         <div className="md:flex items-center justify-between px-4 container mx-auto">
           <Link
             href={'/'}
-            className="text-3xl font-bold bg-gradient-to-r dark:from-fuchsia-800 dark:to-rose-800 from-fuchsia-500 to-rose-500 bg-clip-text text-transparent hover:opacity-75"
+            className="text-3xl font-bold bg-gradient-to-r from-fuchsia-800 to-rose-800 dark:from-fuchsia-500 dark:to-rose-500 bg-clip-text text-transparent hover:opacity-75 hoverable"
           >
             &lt;Bokor&gt;
           </Link>
@@ -211,6 +211,7 @@ const Navbar = () => {
               smooth={true}
               offset={5}
               duration={500}
+              className="hoverable"
             >
               Home
             </Link>
@@ -221,6 +222,7 @@ const Navbar = () => {
               smooth={true}
               offset={5}
               duration={500}
+              className="hoverable"
             >
               About
             </Link>
@@ -231,6 +233,7 @@ const Navbar = () => {
               smooth={true}
               offset={5}
               duration={500}
+              className="hoverable"
             >
               Services
             </Link>
@@ -241,6 +244,7 @@ const Navbar = () => {
               smooth={true}
               offset={5}
               duration={500}
+              className="hoverable"
             >
               Projects
             </Link>
@@ -251,6 +255,7 @@ const Navbar = () => {
               smooth={true}
               offset={5}
               duration={500}
+              className="hoverable"
             >
               Contact
             </Link>
@@ -259,7 +264,7 @@ const Navbar = () => {
             <a
               href="/Abu-bokor-mern-developer.pdf"
               download
-              className="dark:text-white text-black bg-gradient-to-bl dark:from-fuchsia-800 dark:to-rose-800 from-fuchsia-500 to-rose-500 focus:ring-4 focus:ring-rose-300 font-medium rounded-lg px-5 py-2.5 me-2 mb-2 hoverable"
+              className="text-white dark:text-black bg-gradient-to-bl from-fuchsia-800 to-rose-800 dark:from-fuchsia-500 dark:to-rose-500 focus:ring-4 focus:ring-rose-300 font-medium rounded-lg px-5 py-2.5 me-2 mb-2 hoverable"
             >
               Resume
             </a>
