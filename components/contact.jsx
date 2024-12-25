@@ -43,7 +43,7 @@ const Contact = () => {
     <Element>
       <section name="contact" className="dark:text-white">
         <div className="overflow-hidden px-2 ">
-          <h2 className="text-4xl lg:text-[120px] xl:text-[165px] text-center font-bold uppercase bg-gradient-to-bl from-fuchsia-800 to-rose-800 dark:from-fuchsia-500 dark:to-rose-500 bg-clip-text text-transparent py-10 lg:py-16">
+          <h2 className="text-4xl lg:text-[120px] xl:text-[165px] text-center font-bold uppercase bg-gradient-to-bl from-fuchsia-600 to-rose-600 dark:from-fuchsia-500 dark:to-rose-500 bg-clip-text text-transparent py-10 lg:py-16">
             Get in touch.
           </h2>
           <div className="lg:flex pt-10 items-start flex-row-reverse">
@@ -108,7 +108,7 @@ const Contact = () => {
                 <input
                   type="submit"
                   value={'Send Message'}
-                  className="text-white dark:text-black bg-gradient-to-bl from-fuchsia-800 to-rose-800 dark:from-fuchsia-500 dark:to-rose-500 focus:ring-4 focus:ring-rose-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 hoverable"
+                  className="text-white dark:text-black bg-gradient-to-bl from-fuchsia-600 to-rose-600 dark:from-fuchsia-500 dark:to-rose-500 focus:ring-4 focus:ring-rose-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 hoverable"
                 />
               </div>
             </form>

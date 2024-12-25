@@ -39,7 +39,7 @@ const Reviews = () => {
   ];
   return (
     <div className="py-10 overflow-hidden px-2" id="reviews">
-      <h2 className="text-5xl lg:text-8xl font-bold uppercase bg-gradient-to-bl dark:from-fuchsia-800 dark:to-rose-800 from-fuchsia-500 to-rose-500 bg-clip-text text-transparent py-10">
+      <h2 className="text-5xl lg:text-8xl font-bold uppercase bg-gradient-to-bl dark:from-fuchsia-600 dark:to-rose-600 from-fuchsia-500 to-rose-500 bg-clip-text text-transparent py-10">
         What my clients says.
       </h2>
       <div>

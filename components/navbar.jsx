@@ -7,7 +7,7 @@ import { IoMdMenu } from 'react-icons/io';
 import { useGSAP } from '@gsap/react';
 import { useRouter } from 'next/navigation';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
-import { Link, Events, scrollSpy, animateScroll as scroll } from 'react-scroll';
+import Link from 'next/link';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -60,30 +60,30 @@ const Navbar = () => {
   };
 
   // Function to handle the activation of a link.
-  const handleSetActive = (to) => {
-    console.log(to);
-  };
+  // const handleSetActive = (to) => {
+  //   console.log(to);
+  // };
 
-  useEffect(() => {
-    // Registering the 'begin' event and logging it to the console when triggered.
-    Events.scrollEvent.register('begin', (to, element) => {
-      console.log('begin', to, element);
-    });
+  // useEffect(() => {
+  //   // Registering the 'begin' event and logging it to the console when triggered.
+  //   Events.scrollEvent.register('begin', (to, element) => {
+  //     console.log('begin', to, element);
+  //   });
 
-    // Registering the 'end' event and logging it to the console when triggered.
-    Events.scrollEvent.register('end', (to, element) => {
-      console.log('end', to, element);
-    });
+  //   // Registering the 'end' event and logging it to the console when triggered.
+  //   Events.scrollEvent.register('end', (to, element) => {
+  //     console.log('end', to, element);
+  //   });
 
-    // Updating scrollSpy when the component mounts.
-    scrollSpy.update();
+  //   // Updating scrollSpy when the component mounts.
+  //   scrollSpy.update();
 
-    // Returning a cleanup function to remove the registered events when the component unmounts.
-    return () => {
-      Events.scrollEvent.remove('begin');
-      Events.scrollEvent.remove('end');
-    };
-  }, []);
+  //   // Returning a cleanup function to remove the registered events when the component unmounts.
+  //   return () => {
+  //     Events.scrollEvent.remove('begin');
+  //     Events.scrollEvent.remove('end');
+  //   };
+  // }, []);
 
   return (
     <div>
@@ -96,7 +96,7 @@ const Navbar = () => {
           >
             <Link
               href={'/'}
-              className="text-3xl uppercase font-bold bg-gradient-to-r dark:from-fuchsia-800 dark:to-rose-800 from-fuchsia-500 to-rose-500 bg-clip-text text-transparent hover:opacity-75"
+              className="text-3xl uppercase font-bold bg-gradient-to-r dark:from-fuchsia-600 dark:to-rose-600 from-fuchsia-500 to-rose-500 bg-clip-text text-transparent hover:opacity-75"
             >
               Abu b.
             </Link>
@@ -144,7 +144,7 @@ const Navbar = () => {
                 </motion.li>
                 <motion.li variants={item}>
                   <Link
-                    href={'/#about'}
+                    href={'/about'}
                     variants={item}
                     className="link hoverable text-gray-700 text-xl font-semibold hover:text-gray-900 block py-2"
                   >
@@ -153,7 +153,7 @@ const Navbar = () => {
                 </motion.li>
                 <motion.li variants={item}>
                   <Link
-                    href={'/#services'}
+                    href={'/services'}
                     variants={item}
                     className="link hoverable text-gray-700 text-xl font-semibold hover:text-gray-900 block py-2"
                   >
@@ -162,7 +162,7 @@ const Navbar = () => {
                 </motion.li>
                 <motion.li variants={item}>
                   <Link
-                    href={'/#projects'}
+                    href={'/projects'}
                     className="link hoverable text-gray-700 text-xl font-semibold hover:text-gray-900 block py-2"
                   >
                     Projects
@@ -170,7 +170,7 @@ const Navbar = () => {
                 </motion.li>
                 <motion.li variants={item}>
                   <Link
-                    href={'/#contact'}
+                    href={'/contact'}
                     className="link hoverable text-gray-700 text-xl font-semibold hover:text-gray-900 block py-2"
                   >
                     Contact
@@ -180,7 +180,7 @@ const Navbar = () => {
                   <a
                     href="/Abu-bokor-mern-developer.pdf"
                     download
-                    className="text-white dark:text-black bg-gradient-to-bl from-fuchsia-800 to-rose-800 dark:from-fuchsia-500 dark:to-rose-500 focus:ring-4 focus:ring-rose-300 font-medium rounded-lg px-5 py-2.5 me-2 my-2 hoverable"
+                    className="text-white dark:text-black bg-gradient-to-bl from-fuchsia-600 to-rose-600 dark:from-fuchsia-500 dark:to-rose-500 focus:ring-4 focus:ring-rose-300 font-medium rounded-lg px-5 py-2.5 me-2 my-2 hoverable"
                   >
                     Resume
                   </a>
@@ -198,73 +198,23 @@ const Navbar = () => {
       >
         <div className="md:flex items-center justify-between px-4 container mx-auto">
           <Link
-            href={'/'}
-            className="text-3xl font-bold bg-gradient-to-r from-fuchsia-800 to-rose-800 dark:from-fuchsia-500 dark:to-rose-500 bg-clip-text text-transparent hover:opacity-75 hoverable"
+            href="/"
+            className="text-3xl font-bold bg-gradient-to-r from-fuchsia-600 to-rose-600 dark:from-fuchsia-500 dark:to-rose-500 bg-clip-text text-transparent hover:opacity-75 hoverable"
           >
             &lt;Bokor&gt;
           </Link>
           <div className="md:flex text-xl font-semibold justify-center gap-8">
-            <Link
-              activeClass="text-red-500"
-              to="home"
-              spy={true}
-              smooth={true}
-              offset={5}
-              duration={500}
-              className="hoverable"
-            >
-              Home
-            </Link>
-            <Link
-              to="about"
-              activeClass="text-red-500"
-              spy={true}
-              smooth={true}
-              offset={5}
-              duration={500}
-              className="hoverable"
-            >
-              About
-            </Link>
-            <Link
-              to="services"
-              activeClass="text-red-500"
-              spy={true}
-              smooth={true}
-              offset={5}
-              duration={500}
-              className="hoverable"
-            >
-              Services
-            </Link>
-            <Link
-              to="projects"
-              activeClass="text-red-500"
-              spy={true}
-              smooth={true}
-              offset={5}
-              duration={500}
-              className="hoverable"
-            >
-              Projects
-            </Link>
-            <Link
-              to="contact"
-              activeClass="text-red-500"
-              spy={true}
-              smooth={true}
-              offset={5}
-              duration={500}
-              className="hoverable"
-            >
-              Contact
-            </Link>
+            <Link href={'/'}>Home</Link>
+            <Link href={'/'}>About</Link>
+            <Link href={'/'}>Services</Link>
+            <Link href={'/'}>Projects</Link>
+            <Link href={'/'}>Contact</Link>
           </div>
           <div>
             <a
               href="/Abu-bokor-mern-developer.pdf"
               download
-              className="text-white dark:text-black bg-gradient-to-bl from-fuchsia-800 to-rose-800 dark:from-fuchsia-500 dark:to-rose-500 focus:ring-4 focus:ring-rose-300 font-medium rounded-lg px-5 py-2.5 me-2 mb-2 hoverable"
+              className="text-white dark:text-black bg-gradient-to-bl from-fuchsia-600 to-rose-600 dark:from-fuchsia-500 dark:to-rose-500 focus:ring-4 focus:ring-rose-300 font-medium rounded-lg px-5 py-2.5 me-2 mb-2 hoverable"
             >
               Resume
             </a>

@@ -15,6 +15,7 @@ import optimization from '../public/assets/optimization.png';
 import fullStack from '../public/assets/web-development.png';
 import accessibility from '../public/assets/accessibility.png';
 import { Element } from 'react-scroll';
+import Education from './education';
 
 const About = ({ aboutData, skillData }) => {
   const container = useRef();
@@ -77,12 +78,6 @@ const About = ({ aboutData, skillData }) => {
       description:
         'Crafting responsive and adaptive web designs that provide optimal viewing experiences across mobile, tablet, and desktop devices.',
     },
-    // {
-    //   image: fullStack,
-    //   title: 'Front-End Development',
-    //   description:
-    //     'Building dynamic, user-friendly interfaces using React and TypeScript, ensuring fast load times and smooth interactions for better user engagement.',
-    // },
     {
       title: 'Full-Stack Web Development',
       description:
@@ -124,7 +119,7 @@ const About = ({ aboutData, skillData }) => {
       >
         <div className="">
           <div className="fade-in">
-            <h3 className="text-5xl lg:text-8xl font-bold uppercase bg-gradient-to-bl from-fuchsia-800 to-rose-800 dark:from-fuchsia-500 dark:to-rose-500 bg-clip-text text-transparent py-10 lg:py-16">
+            <h3 className="text-5xl lg:text-8xl font-bold uppercase bg-gradient-to-bl from-fuchsia-600 to-rose-600 dark:from-fuchsia-500 dark:to-rose-500 bg-clip-text text-transparent py-10 lg:py-16">
               About Me.
             </h3>
           </div>
@@ -175,7 +170,7 @@ const About = ({ aboutData, skillData }) => {
                 <div className="mt-8">
                   <Link
                     href={'/#contact'}
-                    className="text-white dark:text-black bg-gradient-to-bl from-fuchsia-800 to-rose-800 dark:from-fuchsia-500 dark:to-rose-500 focus:ring-4 focus:ring-rose-300 font-medium rounded-lg text-sm px-5 py-2.5 hover:shadow-lg transition-all hoverable"
+                    className="text-white dark:text-black bg-gradient-to-bl from-fuchsia-600 to-rose-600 dark:from-fuchsia-500 dark:to-rose-500 focus:ring-4 focus:ring-rose-300 font-medium rounded-lg text-sm px-5 py-2.5 hover:shadow-lg transition-all hoverable"
                   >
                     Contact Me
                   </Link>
@@ -204,19 +199,18 @@ const About = ({ aboutData, skillData }) => {
         </div>
         <hr className="border border-zinc-600 dark:border-zinc-400" />
       </section>
-      {/* experience */}
-      <Experience />
-      {/* services */}
+
+      {/* services
       <section name="services slide-up">
         <div id="services">
-          <h3 className="text-5xl lg:text-8xl font-bold uppercase bg-gradient-to-bl from-fuchsia-800 to-rose-800 dark:from-fuchsia-500 dark:to-rose-500 bg-clip-text text-transparent py-10 lg:py-16">
+          <h3 className="text-5xl lg:text-8xl font-bold uppercase bg-gradient-to-bl from-fuchsia-600 to-rose-600 dark:from-fuchsia-500 dark:to-rose-500 bg-clip-text text-transparent py-10 lg:py-16">
             Services.
           </h3>
           <div className="grid w-full px-4 md:grid-cols-2 lg:grid-cols-3 justify-center mx-auto gap-6">
             {serviceData.map((service, index) => (
               <div
                 key={index}
-                className="p-6 card hover:border-b-4 hover:border-rose-400 dark:hover:border-fuchsia-800 transition-all duration-300 w-full border border-gray-200 dark:border-gray-700 rounded-lg bg-white dark:bg-gray-950 shadow-xl"
+                className="p-6 card hover:border-b-4 hover:border-rose-400 dark:hover:border-fuchsia-800 transition-all duration-300 w-full border border-gray-200 dark:border-gray-700 rounded-lg bg-white dark:bg-gray-900 shadow-xl"
               >
                 <Image
                   src={service.image}
@@ -237,7 +231,7 @@ const About = ({ aboutData, skillData }) => {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
     </Element>
   );
 };
