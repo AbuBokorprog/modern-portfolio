@@ -59,32 +59,6 @@ const Navbar = () => {
     show: { opacity: 1 },
   };
 
-  // Function to handle the activation of a link.
-  // const handleSetActive = (to) => {
-  //   console.log(to);
-  // };
-
-  // useEffect(() => {
-  //   // Registering the 'begin' event and logging it to the console when triggered.
-  //   Events.scrollEvent.register('begin', (to, element) => {
-  //     console.log('begin', to, element);
-  //   });
-
-  //   // Registering the 'end' event and logging it to the console when triggered.
-  //   Events.scrollEvent.register('end', (to, element) => {
-  //     console.log('end', to, element);
-  //   });
-
-  //   // Updating scrollSpy when the component mounts.
-  //   scrollSpy.update();
-
-  //   // Returning a cleanup function to remove the registered events when the component unmounts.
-  //   return () => {
-  //     Events.scrollEvent.remove('begin');
-  //     Events.scrollEvent.remove('end');
-  //   };
-  // }, []);
-
   return (
     <div>
       <div className="">
@@ -178,9 +152,9 @@ const Navbar = () => {
                 </motion.li>
                 <motion.li className="my-4">
                   <a
-                    href="/Abu-bokor-mern-developer.pdf"
+                    href="/abubokor-full-stack-developer.pdf"
                     download
-                    className="text-white dark:text-black bg-gradient-to-bl from-fuchsia-600 to-rose-600 dark:from-fuchsia-500 dark:to-rose-500 focus:ring-4 focus:ring-rose-300 font-medium rounded-lg px-5 py-2.5 me-2 my-2 hoverable"
+                    className="text-white bg-gradient-to-bl from-fuchsia-600 to-rose-600 dark:from-fuchsia-500 dark:to-rose-500 focus:ring-4 focus:ring-rose-300 font-medium rounded-lg px-5 py-2.5 me-2 my-2 hoverable"
                   >
                     Resume
                   </a>
@@ -212,9 +186,9 @@ const Navbar = () => {
           </div>
           <div>
             <a
-              href="/Abu-bokor-mern-developer.pdf"
+              href="/abubokor-full-stack-developer.pdf"
               download
-              className="text-white dark:text-black bg-gradient-to-bl from-fuchsia-600 to-rose-600 dark:from-fuchsia-500 dark:to-rose-500 focus:ring-4 focus:ring-rose-300 font-medium rounded-lg px-5 py-2.5 me-2 mb-2 hoverable"
+              className="text-white bg-gradient-to-bl from-fuchsia-600 to-rose-600 dark:from-fuchsia-500 dark:to-rose-500 focus:ring-4 focus:ring-rose-300 font-medium rounded-lg px-5 py-2.5 me-2 mb-2 hoverable"
             >
               Resume
             </a>

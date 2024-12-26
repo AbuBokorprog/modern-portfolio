@@ -55,14 +55,14 @@ const PortfolioCard = ({ p }) => {
       <div className="flex justify-between items-center mt-4">
         <Link
           href={`/portfolio/${p?._id}`}
-          className="bg-gradient-to-bl from-fuchsia-600 to-rose-600 dark:from-fuchsia-500 dark:to-rose-500 text-white dark:text-black px-4 py-2 rounded-lg shadow hover:bg-rose-600 transition-colors duration-200 hoverable"
+          className="bg-gradient-to-bl from-fuchsia-600 to-rose-600 dark:from-fuchsia-500 dark:to-rose-500 text-white  px-4 py-2 rounded-lg shadow hover:bg-rose-600 transition-colors duration-200 hoverable"
         >
           View Details
         </Link>
         <a
           href={`${p?.view_url}`}
           target="_blank"
-          className="bg-gradient-to-bl from-fuchsia-600 to-rose-600 dark:from-fuchsia-500 dark:to-rose-500 text-white dark:text-black px-4 py-2 rounded-lg shadow hover:bg-fuchsia-600 transition-colors duration-200 hoverable"
+          className="bg-gradient-to-bl from-fuchsia-600 to-rose-600 dark:from-fuchsia-500 dark:to-rose-500 text-white  px-4 py-2 rounded-lg shadow hover:bg-fuchsia-600 transition-colors duration-200 hoverable"
         >
           Preview
         </a>
