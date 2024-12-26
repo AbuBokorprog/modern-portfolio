@@ -3,6 +3,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { FaGithub, FaExternalLinkAlt, FaCalendarAlt } from 'react-icons/fa';
 import { BiTime } from 'react-icons/bi';
+import moment from 'moment';
 
 export default async function Page({ params }) {
   const id = (await params).id;
@@ -40,7 +41,7 @@ export default async function Page({ params }) {
           <div className="flex flex-wrap items-center gap-4 text-gray-600 dark:text-gray-400">
             <div className="flex items-center gap-2">
               <FaCalendarAlt className="text-rose-600 dark:text-rose-500" />
-              <span>{completion_date}</span>
+              <span>{moment(completion_date).format('MMMM YYYY')}</span>
             </div>
             <div className="flex items-center gap-2">
               <BiTime className="text-rose-600 dark:text-rose-500" />
@@ -95,25 +96,35 @@ export default async function Page({ params }) {
           </section>
 
           {/* Key Features */}
-          <section>
-            <h2 className="text-2xl font-bold mb-4">Key Features</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              {key_features.map((feature, index) => (
-                <div
-                  key={index}
-                  className="p-4 bg-gray-50 dark:bg-gray-800 rounded-xl border border-gray-100 dark:border-gray-700"
-                >
-                  {feature}
-                </div>
-              ))}
-            </div>
-          </section>
+          {key_features && key_features?.length > 0 && (
+            <section>
+              <h2 className="text-2xl font-bold mb-4">Key Features</h2>
+              <div className="spacey-5 grid grid-cols-1 md:grid-cols-2 gap-2">
+                {key_features.map((feature, index) => (
+                  <li
+                    key={index}
+                    className="p-4 bg-gray-50 dark:bg-gray-800 rounded-xl border border-gray-100 dark:border-gray-700"
+                  >
+                    {feature}
+                  </li>
+                ))}
+              </div>
+            </section>
+          )}
 
           {/* Challenges & Solutions */}
-          <section>
-            <h2 className="text-2xl font-bold mb-4">Challenges & Solutions</h2>
-            <p className="text-gray-700 dark:text-gray-300">{challenges}</p>
-          </section>
+          {challenges && challenges?.length > 0 && (
+            <section>
+              <h2 className="text-2xl font-bold mb-4">
+                Challenges & Solutions
+              </h2>
+              {challenges.map((challenge, index) => (
+                <li key={index} className=" ">
+                  {challenge}
+                </li>
+              ))}
+            </section>
+          )}
         </div>
 
         {/* Sidebar */}

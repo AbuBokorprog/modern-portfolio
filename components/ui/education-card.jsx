@@ -13,18 +13,13 @@ const EducationCard = ({ education }) => {
     grade,
     _id,
     field,
+    achievements,
     institute_location,
     isPresent,
     short_description,
+    courses,
   } = education;
 
-  const achievements = ['Achievement 1', 'Achievement 2'];
-  const courses = [
-    'Data Structures',
-    'Algorithms',
-    'Web Development',
-    // ...
-  ];
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
@@ -46,19 +41,24 @@ const EducationCard = ({ education }) => {
           </div>
           <div>
             <h3 className="text-xl font-bold">{institute_name}</h3>
+            <small>{institute_location}</small>
             <div className="flex flex-wrap gap-2 mt-2">
               <div className="flex items-center gap-1">
-                <span className="text-sm text-gray-600">
+                <span className="text-sm text-gray-600 dark:text-gray-300">
                   {moment(startTime).format('MMMM YYYY')}
                 </span>
-                <span className="text-sm text-gray-600">•</span>
-                <span className="text-sm text-gray-600">
+                <span className="text-sm text-gray-600 dark:text-gray-300">
+                  •
+                </span>
+                <span className="text-sm text-gray-600 dark:text-gray-300">
                   {isPresent ? 'Present' : moment(endTime).format('MMMM YYYY')}
                 </span>
               </div>
               {grade && (
                 <>
-                  <span className="text-sm text-gray-600">•</span>
+                  <span className="text-sm text-gray-600 dark:text-gray-300">
+                    •
+                  </span>
                   <span className="px-2 py-1 text-xs font-medium text-purple-600 bg-purple-100 rounded-full">
                     Grade: {grade}
                   </span>

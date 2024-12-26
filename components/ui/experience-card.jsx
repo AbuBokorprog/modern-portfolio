@@ -14,6 +14,7 @@ const ExperienceCard = ({ experience }) => {
     endTime,
     isPresent,
     company_location,
+    technologies,
   } = experience;
 
   return (
@@ -65,18 +66,18 @@ const ExperienceCard = ({ experience }) => {
             <p>{short_description}</p>
           </div>
 
-          <div className="flex flex-wrap gap-2 mt-4">
-            {['React', 'Next.js', 'TypeScript', 'Tailwind CSS'].map(
-              (tech, index) => (
+          {technologies && technologies?.length > 0 && (
+            <div className="flex flex-wrap gap-2 mt-4">
+              {technologies?.map((tech, index) => (
                 <span
                   key={index}
                   className="px-3 py-1 text-sm bg-gray-100 dark:bg-gray-800 rounded-full text-gray-700 dark:text-gray-300"
                 >
                   {tech}
                 </span>
-              )
-            )}
-          </div>
+              ))}
+            </div>
+          )}
         </div>
       </div>
     </motion.div>

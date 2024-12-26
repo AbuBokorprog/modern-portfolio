@@ -26,9 +26,10 @@ const BlogCard = ({ blog }) => {
 
       <div className="p-4">
         <h3 className="text-xl font-semibold mb-2 line-clamp-1">{title}</h3>
-        <p className=" mb-4 text-sm line-clamp-2">
-          {description.slice(0, 100)}...
-        </p>
+        <div
+          className="text-gray-700 dark:text-gray-300"
+          dangerouslySetInnerHTML={{ __html: description?.slice(0, 100) }}
+        ></div>
 
         <div className="flex items-center justify-between">
           <span className="text-sm ">
