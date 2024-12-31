@@ -170,7 +170,7 @@ const Navbar = () => {
         ref={container}
         className="py-6 dark:text-white dark:bg-black bg-white text-black border-b hidden lg:block fixed top-0 start-0 end-0 z-20"
       >
-        <div className="md:flex items-center justify-between px-4 container mx-auto">
+        <div className="md:flex items-center justify-between px-2 container mx-auto">
           <Link
             href="/"
             className="text-3xl font-bold bg-gradient-to-r from-fuchsia-600 to-rose-600 dark:from-fuchsia-500 dark:to-rose-500 bg-clip-text text-transparent hover:opacity-75 hoverable"

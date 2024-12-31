@@ -24,7 +24,7 @@ const BlogCard = ({ blog }) => {
         </span>
       </div>
 
-      <div className="p-4">
+      <div className="p-4 pb-0">
         <h3 className="text-xl font-semibold mb-2 line-clamp-1">{title}</h3>
         <div
           className="text-gray-700 dark:text-gray-300"

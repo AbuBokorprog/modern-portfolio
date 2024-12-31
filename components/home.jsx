@@ -14,7 +14,7 @@ function Home({ children }) {
       {isLoading && (
         <LoadingComponent onLoadingComplete={handleLoadingComplete} />
       )}
-      {!isLoading && <div className="container mx-auto">{children}</div>}
+      {!isLoading && <div>{children}</div>}
     </div>
   );
 }

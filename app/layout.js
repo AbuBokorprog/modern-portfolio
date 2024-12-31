@@ -22,7 +22,7 @@ export default function RootLayout({ children }) {
           <Provider>
             <Cursor />
             <Navbar />
-            {children}
+            <div className="container mx-auto">{children}</div>
             <Footer />
           </Provider>
         </ThemeProvider>

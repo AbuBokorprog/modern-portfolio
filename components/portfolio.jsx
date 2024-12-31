@@ -130,7 +130,7 @@ const Portfolio = ({ projects, frontend, mern, full }) => {
         <div>
           {/* all tab */}
           {tab == 'all' && (
-            <div className="px-2  py-8 grid grid-cols-1 lg:grid-cols-3 gap-6">
+            <div className="px-2 grid grid-cols-1 lg:grid-cols-3 gap-6">
               {projects?.slice(0, portfolioCount)?.map((p) => (
                 <PortfolioCard key={p?._id} p={p} />
               ))}
@@ -152,7 +152,7 @@ const Portfolio = ({ projects, frontend, mern, full }) => {
           {/* frontend */}
 
           {tab == 'frontend' && (
-            <div className="px-2  py-8 grid grid-cols-1 lg:grid-cols-3 gap-6">
+            <div className="px-2 grid grid-cols-1 lg:grid-cols-3 gap-6">
               {frontend?.slice(0, frontCount)?.map((p) => (
                 <PortfolioCard key={p?._id} p={p} />
               ))}
@@ -173,7 +173,7 @@ const Portfolio = ({ projects, frontend, mern, full }) => {
         <div>
           {/* mern */}
           {tab == 'mern-stack' && (
-            <div className="px-2  py-8 grid grid-cols-1 lg:grid-cols-3 gap-6">
+            <div className="px-2 grid grid-cols-1 lg:grid-cols-3 gap-6">
               {mern?.slice(0, mernCount)?.map((p) => (
                 <PortfolioCard key={p?._id} p={p} />
               ))}
@@ -196,7 +196,7 @@ const Portfolio = ({ projects, frontend, mern, full }) => {
         <div>
           {/* full stack */}
           {tab == 'full-stack' && (
-            <div className="px-2  py-8 grid grid-cols-1 lg:grid-cols-3 gap-6">
+            <div className="px-2 grid grid-cols-1 lg:grid-cols-3 gap-6">
               {full?.slice(0, fullCount)?.map((p) => (
                 <PortfolioCard key={p?._id} p={p} />
               ))}

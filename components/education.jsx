@@ -14,7 +14,7 @@ const Education = ({ educationData }) => {
       >
         Education.
       </motion.h2>
-      <div className="container mx-auto px-4">
+      <div className=" mx-auto px-4">
         <div className=" mx-auto">
           {educationData?.data?.map((edu) => (
             <EducationCard key={edu?._id} education={edu} />

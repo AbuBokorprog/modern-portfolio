@@ -34,7 +34,7 @@ export default async function page() {
   );
 
   return (
-    <div className="">
+    <div>
       <Banner />
       <About
         aboutData={aboutData?.data && aboutData?.data[0]}
